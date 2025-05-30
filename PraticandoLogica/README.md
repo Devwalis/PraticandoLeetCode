@@ -60,8 +60,8 @@ Implemente uma função recursiva que calcule o fatorial de um número.
 
 ## 📂 Organização
 
-Cada exercício está dentro de sua própria classe Java, com o nome da questão em inglês no padrão camelCase.  
-Exemplo: `PalindromeChecker.java`, `RecursiveFactorial.java`, etc.
+Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
+Exemplo: `Polindromo.java`, `Fatorial.java`, etc.
 
 ---
 
