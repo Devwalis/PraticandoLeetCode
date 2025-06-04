@@ -168,6 +168,27 @@ Verifique se duas strings são anagramas.
 
 ---
 
+
+
+## 🔢 7. Maior Número em um Array
+
+### ✅ Enunciado:
+Encontre o maior número em um array de inteiros.  
+**Exemplo:** `[1, 9, 4, 7]` → `9`
+
+### 💡 Lógica do Algoritmo:
+- Inicializa uma variável `maior` com o primeiro valor.
+- Percorre o array comparando os valores.
+- Retorna o maior valor encontrado.
+
+### 🔍 Explicação dos métodos usados:
+
+| Método                  | Explicação                                                                 |
+|-------------------------|----------------------------------------------------------------------------|
+| `array.length`          | Retorna o número de elementos no array.                                   |
+| `for`                   | Laço de repetição para percorrer o array.                                 |
+| `if (elemento > maior)` | Verifica se o valor atual é maior que o maior já encontrado.              |
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
