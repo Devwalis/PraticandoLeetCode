@@ -9,7 +9,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 
 1. [Palíndromo](#1-palíndromo)  
 2. [Fatorial Recursivo](#2-fatorial-recursivo)  
-
+*(mais serão adicionados...)*
 
 ---
 
