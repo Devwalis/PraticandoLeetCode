@@ -141,10 +141,37 @@ Saída: `8` (Sequência: `0, 1, 1, 2, 3, 5, 8`)
 
 ---
 
+## 🧩 6. Anagrama
+
+### ✅ Enunciado:
+Verifique se duas strings são anagramas.  
+**Exemplo:** `"roma"` e `"amor"` → `true`
+
+### 💡 Lógica do Algoritmo:
+- Remove espaços e coloca tudo em minúsculo.
+- Compara se os tamanhos das palavras são iguais.
+- Transforma as strings em arrays de caracteres.
+- Ordena ambos os arrays.
+- Verifica se os arrays ordenados são iguais.
+
+---
+
+### 🔍 Explicação dos métodos usados:
+| Método                          | Explicação                                                                 |
+|----------------------------------|---------------------------------------------------------------------------|
+| `replaceAll("\\s+", "")`         | Remove todos os espaços em branco.                                        |
+| `toLowerCase()`                  | Transforma todos os caracteres em minúsculo.                              |
+| `length()`                       | Retorna o comprimento da string.                                          |
+| `toCharArray()`                  | Converte a string para um array de caracteres.                            |
+| `Arrays.sort(array)`             | Ordena os elementos do array.                                             |
+| `Arrays.equals(arr1, arr2)`      | Compara se dois arrays são exatamente iguais.                             |
+
+---
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
-Exemplo: `Polindromo.java`, `Fatorial.java`, `InverterArray`, `SomarDePares` etc.
+Exemplo: `Polindromo.java`, `Fatorial.java`, `InverterArray`, `SomarDePares`, `Fibonacci` etc.
 
 ---
 
