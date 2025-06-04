@@ -1,4 +1,4 @@
-public class InverteArray {
+public class InverterArray {
     public static void main(String[] args) {
         int[] numeros = {1,2,3,4};
         inverterArray(numeros);
@@ -20,7 +20,7 @@ public class InverteArray {
 
             inicio++;
             fim--;
-            
+
         }
     }
 
