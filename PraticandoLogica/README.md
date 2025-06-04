@@ -8,8 +8,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 ## 📌 Lista de Exercícios
 
 1. [Palíndromo](#1-palíndromo)  
-2. [Fatorial Recursivo](#2-fatorial-recursivo)  
-*(mais serão adicionados...)*
+2. [Fatorial Recursivo](#2-fatorial-recursivo)
+3. [Inverter um Array](#3-InverterArray)
+
 
 ---
 
