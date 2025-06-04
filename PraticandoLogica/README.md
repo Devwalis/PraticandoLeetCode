@@ -9,8 +9,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 
 1. [Palíndromo](#1-palíndromo)  
 2. [Fatorial Recursivo](#2-fatorial-recursivo)  
-*(mais serão adicionados...)*
-
+3. [Inverter Array](#3-inverter-array)  
+4. [Soma de Pares](#4-soma-de-pares)  
+5. [Fibonacci (Iterativo e Recursivo)](#5-fibonacci-iterativo-e-recursivo) 
 ---
 
 ## 🧪 1. Palíndromo
@@ -106,6 +107,39 @@ Saída: `12`
 | `numero % 2 == 0`          | Verifica se o número é par (divisão com resto igual a zero).              | `if (n % 2 == 0)`                    |
 | `soma += numero`           | Soma o valor do número atual à variável `soma`.                           | `soma += n;`                         |
 | `System.out.println()`     | Exibe mensagens ou resultados no terminal.                                | `System.out.println("Resultado")`    |
+
+
+
+
+## 🧪 5. Fibonacci (Iterativo e Recursivo)
+
+### ✅ Enunciado:
+Implemente uma função que retorne o n-ésimo número da sequência de Fibonacci.  
+**Exemplo:**  
+Entrada: `n = 6`  
+Saída: `8` (Sequência: `0, 1, 1, 2, 3, 5, 8`)
+
+### 💡 Lógica do Algoritmo:
+
+- **Recursivo:**  
+  - Base da recursão: se `n` for 0 ou 1, retorna `n`.
+  - Caso contrário, chama a função novamente para `n - 1` e `n - 2` e soma os resultados.
+  
+- **Iterativo:**  
+  - Usa duas variáveis (`a` e `b`) para armazenar os dois últimos valores.
+  - Itera até `n`, atualizando os valores e armazenando o último resultado.
+
+### 📘 Explicação dos métodos usados:
+
+| Método / Conceito                  | O que faz                                                                 |
+|-----------------------------------|---------------------------------------------------------------------------|
+| `if (n <= 1)`                     | Condição base para evitar recursões infinitas (casos simples de Fibonacci). |
+| `return fibonacci(n-1) + ...`     | Chamada recursiva para resolver subproblemas menores.                    |
+| `int a = 0, b = 1;`               | Define os dois primeiros elementos da sequência de Fibonacci.            |
+| `for (int i = 2; i <= n; i++)`    | Laço que avança a sequência somando os dois números anteriores.         |
+| `System.out.println()`            | Imprime os resultados no console.                                        |
+
+---
 
 ## 📂 Organização
 
