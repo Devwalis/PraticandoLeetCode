@@ -58,10 +58,34 @@ Implemente uma função recursiva que calcule o fatorial de um número.
 
 ---
 
+## 🧪 3. Inverter Array
+
+### ✅ Enunciado:
+Escreva uma função que receba um array de inteiros e retorne o array invertido.  
+**Exemplo:**  
+Entrada: `[1, 2, 3, 4]`  
+Saída: `[4, 3, 2, 1]`
+
+### 💡 Lógica do Algoritmo:
+- Utiliza dois ponteiros (índices): um no início e outro no final do array.
+- Troca os elementos dessas posições até que os ponteiros se encontrem no meio.
+- A operação é feita **in-place** (sem criar um novo array).
+
+### 📘 Explicação dos métodos usados:
+
+| Método / Conceito              | O que faz                                                                                      | Exemplo de uso                              |
+|-------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------|
+| `int[] array = {...}`         | Cria e inicializa um array de inteiros.                                                       | `int[] arr = {1, 2, 3, 4};`                  |
+| `int temp`                    | Cria uma variável temporária usada para armazenar valores durante a troca.                   | `int temp = array[i];`                      |
+| `array[i] = array[j]`         | Atribui ao índice `i` o valor que está no índice `j`.                                         | `array[0] = array[3];`                      |
+| `array[j] = temp`             | Atribui ao índice `j` o valor que estava no índice `i`, armazenado em `temp`.                | `array[3] = temp;`                          |
+| `while (i < j)`               | Estrutura de repetição que troca os valores enquanto o índice inicial for menor que o final. | `while (start < end)`                       |
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
-Exemplo: `Polindromo.java`, `Fatorial.java`, etc.
+Exemplo: `Polindromo.java`, `Fatorial.java`, `InverterArray` etc.
 
 ---
 
