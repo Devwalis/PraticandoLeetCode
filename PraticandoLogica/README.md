@@ -12,6 +12,11 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 3. [Inverter Array](#3-inverter-array)  
 4. [Soma de Pares](#4-soma-de-pares)  
 5. [Fibonacci (Iterativo e Recursivo)](#5-fibonacci-iterativo-e-recursivo) 
+6. [Anagrama](#6-anagrama)
+7. [Maior Número em um Array](#7-maior-número-em-um-array)
+8. [Número Primo](#-8-número-primo)
+9. [Remover Duplicados de um Array](#-9-remover-duplicatas-de-um-array)
+
 ---
 
 ## 🧪 1. Palíndromo
@@ -229,7 +234,38 @@ Entrada: `4` → Saída: `false`
 | `return true`                   | Retorna verdadeiro se nenhum divisor foi encontrado (primo)             |
 
 
+# 🔢 9. Remover Duplicatas de um Array
 
+## ✅ Enunciado
+
+Receba um array de inteiros e retorne um novo array sem elementos duplicados, mantendo a ordem original dos elementos.
+
+**Exemplo:**
+
+Entrada: `[1, 2, 2, 3, 4, 4]`
+Saída: `[1, 2, 3, 4]`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+* **Contagem de elementos únicos:** Percorre o array verificando quantos elementos aparecem pela primeira vez.
+* **Criação de array temporário:** Armazena elementos únicos na ordem de aparição usando um array temporário.
+* **Compactação do resultado:** Copia os elementos únicos para um novo array do tamanho exato.
+* **Manutenção da ordem:** Preserva a sequência original dos elementos não duplicados.
+
+---
+
+## 📘 Explicação dos métodos usados
+
+| Método / Conceito     | O que faz                                                    |
+| :-------------------- | :----------------------------------------------------------- |
+| `Scanner`             | Recebe entrada do usuário via terminal.                     |
+| `nextInt()`           | Lê números inteiros digitados pelo usuário.                 |
+| `for` aninhado        | Compara elementos com anteriores para detectar duplicatas.   |
+| `boolean isDuplicate` | Flag que indica se elemento já foi encontrado anteriormente. |
+| `System.arraycopy()`  | Copia elementos entre arrays de forma eficiente.             |
+| `index++`             | Incrementa índice após adicionar elemento único (pós-incremento). |
 
 ## 📂 Organização
 
