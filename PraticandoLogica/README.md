@@ -189,6 +189,30 @@ Encontre o maior número em um array de inteiros.
 | `for`                   | Laço de repetição para percorrer o array.                                 |
 | `if (elemento > maior)` | Verifica se o valor atual é maior que o maior já encontrado.              |
 
+
+🧪 8. Número Primo
+✅ Enunciado:
+
+Verifique se um número é primo. Um número primo é aquele que só é divisível por 1 e por ele mesmo, e que é maior que 1.
+Exemplo: 7 → true, 10 → false
+💡 Lógica do Algoritmo:
+
+    Se o número for menor ou igual a 1, não é primo.
+
+    Percorre de 2 até a raiz quadrada do número.
+
+    Se encontrar algum divisor (n % i == 0), o número não é primo.
+
+    Se não encontrar nenhum divisor, o número é primo.
+
+📘 Explicação dos métodos usados:
+Método / Conceito	Explicação
+Scanner	Classe usada para ler a entrada do usuário via teclado.
+nextInt()	Lê um número inteiro inserido pelo usuário.
+Math.sqrt(n)	Retorna a raiz quadrada do número n.
+n % i == 0	Verifica se n é divisível por i (resto da divisão igual a 0).
+for (int i = 2; ...)	Estrutura de repetição que percorre de 2 até √n para verificar divisores.
+System.out.println()	Imprime o resultado no console.
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
