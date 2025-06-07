@@ -306,17 +306,6 @@ A complexidade de um algoritmo descreve o **tempo de execução** e/ou **uso de 
 
 ### 🔁 Exemplo 1 – Duplicados com Duplo For
 
-```java
-public static boolean exemplo1(int[] v) {
-    for (int i = 0; i < v.length; i++) {
-        for (int j = 0; j < v.length; j++) {
-            if (i != j && v[i] == v[j]) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
 
                                 |
 
