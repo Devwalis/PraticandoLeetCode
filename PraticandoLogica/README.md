@@ -275,11 +275,6 @@ Saída: `[1, 2, 3, 4]`
 Dado um array de inteiros e um valor alvo, retorne os índices de dois números cuja soma seja igual ao valor alvo.  
 Você deve assumir que cada entrada terá exatamente uma solução, e não pode usar o mesmo elemento duas vezes.
 
-**Exemplo:**
-```java
-int[] nums = {2, 7, 11, 15};
-int alvo = 9;
-// Saída esperada: [0, 1]
 
 ### 📘 Explicação dos métodos usados:
 
