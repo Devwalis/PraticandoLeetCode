@@ -278,7 +278,47 @@ Você deve assumir que cada entrada terá exatamente uma solução, e não pode 
 | `int complemento = alvo - nums[i]` | Calcula o número que somado ao atual resultará no valor alvo.                             | Se `alvo = 9` e `nums[i] = 2`, então `complemento = 7` |
 | `map.containsKey(complemento)` | Verifica se o complemento já foi adicionado anteriormente ao mapa.                            | `map.containsKey(7)`                            |
 | `map.get(complemento)`         | Retorna o índice correspondente ao valor do complemento armazenado no mapa.                   | `map.get(7)`                                    |
-| `map.put(nums[i], i)`          | Adiciona o valor atual e seu índice ao mapa para futuras comparações.                         | `map.put(2, 0)`                                 |
+| `map.put(nums[i], i)`          | Adiciona o valor atual e seu índice ao mapa para futuras comparações.                         | `map.put(2, 0)` 
+
+
+# 📊 Complexidade de Algoritmos – Análise com Exemplos em Java
+
+## ✨ O que é Complexidade de Algoritmos?
+
+A complexidade de um algoritmo descreve o **tempo de execução** e/ou **uso de memória** em função do tamanho da entrada. Essa análise permite prever o desempenho do algoritmo à medida que os dados aumentam.
+
+> A notação mais comum é a **notação Big-O** (O-grande), que expressa o pior caso possível para o tempo de execução.
+
+---
+
+## 📐 Como Analisar a Complexidade de um Algoritmo?
+
+### ✅ Etapas principais:
+
+1. **Foque nas repetições (laços e chamadas recursivas)**: são elas que fazem o tempo crescer.
+2. **Considere a complexidade dos métodos internos utilizados** (como `Arrays.sort()`).
+3. **Ignore constantes e mantenha apenas o termo de maior crescimento**.
+4. **Analise separadamente blocos que não dependem uns dos outros** e depois combine as complexidades.
+
+---
+
+## 🧠 Exemplos de Complexidade com Java
+
+### 🔁 Exemplo 1 – Duplicados com Duplo For
+
+```java
+public static boolean exemplo1(int[] v) {
+    for (int i = 0; i < v.length; i++) {
+        for (int j = 0; j < v.length; j++) {
+            if (i != j && v[i] == v[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+                                |
 
 
 
