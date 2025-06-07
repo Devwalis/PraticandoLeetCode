@@ -219,20 +219,13 @@ Entrada: `4` → Saída: `false`
 
 ### 📘 Explicação dos métodos usados:
 
-| Método / Conceito               | O que faz                                                                 |
-
-|---------------------------------|---------------------------------------------------------------------------|
-
-| `Math.sqrt(n)`                  | Retorna a raiz quadrada de `n` (tipo double)                             |
-
-| `for (int i = 2; i <= raiz; i++)` | Loop que testa possíveis divisores                                       |
-
-| `n % i == 0`                    | Condição que verifica se `i` divide `n` sem resto                        |
-
-| `return false`                  | Retorna imediatamente se encontrar divisor (não primo)                  |
-
-| `return true`                   | Retorna verdadeiro se nenhum divisor foi encontrado (primo)             |
-
+| Método / Conceito                   | O que faz                                                                 |
+|------------------------------------|---------------------------------------------------------------------------|
+| `Math.sqrt(n)`                     | Retorna a raiz quadrada de `n` (tipo `double`).                           |
+| `for (int i = 2; i <= raiz; i++)`  | Loop que testa possíveis divisores de `n`.                                |
+| `n % i == 0`                       | Verifica se `i` divide `n` sem deixar resto.                              |
+| `return false`                     | Retorna imediatamente se encontrar divisor (portanto, não é primo).       |
+| `return true`                      | Retorna verdadeiro se nenhum divisor for encontrado (número é primo).     |
 
 # 🔢 9. Remover Duplicatas de um Array
 
