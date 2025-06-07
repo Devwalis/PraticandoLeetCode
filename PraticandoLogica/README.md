@@ -267,6 +267,35 @@ Saída: `[1, 2, 3, 4]`
 | `System.arraycopy()`  | Copia elementos entre arrays de forma eficiente.             |
 | `index++`             | Incrementa índice após adicionar elemento único (pós-incremento). |
 
+
+## 🧪 10. Duas somas em um array
+
+### ✅ Enunciado:
+
+Dado um array de inteiros e um valor alvo, retorne os índices de dois números cuja soma seja igual ao valor alvo.  
+Você deve assumir que cada entrada terá exatamente uma solução, e não pode usar o mesmo elemento duas vezes.
+
+**Exemplo:**
+```java
+int[] nums = {2, 7, 11, 15};
+int alvo = 9;
+// Saída esperada: [0, 1]
+
+### 📘 Explicação dos métodos usados:
+
+| Método                          | O que faz                                                                                      | Exemplo de uso                                  |
+|--------------------------------|-------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| `Map<Integer, Integer>`        | Cria um dicionário (`HashMap`) que associa um número ao seu índice.                           | `Map<Integer, Integer> map = new HashMap<>();`  |
+| `for (int i = 0; i < nums.length; i++)` | Percorre todos os elementos do array.                                                  | -                                               |
+| `int complemento = alvo - nums[i]` | Calcula o número que somado ao atual resultará no valor alvo.                             | Se `alvo = 9` e `nums[i] = 2`, então `complemento = 7` |
+| `map.containsKey(complemento)` | Verifica se o complemento já foi adicionado anteriormente ao mapa.                            | `map.containsKey(7)`                            |
+| `map.get(complemento)`         | Retorna o índice correspondente ao valor do complemento armazenado no mapa.                   | `map.get(7)`                                    |
+| `map.put(nums[i], i)`          | Adiciona o valor atual e seu índice ao mapa para futuras comparações.                         | `map.put(2, 0)`                                 |
+
+
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
