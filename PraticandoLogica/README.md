@@ -16,6 +16,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 7. [Maior Número em um Array](#7-maior-número-em-um-array)
 8. [Número Primo](#-8-número-primo)
 9. [Remover Duplicados de um Array](#-9-remover-duplicatas-de-um-array)
+10. [TwoSum](#two-sum)
+11. [SomaDePares](#-4-soma-de-pares)
 
 ---
 
