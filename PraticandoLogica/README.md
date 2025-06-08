@@ -307,7 +307,41 @@ A complexidade de um algoritmo descreve o **tempo de execução** e/ou **uso de 
 ### 🔁 Exemplo 1 – Duplicados com Duplo For
 
 
-                                |
+ ## 🧪 11. Soma de Pares
+
+### ✅ Enunciado
+
+Dado um array de inteiros, retorne a soma de todos os números pares.
+
+---
+
+### 💡 Lógica do Algoritmo
+
+1. Criar uma variável `soma` iniciada em `0`.  
+2. Percorrer cada elemento do array.  
+3. Verificar se o número é par: `numero % 2 == 0`.  
+4. Se for par, somar à variável `soma`.  
+5. Retornar o valor final da soma.
+
+---
+
+### 🔍 Complexidade
+
+- **Tempo:** `O(n)` — percorre o array uma única vez.  
+- **Espaço:** `O(1)` — usa apenas uma variável para a soma.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                        | O que faz                                                                     |
+|-----------------------------------------|--------------------------------------------------------------------------------|
+| `int soma = 0`                          | Inicializa a variável que acumula a soma dos números pares                    |
+| `for (int i = 0; i < array.length; i++)`| Percorre todos os elementos do array                                          |
+| `array[i] % 2 == 0`                     | Verifica se o número atual é par (resto da divisão por 2 igual a 0)          |
+| `soma += array[i]`                      | Adiciona o número par à variável de soma                                      |
+| `return soma`                           | Retorna a soma total dos números pares                                        |
+                               |
 
 
 
