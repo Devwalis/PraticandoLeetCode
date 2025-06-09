@@ -344,7 +344,42 @@ Dado um array de inteiros, retorne a soma de todos os números pares.
 | `soma += array[i]`                      | Adiciona o número par à variável de soma                                      |
 | `return soma`                           | Retorna a soma total dos números pares                                        |
                                |
+## 🧪 13. Contar Ocorrências
 
+### ✅ Enunciado
+
+Conte quantas vezes um determinado número aparece em um array.
+
+---
+
+### 💡 Lógica do Algoritmo
+
+1. Inicializar uma variável `contador` com valor 0.
+2. Percorrer todos os elementos do array.
+3. Para cada elemento, verificar se é igual ao número desejado.
+4. Se for igual, incrementar o `contador`.
+5. Retornar o valor final de `contador`.
+
+---
+
+### 🔍 Complexidade
+
+- **Tempo:** `O(n)` — percorre todos os elementos do array.
+- **Espaço:** `O(1)` — utiliza apenas uma variável adicional.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito               | O que faz                                                                  |
+|----------------------------------|-----------------------------------------------------------------------------|
+| `int contador = 0`               | Inicializa o contador de ocorrências                                       |
+| `for (int i = 0; i < array.length; i++)` | Percorre todos os elementos do array                            |
+| `if (array[i] == numeroDesejado)` | Verifica se o número atual é igual ao número procurado                     |
+| `contador++`                     | Incrementa o contador se houver uma ocorrência                             |
+| `return contador`                | Retorna o número total de ocorrências encontradas                          |
+
+---
 
 
 
