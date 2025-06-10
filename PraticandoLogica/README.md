@@ -382,6 +382,81 @@ Conte quantas vezes um determinado número aparece em um array.
 ---
 
 
+## 🧪 15. Inverter String
+
+### ✅ Enunciado
+
+Dada uma string, retorne sua inversa.
+
+---
+
+### 💡 Lógica do Algoritmo
+
+1. Criar uma variável para armazenar a string invertida.
+2. Iterar do final até o início da string original.
+3. Concatenar os caracteres nessa nova string.
+4. Retornar a string invertida.
+
+---
+
+### 🔍 Complexidade
+
+- **Tempo:** `O(n)` — percorre cada caractere da string uma vez.
+- **Espaço:** `O(n)` — cria uma nova string com todos os caracteres invertidos.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                    | O que faz                                                              |
+|-------------------------------------|------------------------------------------------------------------------|
+| `charAt(i)`                         | Retorna o caractere na posição `i` da string original                  |
+| `for (int i = str.length() - 1; i >= 0; i--)` | Percorre a string de trás pra frente                          |
+| `StringBuilder`                     | Classe usada para construir strings de forma eficiente                 |
+| `append()`                          | Adiciona um caractere ao final da `StringBuilder`                      |
+| `toString()`                        | Converte o `StringBuilder` de volta para uma `String`                  |
+
+---
+
+
+## 🧪 16. Fatorial de um Número
+
+### ✅ Enunciado
+
+Calcule o fatorial de um número `n`.
+
+---
+
+### 💡 Lógica do Algoritmo
+
+1. Criar uma variável `fatorial` iniciada em 1.
+2. Usar um laço `for` para multiplicar os números de `n` até 1.
+3. Retornar o valor final da multiplicação.
+
+---
+
+### 🔍 Complexidade
+
+- **Tempo:** `O(n)` — uma iteração por número até `n`.
+- **Espaço:** `O(1)` — usa apenas uma variável auxiliar.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito            | O que faz                                                              |
+|-----------------------------|-------------------------------------------------------------------------|
+| `int fatorial = 1`          | Inicializa a variável com o valor neutro da multiplicação               |
+| `for (int i = n; i >= 1; i--)` | Laço que percorre de `n` até `1`                                      |
+| `fatorial *= i`             | Multiplica o valor atual da variável `fatorial` pelo valor de `i`       |
+| `return fatorial`           | Retorna o resultado final após o laço                                   |
+
+---
+
+
+
+
+
 
 
 ## 📂 Organização
