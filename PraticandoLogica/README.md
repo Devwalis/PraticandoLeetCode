@@ -344,7 +344,7 @@ Dado um array de inteiros, retorne a soma de todos os números pares.
 | `soma += array[i]`                      | Adiciona o número par à variável de soma                                      |
 | `return soma`                           | Retorna a soma total dos números pares                                        |
                                |
-## 🧪 13. Contar Ocorrências
+## 🧪 12. Contar Ocorrências
 
 ### ✅ Enunciado
 
@@ -382,7 +382,7 @@ Conte quantas vezes um determinado número aparece em um array.
 ---
 
 
-## 🧪 15. Inverter String
+## 🧪 13. Inverter String
 
 ### ✅ Enunciado
 
@@ -419,7 +419,7 @@ Dada uma string, retorne sua inversa.
 ---
 
 
-## 🧪 16. Fatorial de um Número
+## 🧪 14. Fatorial de um Número
 
 ### ✅ Enunciado
 
@@ -452,6 +452,49 @@ Calcule o fatorial de um número `n`.
 | `return fatorial`           | Retorna o resultado final após o laço                                   |
 
 ---
+
+
+
+## 🧪 15. Soma Máxima Contígua (Kadane's Algorithm)
+
+### ✅ Enunciado
+
+Dado um array, encontre a subarray de soma máxima.
+
+---
+
+### 💡 Lógica do Algoritmo
+
+- Inicializar duas variáveis:
+  - `somaAtual` com o primeiro valor do array.
+  - `somaMaxima` com o primeiro valor do array.
+- Percorrer o array a partir do segundo elemento.
+- Em cada iteração:
+  - Atualizar `somaAtual` com o maior valor entre o número atual ou a soma do número atual com `somaAtual` anterior.
+  - Atualizar `somaMaxima` com o maior valor entre `somaMaxima` e `somaAtual`.
+
+---
+
+### 🔍 Complexidade
+
+- **Tempo:** `O(n)` — percorre o array uma única vez.
+- **Espaço:** `O(1)` — não utiliza estruturas adicionais além de variáveis de controle.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                     | O que faz                                                                  |
+|--------------------------------------|----------------------------------------------------------------------------|
+| `Math.max(a, b)`                     | Retorna o maior valor entre `a` e `b`                                      |
+| `int somaAtual = nums[0]`            | Inicializa a soma atual com o primeiro elemento do array                   |
+| `int somaMaxima = nums[0]`           | Armazena a maior soma encontrada até o momento                             |
+| `for (int i = 1; i < nums.length; i++)` | Percorre o array a partir do segundo elemento                         |
+| `somaAtual + nums[i]`                | Soma o valor atual com o elemento do array                                 |
+| `somaMaxima = Math.max(...)`         | Atualiza a soma máxima se a nova soma for maior que a anterior             |
+
+---
+
 
 
 
