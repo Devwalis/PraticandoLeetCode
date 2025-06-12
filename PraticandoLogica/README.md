@@ -16,8 +16,17 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 7. [Maior Número em um Array](#7-maior-número-em-um-array)
 8. [Número Primo](#-8-número-primo)
 9. [Remover Duplicados de um Array](#-9-remover-duplicatas-de-um-array)
-10. [TwoSum](#two-sum)
-11. [SomaDePares](#-4-soma-de-pares)
+10. [TwoSum](#10-two-sum)
+11. [SomaDePares](#-11-soma-de-pares)
+12. [Contar Ocorrências](#-12-Contar-Ocorrências)
+13. [Inverter String](#-13-Inverter-String)
+14. [Fatorial de um Número](#-14-Fatorial-de-um-Número)
+15. [Soma Máxima Contígua (Kadane's Algorithm)](#-Soma-Máxima-Contígua)
+16. [Produto de Todos Menos o Atual](#-16-Produto-de-Todos-Menos-o-Atual)
+17.
+18.
+19.
+
 
 ---
 
@@ -494,6 +503,51 @@ Dado um array, encontre a subarray de soma máxima.
 | `somaMaxima = Math.max(...)`         | Atualiza a soma máxima se a nova soma for maior que a anterior             |
 
 ---
+
+### 🧪 16. Produto de Todos Menos o Atual
+
+#### ✅ Enunciado
+
+Dado um array de números, retorne um novo array onde cada posição contém o produto de todos os elementos, **exceto o atual**.
+
+---
+
+#### 💡 Lógica do Algoritmo
+
+- Criar dois arrays auxiliares: `prefixo` e `sufixo`.
+- `prefixo[i]`: produto de todos os elementos antes do índice `i`.
+- `sufixo[i]`: produto de todos os elementos após o índice `i`.
+- O valor final de cada posição será `prefixo[i] * sufixo[i]`.
+
+**Exemplo:**
+
+Entrada: [1, 2, 3, 4]  
+Saída:   [24, 12, 8, 6]
+
+
+
+#### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+---
+
+#### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                            | O que faz                                                     |
+|----------------------------------------------|----------------------------------------------------------------|
+| `int[] prefixo = new int[n];`                | Cria um array para armazenar os produtos à esquerda de cada elemento |
+| `int[] sufixo = new int[n];`                 | Cria um array para armazenar os produtos à direita de cada elemento |
+| `prefixo[i] = prefixo[i - 1] * nums[i - 1];` | Calcula o produto acumulado antes do índice atual             |
+| `sufixo[i] = sufixo[i + 1] * nums[i + 1];`   | Calcula o produto acumulado depois do índice atual            |
+| `resultado[i] = prefixo[i] * sufixo[i];`     | Produto de todos os elementos, exceto o atual  
+
+
+
+
 
 
 
