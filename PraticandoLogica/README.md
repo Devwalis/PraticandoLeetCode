@@ -550,6 +550,42 @@ Saída:   [24, 12, 8, 6]
 
 
 
+### 🧪 17. Interseção de Arrays
+
+✅ **Enunciado**  
+Dado dois arrays, retorne os elementos em comum entre eles.
+
+---
+
+💡 **Lógica do Algoritmo**
+
+- Criar um `Set` para armazenar os elementos únicos do primeiro array.
+- Percorrer o segundo array e verificar quais elementos também estão no `Set`.
+- Armazenar os elementos em comum em outro `Set`.
+- Converter o conjunto final em um array de inteiros.
+
+---
+
+🔍 **Complexidade**
+
+| Tipo   | Valor     |
+|--------|-----------|
+| Tempo  | O(n + m)  |
+| Espaço | O(n)      |
+
+> n = tamanho do primeiro array  
+> m = tamanho do segundo array
+
+---
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito                             | O que faz                                             |
+|----------------------------------------------|--------------------------------------------------------|
+| `Set<Integer> conjunto = new HashSet<>()`     | Armazena elementos únicos do primeiro array            |
+| `conjunto.contains(num)`                      | Verifica se o número já existe no conjunto             |
+| `Set<Integer> resultado = new HashSet<>()`    | Armazena os elementos que estão nos dois arrays        |
+| `resultado.toArray(new int[resultado.size()])`| Converte o Set em um array de inteiros                 |
 
 
 
