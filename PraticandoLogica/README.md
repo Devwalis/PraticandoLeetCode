@@ -588,7 +588,33 @@ Dado dois arrays, retorne os elementos em comum entre eles.
 | `resultado.toArray(new int[resultado.size()])`| Converte o Set em um array de inteiros                 |
 
 
+### 🧪 18. Primeiro Caractere Não Repetido
 
+✅ **Enunciado**  
+Dada uma string, encontre o primeiro caractere que não se repete.
+
+💡 **Lógica do Algoritmo**  
+Utilize um `Map` para contar a frequência de cada caractere.  
+Em seguida, percorra a string novamente para encontrar o primeiro com frequência 1.
+
+🔍 **Complexidade**
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1) – limitado ao alfabeto ASCII |
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito                          | O que faz                                                                 |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| `Map<Character, Integer>`                 | Armazena cada caractere com sua contagem de ocorrências                  |
+| `getOrDefault(c, 0) + 1`                  | Incrementa a frequência de cada caractere                                |
+| `LinkedHashMap`                           | Mantém a ordem de inserção dos caracteres                                |
+| `mapaFrequencia.get(c) == 1`              | Verifica qual caractere aparece exatamente uma vez                       |
+| `'\0'`                                    | Representa caractere nulo caso não haja caractere único                  |
+
+---
 
 
 
