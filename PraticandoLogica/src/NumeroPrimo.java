@@ -15,6 +15,7 @@ public class NumeroPrimo {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite um número: ");
         int numero = scanner.nextInt();
+        
         boolean resultado = ehPrimo(numero);
         System.out.println("É primo? "+ resultado);
 
