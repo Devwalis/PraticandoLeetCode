@@ -615,7 +615,39 @@ Em seguida, percorra a string novamente para encontrar o primeiro com frequênci
 | `'\0'`                                    | Representa caractere nulo caso não haja caractere único                  |
 
 ---
+### 🧪 19. Número Único
 
+✅ **Enunciado**  
+Dado um array onde todos os números aparecem duas vezes, exceto um, encontre o número único.
+
+💡 **Lógica do Algoritmo**  
+Utilizamos a operação XOR. O XOR possui as seguintes propriedades importantes:
+- `a ^ a = 0` → Um número XOR com ele mesmo resulta em zero.
+- `a ^ 0 = a` → Um número XOR com zero permanece o mesmo.
+
+Ao aplicar XOR em todos os elementos do array, os números duplicados se anulam e resta apenas o número único.
+
+---
+
+🔍 **Complexidade**
+
+| Tipo   | Valor  |
+|--------|--------|
+| Tempo  | O(n)   |
+| Espaço | O(1)   |
+
+---
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito      | O que faz                                                                 |
+|------------------------|---------------------------------------------------------------------------|
+| `int resultado = 0;`   | Inicializa a variável acumuladora do XOR                                  |
+| `resultado ^= num;`    | Aplica a operação XOR entre o resultado atual e o número do array         |
+| `for (int num : nums)` | Percorre todos os elementos do array                                      |
+| `System.out.println()` | Exibe o número único encontrado no console                                |
+
+---
 
 
 ## 📂 Organização
