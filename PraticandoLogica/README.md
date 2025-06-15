@@ -650,6 +650,62 @@ Ao aplicar XOR em todos os elementos do array, os números duplicados se anulam 
 ---
 
 
+### 🧪 30. Maskify
+
+✅ **Enunciado**  
+Implemente uma função `maskify` que oculte todos os caracteres de uma string com `#`, exceto os quatro últimos. Isso é útil para esconder dados sensíveis como números de cartão de crédito.
+
+📥 **Entrada**  
+Uma `String` com qualquer número de caracteres.
+
+📤 **Saída**  
+A mesma `String`, porém com todos os caracteres mascarados com `#`, exceto os últimos 4.
+
+📌 **Exemplos**
+| Entrada                              | Saída                         |
+|--------------------------------------|-------------------------------|
+| `"4556364607935616"`                 | `"############5616"`          |
+| `"64607935616"`                      | `"#######5616"`               |
+| `"1"`                                | `"1"`                         |
+| `""`                                 | `""`                          |
+| `"Skippy"`                           | `"##ippy"`                    |
+| `"Nananananananananananananananana Batman!"` | `"#########################man!"` |
+
+---
+
+💡 **Lógica do Algoritmo**  
+1. Verifique se a string tem 4 ou menos caracteres. Se sim, retorne a string original.  
+2. Calcule o número de caracteres que precisam ser mascarados (tamanho da string - 4).  
+3. Crie um `StringBuilder` com esse número de `#`.  
+4. Adicione os últimos 4 caracteres da string original.  
+5. Retorne o resultado como string.
+
+---
+
+🔍 **Complexidade**
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+---
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito                  | O que faz                                                                 |
+|-----------------------------------|--------------------------------------------------------------------------|
+| `str.length()`                    | Retorna o tamanho da string                                              |
+| `StringBuilder masked = new ...`  | Cria um objeto mutável para construir strings                            |
+| `masked.append('#')`              | Adiciona um caractere `#` no final da string                             |
+| `str.substring(maskLength)`       | Retorna os 4 últimos caracteres da string                                |
+| `masked.toString()`               | Converte o `StringBuilder` para uma `String`                             |
+
+---
+
+
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
