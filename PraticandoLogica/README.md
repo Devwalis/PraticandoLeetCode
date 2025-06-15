@@ -650,7 +650,7 @@ Ao aplicar XOR em todos os elementos do array, os números duplicados se anulam 
 ---
 
 
-### 🧪 30. Maskify
+### 🧪 20. Maskify
 
 ✅ **Enunciado**  
 Implemente uma função `maskify` que oculte todos os caracteres de uma string com `#`, exceto os quatro últimos. Isso é útil para esconder dados sensíveis como números de cartão de crédito.
@@ -702,7 +702,55 @@ A mesma `String`, porém com todos os caracteres mascarados com `#`, exceto os �
 
 ---
 
+### 🧪 21. Próximo Quadrado Perfeito
 
+✅ **Enunciado**  
+Implemente a função `findNextSquare` que retorna o próximo **quadrado perfeito** de um número dado.  
+Um quadrado perfeito é um número cujo valor da raiz quadrada é um número inteiro.
+
+- Se o número de entrada **não for** um quadrado perfeito, retorne `-1`.
+
+📥 **Entrada**  
+Um número inteiro não negativo.
+
+📤 **Saída**  
+O próximo quadrado perfeito (inteiro) ou `-1`, caso a entrada não seja um quadrado perfeito.
+
+📌 **Exemplos**
+| Entrada | Saída |
+|---------|-------|
+| 121     | 144   |
+| 625     | 676   |
+| 114     | -1    |
+
+---
+
+💡 **Lógica do Algoritmo**  
+1. Calcule a raiz quadrada do número com `Math.sqrt()`.
+2. Verifique se o número é um quadrado perfeito: ou seja, se a raiz quadrada for um número inteiro.
+3. Se **não for**, retorne `-1`.
+4. Se **for**, incremente a raiz em 1 e retorne o quadrado dessa nova raiz.
+
+---
+
+🔍 **Complexidade**
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+---
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito          | O que faz                                                    |
+|----------------------------|--------------------------------------------------------------|
+| `Math.sqrt(n)`             | Calcula a raiz quadrada de `n`                               |
+| `(int) Math.sqrt(n)`       | Converte a raiz quadrada para inteiro (truncate)             |
+| `Math.pow(base, expoente)` | Eleva um número à potência                                   |
+| `==`                       | Verifica se o quadrado do inteiro raiz é igual ao número     |
+
+---
 
 
 
