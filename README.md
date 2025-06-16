@@ -11,21 +11,23 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 2. [Fatorial Recursivo](#2-fatorial-recursivo)  
 3. [Inverter Array](#3-inverter-array)  
 4. [Soma de Pares](#4-soma-de-pares)  
-5. [Fibonacci (Iterativo e Recursivo)](#5-fibonacci-iterativo-e-recursivo) 
-6. [Anagrama](#6-anagrama)
-7. [Maior Número em um Array](#7-maior-número-em-um-array)
-8. [Número Primo](#-8-número-primo)
-9. [Remover Duplicados de um Array](#-9-remover-duplicatas-de-um-array)
-10. [TwoSum](#10-two-sum)
-11. [SomaDePares](#-11-soma-de-pares)
-12. [Contar Ocorrências](#-12-Contar-Ocorrências)
-13. [Inverter String](#-13-Inverter-String)
-14. [Fatorial de um Número](#-14-Fatorial-de-um-Número)
-15. [Soma Máxima Contígua (Kadane's Algorithm)](#-Soma-Máxima-Contígua)
-16. [Produto de Todos Menos o Atual](#-16-Produto-de-Todos-Menos-o-Atual)
-17.
-18.
-19.
+5. [Fibonacci (Iterativo e Recursivo)](#5-fibonacci-iterativo-e-recursivo)  
+6. [Anagrama](#6-anagrama)  
+7. [Maior Número em um Array](#7-maior-número-em-um-array)  
+8. [Número Primo](#8-número-primo)  
+9. [Remover Duplicados de um Array](#9-remover-duplicados-de-um-array)  
+10. [TwoSum](#10-twosum)  
+11. [SomaDePares](#11-somadepares)  
+12. [Contar Ocorrências](#12-contar-ocorrências)  
+13. [Inverter String](#13-inverter-string)  
+14. [Fatorial de um Número](#14-fatorial-de-um-número)  
+15. [Soma Máxima Contígua (Kadane's Algorithm)](#15-soma-máxima-contígua-kadanes-algorithm)  
+16. [Produto de Todos Menos o Atual](#16-produto-de-todos-menos-o-atual)  
+17. [Interseção de Arrays](#17-interseção-de-arrays)  
+18. [Primeiro Caractere Não Repetido](#18-primeiro-caractere-não-repetido)  
+19. [Número Único](#19-número-único)  
+20. [Maskify](#20-maskify)  
+21. [Próximo Quadrado Perfeito](#21-próximo-quadrado-perfeito)
 
 
 ---
