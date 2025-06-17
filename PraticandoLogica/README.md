@@ -29,6 +29,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 20. [Maskify](#20-maskify)  
 21. [Próximo Quadrado Perfeito](#21-próximo-quadrado-perfeito)
 22. [Converter String para Número](#22-Converter-String-para-Número)
+23. [Total de Gols do Messi](#23-Total-de-Gols-do-Messi)
+
 
 
 
