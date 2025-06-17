@@ -30,6 +30,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 21. [Próximo Quadrado Perfeito](#21-próximo-quadrado-perfeito)
 22. [Converter String para Número](#22-Converter-String-para-Número)
 23. [Total de Gols do Messi](#23-Total-de-Gols-do-Messi)
+24. [Primeiro Nome Ordenado com Asteriscos](#24-Primeiro-Nome-Ordenado-com-Asteriscos)
 
 
 
@@ -831,6 +832,46 @@ Crie uma função que **receba os gols marcados** em cada uma dessas ligas e **r
 | `int total = a + b + c`  | Soma os gols de LaLiga, Copa do Rey e Champions League.         |
 | `return total`           | Retorna a soma total de gols.                                   |
 | `System.out.println()`   | Exibe o resultado no terminal.                                  |
+
+
+## 🧪 24. Primeiro Nome Ordenado com Asteriscos
+
+### ✅ Enunciado:
+
+Você receberá uma **lista de strings**.  
+Sua tarefa é:
+
+- Ordenar alfabeticamente (sensível a maiúsculas/minúsculas e baseado nos valores ASCII).
+- Retornar a **primeira string** da lista após a ordenação.
+- Inserir `"***"` entre cada caractere dessa string.
+
+### 💡 Lógica do Algoritmo:
+
+- Ordena o array de strings com `Arrays.sort()`.
+- Pega o primeiro elemento do array (menor em ordem ASCII).
+- Percorre a string adicionando `"***"` entre os caracteres usando `StringBuilder`.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor      |
+|--------|------------|
+| Tempo  | O(n log n) |
+| Espaço | O(n)       |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                  |
+|-------------------------|-----------------------------------------------------------------------------|
+| `Arrays.sort(array)`    | Ordena os elementos do array em ordem crescente (baseado no valor ASCII).  |
+| `StringBuilder`         | Objeto usado para concatenar strings de forma eficiente.                   |
+| `charAt(i)`             | Retorna o caractere no índice `i` da string.                               |
+| `append()`              | Adiciona um caractere ou string ao final do `StringBuilder`.               |
+| `toString()`            | Converte o `StringBuilder` para uma `String`.                              |
+
 
 
 
