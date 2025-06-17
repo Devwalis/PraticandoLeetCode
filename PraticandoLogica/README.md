@@ -752,6 +752,44 @@ O próximo quadrado perfeito (inteiro) ou `-1`, caso a entrada não seja um quad
 
 ---
 
+## 🧪 22. Converter String para Número
+
+### ✅ Enunciado
+
+Dada uma **string numérica válida**, converta-a para um número inteiro (`int`).  
+Você pode assumir que todas as entradas são representações válidas de números inteiros.
+
+**Exemplos:**
+
+
+
+### 💡 Lógica do Algoritmo
+
+- Como a string é uma representação válida de um número inteiro, podemos usar a função `Integer.parseInt()` do Java.
+- Esse método analisa o conteúdo da string e retorna seu valor numérico.
+- A conversão é direta, sem necessidade de iteração manual sobre os caracteres.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor                                      |
+|--------|--------------------------------------------|
+| Tempo  | O(n) — onde n é o número de dígitos        |
+| Espaço | O(1) — constante, sem uso adicional de memória |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito         | O que faz                                         | Exemplo de uso                    |
+|---------------------------|--------------------------------------------------|-----------------------------------|
+| `Integer.parseInt(str)`   | Converte uma string numérica para inteiro        | `Integer.parseInt("123") → 123`   |
+| `System.out.println()`    | Exibe o valor no console                         | `System.out.println(123)`         |
+
+
+
+
 
 
 ## 📂 Organização
