@@ -31,6 +31,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 22. [Converter String para Número](#22-Converter-String-para-Número)
 23. [Total de Gols do Messi](#23-Total-de-Gols-do-Messi)
 24. [Primeiro Nome Ordenado com Asteriscos](#24-Primeiro-Nome-Ordenado-com-Asteriscos)
+25. [ Combat - Vida após Dano](#25-Combat-Vida-após-Dano)
 
 
 
@@ -871,6 +872,46 @@ Sua tarefa é:
 | `charAt(i)`             | Retorna o caractere no índice `i` da string.                               |
 | `append()`              | Adiciona um caractere ou string ao final do `StringBuilder`.               |
 | `toString()`            | Converte o `StringBuilder` para uma `String`.                              |
+
+
+## 25. 🧪 Combat - Vida após Dano
+
+### ✅ Enunciado:
+
+Crie uma função `combat` que receba dois parâmetros:
+
+- `health`: a vida atual do jogador.  
+- `damage`: a quantidade de dano recebido.
+
+A função deve retornar a nova vida do jogador após o dano, garantindo que a vida **nunca fique abaixo de 0**.
+
+---
+
+### 💡 Lógica do Algoritmo:
+
+- Subtrai o `damage` da `health`.
+- Se o resultado for menor que 0, retorna 0.
+- Caso contrário, retorna o valor resultante.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito   | O que faz                                         |
+|---------------------|--------------------------------------------------|
+| `Math.max(a, b)`    | Retorna o maior valor entre `a` e `b`.           |
+| `int`               | Tipo primitivo que armazena números inteiros.    |
+| `return`            | Retorna o valor final da função.                 |
+
 
 
 
