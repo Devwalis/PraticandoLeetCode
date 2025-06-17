@@ -29,6 +29,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 20. [Maskify](#20-maskify)  
 21. [Próximo Quadrado Perfeito](#21-próximo-quadrado-perfeito)
 22. [Converter String para Número](#22-Converter-String-para-Número)
+23. [Total de Gols do Messi](#23-Total-de-Gols-do-Messi)
 
 
 ---
@@ -791,6 +792,44 @@ Você pode assumir que todas as entradas são representações válidas de núme
 |---------------------------|--------------------------------------------------|-----------------------------------|
 | `Integer.parseInt(str)`   | Converte uma string numérica para inteiro        | `Integer.parseInt("123") → 123`   |
 | `System.out.println()`    | Exibe o valor no console                         | `System.out.println(123)`         |
+
+
+## 🧪 23. Total de Gols do Messi
+
+### ✅ Enunciado:
+
+Messi é um jogador de futebol com gols em três campeonatos:
+
+- LaLiga  
+- Copa do Rey  
+- Champions League  
+
+Crie uma função que **receba os gols marcados** em cada uma dessas ligas e **retorne o total de gols**.
+
+### 💡 Lógica do Algoritmo:
+
+- Receber os três valores como parâmetros.
+- Somar os três valores.
+- Retornar o total.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor  |
+|--------|--------|
+| Tempo  | O(1)   |
+| Espaço | O(1)   |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito        | O que faz                                                      |
+|--------------------------|-----------------------------------------------------------------|
+| `int total = a + b + c`  | Soma os gols de LaLiga, Copa do Rey e Champions League.         |
+| `return total`           | Retorna a soma total de gols.                                   |
+| `System.out.println()`   | Exibe o resultado no terminal.                                  |
 
 
 
