@@ -32,6 +32,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 23. [Total de Gols do Messi](#23-Total-de-Gols-do-Messi)
 24. [Primeiro Nome Ordenado com Asteriscos](#24-Primeiro-Nome-Ordenado-com-Asteriscos)
 25. [ Combat - Vida após Dano](#25-Combat-Vida-após-Dano)
+26. [Reverter uma Lista Ligada](#26-Reverter-uma-Lista-Ligada)
 
 
 
@@ -918,13 +919,42 @@ A função deve retornar a nova vida do jogador após o dano, garantindo que a v
 
 
 
+## 🧪 26. Reverter uma Lista Ligada
 
+### ✅ Enunciado:
+
+Dada a cabeça de uma lista ligada, reverta a lista e retorne a nova cabeça.
+
+### 💡 Lógica do Algoritmo:
+
+- Usamos três ponteiros: `anterior`, `atual` e `proximo`.
+- A cada iteração, invertemos o ponteiro `next` do nó atual para apontar para o anterior.
+- Avançamos os ponteiros até o final da lista.
+- Retornamos o novo início da lista (`anterior`).
+
+### 🔍 Complexidade:
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito              | O que faz                                                      |
+|-------------------------------|-----------------------------------------------------------------|
+| `Node`                        | Classe que representa um nó da lista ligada.                   |
+| `while (atual != null)`       | Percorre cada nó da lista até o final.                         |
+| `Node proximo = atual.proximo`| Armazena o próximo nó antes de inverter o ponteiro.            |
+| `atual.proximo = anterior`    | Inverte a direção do ponteiro `next`.                          |
+| `anterior = atual`            | Avança o ponteiro para o nó atual.                             |
+| `atual = proximo`             | Move para o próximo nó na iteração.                            |
 
 
 
 ## 📂 Organização
 
-Cada exercício está dentro de sua própria classe Java, com o nome da questão em portugês no padrão camelCase.  
+Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
 Exemplo: `Palindromo.java`, `Fatorial.java`, `InverterArray`, `SomarDePares`, `Fibonacci` etc.
 
 ---
