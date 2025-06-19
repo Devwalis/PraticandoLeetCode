@@ -31,10 +31,10 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 22. [Converter String para Número](#22-Converter-String-para-Número)
 23. [Total de Gols do Messi](#23-Total-de-Gols-do-Messi)
 24. [Primeiro Nome Ordenado com Asteriscos](#24-Primeiro-Nome-Ordenado-com-Asteriscos)
-25. [ Combat - Vida após Dano](#25-Combat-Vida-após-Dano)
+25. [Combat - Vida após Dano](#25-Combat-Vida-após-Dano)
 26. [Reverter uma Lista Ligada](#26-Reverter-uma-Lista-Ligada)
-27. [27. 3X. O que Eles Bebem](#27-O-que-Eles-Bebem)
-28. [28. N-ésimo Elemento a Partir do Fim](#28-N-ésimo-Elemento-a-Partir-do-Fim)
+27. [O que Eles Bebem](#27-O-que-Eles-Bebem)
+28. [N-ésimo Elemento a Partir do Fim](#28-N-ésimo-Elemento-a-Partir-do-Fim)
 
 
 

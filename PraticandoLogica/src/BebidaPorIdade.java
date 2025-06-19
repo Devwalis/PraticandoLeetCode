@@ -3,14 +3,14 @@ public class BebidaPorIdade {
 
     public static String bebidaPorIdade(int idade){
         if (idade < 14){
-            return "toddy";
-        } else if (idade < 10){
-            return "coke";
+            return "drink toddy";
+        } else if (idade < 18){
+            return "drink coke";
 
         } else if (idade < 21){
-            return "beer";
+            return "drink beer";
         } else{
-            return "whisky";
+            return "drink whisky";
         }
         }
 
