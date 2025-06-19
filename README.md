@@ -33,6 +33,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 24. [Primeiro Nome Ordenado com Asteriscos](#24-Primeiro-Nome-Ordenado-com-Asteriscos)
 25. [ Combat - Vida após Dano](#25-Combat-Vida-após-Dano)
 26. [Reverter uma Lista Ligada](#26-Reverter-uma-Lista-Ligada)
+27. [27. 3X. O que Eles Bebem](#27-O-que-Eles-Bebem)
+28. [28. N-ésimo Elemento a Partir do Fim](#28-N-ésimo-Elemento-a-Partir-do-Fim)
 
 
 
@@ -949,6 +951,84 @@ Dada a cabeça de uma lista ligada, reverta a lista e retorne a nova cabeça.
 | `atual.proximo = anterior`    | Inverte a direção do ponteiro `next`.                          |
 | `anterior = atual`            | Avança o ponteiro para o nó atual.                             |
 | `atual = proximo`             | Move para o próximo nó na iteração.                            |
+
+## 🧪 27. 3X. O que Eles Bebem
+
+### ✅ Enunciado:
+
+Crie uma função que receba a **idade** de uma pessoa e retorne o que ela pode beber, seguindo as regras abaixo:
+
+| Faixa Etária        | Bebida   |
+|---------------------|----------|
+| Menores de 14 anos  | toddy    |
+| Menores de 18 anos  | coke     |
+| Menores de 21 anos  | beer     |
+| 21 anos ou mais     | whisky   |
+
+---
+
+### 💡 Lógica do Algoritmo:
+
+- Verifica a idade em ordem crescente usando `if-else`.
+- Retorna a string correspondente à bebida conforme a faixa etária.
+- A primeira condição verdadeira determina o retorno.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                              |
+|--------------------------|------------------------------------------------------------------------|
+| `if-else`                | Estrutura condicional para determinar qual faixa etária se aplica.     |
+| `return`                 | Retorna a bebida correspondente como string.                          |
+| `System.out.println()`   | Exibe o resultado no console para testes manuais.                      |
+
+---
+
+
+## 🧪 28. N-ésimo Elemento a Partir do Fim
+
+### ✅ Enunciado:
+
+Dada uma lista ligada, retorne o valor do **n-ésimo nó a partir do final** da lista.
+
+---
+
+### 💡 Lógica do Algoritmo:
+
+- Utilizamos dois ponteiros (`avancado` e `atual`).
+- Avançamos o ponteiro `avancado` **n posições** à frente.
+- Em seguida, movemos os dois ponteiros **simultaneamente** até que `avancado` chegue ao final da lista.
+- Quando isso acontecer, o ponteiro `atual` estará no **n-ésimo nó a partir do fim**.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                | O que faz                                                              |
+|----------------------------------|-------------------------------------------------------------------------|
+| `Node`                           | Classe que representa cada nó da lista ligada.                         |
+| `for (int i = 0; i < n; i++)`    | Avança o ponteiro `avancado` n posições à frente.                      |
+| `while (avancado != null)`       | Move ambos ponteiros até o final da lista.                             |
+| `atual.valor`                    | Contém o valor desejado no final da execução.                          |
 
 
 
