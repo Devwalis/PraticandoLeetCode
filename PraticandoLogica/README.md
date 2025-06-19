@@ -1027,6 +1027,38 @@ Dada uma lista ligada, retorne o valor do **n-ésimo nó a partir do final** da 
 
 
 
+## 🧪 29. Multiples of n up to limit
+
+### ✅ Enunciado:
+
+Crie uma função que receba dois inteiros `n` e `limit`, e retorne uma lista contendo todos os múltiplos de `n` até (e possivelmente incluindo) `limit`.
+
+### 💡 Lógica do Algoritmo:
+
+- Criar uma lista para armazenar os múltiplos.
+- Usar um loop que comece em `n` e vá até `limit`, incrementando de `n` em `n`.
+- A cada iteração, adicionar o valor atual à lista.
+- Retornar a lista ao final do processo.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor                                      |
+|--------|--------------------------------------------|
+| Tempo  | O(n/k) → onde `k` é o número de múltiplos  |
+| Espaço | O(n/k) → tamanho da lista retornada        |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                        | O que faz                                                      |
+|-----------------------------------------|----------------------------------------------------------------|
+| `List<Integer>`                         | Estrutura de dados para armazenar os múltiplos                 |
+| `for (int i = n; i <= limit; i += n)`   | Loop que percorre apenas os múltiplos de `n` até o `limit`     |
+| `list.add(i)`                           | Adiciona o número atual à lista                                |
+| `return list`                           | Retorna a lista de múltiplos                                   |
 
 
 
