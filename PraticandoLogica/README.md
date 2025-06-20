@@ -35,6 +35,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 26. [Reverter uma Lista Ligada](#26-Reverter-uma-Lista-Ligada)
 27. [O que Eles Bebem](#27-O-que-Eles-Bebem)
 28. [N-ésimo Elemento a Partir do Fim](#28-N-ésimo-Elemento-a-Partir-do-Fim)
+29. [Multiples of n up to limit](#29-Multiples-of-n-up-to-limit)
 
 
 
@@ -1061,7 +1062,7 @@ Crie uma função que receba dois inteiros `n` e `limit`, e retorne uma lista co
 | `return list`                           | Retorna a lista de múltiplos                                   |
 
 
-
+ 
 
 
 

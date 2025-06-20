@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,7 +16,8 @@ public class MultiplosDeNupParaLimitar{
     
     public static void main(String[] args) {
         System.out.println(buscaMultiplos(2, 6));
-        
+
     }
     
-}
+}*/
+
