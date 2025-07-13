@@ -9,4 +9,19 @@ public class ReverterDigitos {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+        long input1 = 35231;
+        long input2 = 0;
+
+        int[] result1 = digitalize(input1);
+        int[] result2 = digitalize(input2);
+        
+
+        System.out.println("Resultado 1: ");
+        for(int n : result1) System.out.println(n +" ");
+
+        System.out.println("Resultado 2: ");
+        for(int n : result2) System.out.println(n + " ");
+    }
 }
