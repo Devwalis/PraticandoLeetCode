@@ -37,6 +37,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 28. [N-ésimo Elemento a Partir do Fim](#28-N-ésimo-Elemento-a-Partir-do-Fim)
 29. [Multiples of n up to limit](#29-Multiples-of-n-up-to-limit)
 30. [Bem-vindo com Nome, Cidade e Estado](#30-Bem-vindo-nome-cidade-estado)
+31. [Dígitos em Ordem Reversa](#31-Dígitos-em-Ordem-Reversa)
 
 
 
@@ -1031,6 +1032,46 @@ Dada uma lista ligada, retorne o valor do **n-ésimo nó a partir do final** da 
 | `for (int i = 0; i < n; i++)`    | Avança o ponteiro `avancado` n posições à frente.                      |
 | `while (avancado != null)`       | Move ambos ponteiros até o final da lista.                             |
 | `atual.valor`                    | Contém o valor desejado no final da execução.                          |
+
+
+
+## 🧪 Dígitos em Ordem Reversa
+
+### ✅ Enunciado
+
+Dado um número inteiro **não negativo**, retorne os **dígitos desse número** em um array, mas em **ordem reversa**.
+
+
+### 💡 Lógica do Algoritmo
+
+- Converter o número para uma `String`.
+- Criar um array de inteiros com o tamanho da string.
+- Percorrer a string de trás para frente.
+- Converter cada caractere para número inteiro.
+- Armazenar no array.
+- Retornar o array com os dígitos em ordem reversa.
+
+---
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                               |
+|-----------------------------------|----------------------------------------------------------|
+| `String.valueOf(number)`          | Converte o número para uma `String`.                    |
+| `charAt(i)`                       | Acessa o caractere na posição `i` da string.            |
+| `Character.getNumericValue(char)`| Converte um caractere numérico em valor inteiro.        |
+| `int[] array = new int[n]`        | Cria um array de inteiros com `n` posições.             |
+
+
 
 
 
