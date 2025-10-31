@@ -38,6 +38,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 29. [Multiples of n up to limit](#29-Multiples-of-n-up-to-limit)
 30. [Bem-vindo com Nome, Cidade e Estado](#30-Bem-vindo-nome-cidade-estado)
 31. [Dígitos em Ordem Reversa](#31-Dígitos-em-Ordem-Reversa)
+32. [Perguntar Idade de uma criança](#32-Perguntar-idade-de-uma-criança)
+
 
 
 
@@ -1070,6 +1072,39 @@ Dado um número inteiro **não negativo**, retorne os **dígitos desse número**
 | `charAt(i)`                       | Acessa o caractere na posição `i` da string.            |
 | `Character.getNumericValue(char)`| Converte um caractere numérico em valor inteiro.        |
 | `int[] array = new int[n]`        | Cria um array de inteiros com `n` posições.             |
+
+## 🧪 32. Idade da Menina
+
+### ✅ Enunciado:
+Você pergunta a uma garotinha "Quantos anos você tem?" Ela sempre responde "x years old", onde x é um número aleatório entre 0 e 9.
+
+Escreva um programa que retorne a idade da menina (0-9) como um inteiro.
+
+Assuma que a string de entrada do teste é sempre uma string válida. Por exemplo, a entrada pode ser "1 year old" ou "5 years old". O primeiro caractere na string é sempre um número.
+
+### 💡 Lógica do Algoritmo:
+- Como o enunciado garante que o primeiro caractere da string é sempre um dígito numérico, a lógica é simples.
+- Basta acessar o primeiro caractere da string.
+- Converter esse caractere para seu valor numérico inteiro.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `frase.charAt(0)`                 | Retorna o caractere na posição 0 da string.                  |
+| `Character.getNumericValue(char)` | Converte um caractere que representa um dígito em seu valor numérico inteiro. |
+| `return`                          | Retorna o valor inteiro encontrado.                          |
+
+
 
 
 
