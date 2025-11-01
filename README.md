@@ -1037,7 +1037,7 @@ Dada uma lista ligada, retorne o valor do **n-ésimo nó a partir do final** da 
 
 
 
-## 🧪 Dígitos em Ordem Reversa
+## 🧪29 Dígitos em Ordem Reversa
 
 ### ✅ Enunciado
 
@@ -1073,7 +1073,7 @@ Dado um número inteiro **não negativo**, retorne os **dígitos desse número**
 | `Character.getNumericValue(char)`| Converte um caractere numérico em valor inteiro.        |
 | `int[] array = new int[n]`        | Cria um array de inteiros com `n` posições.             |
 
-## 🧪 32. Idade da Menina
+## 🧪 30. Idade da Menina
 
 ### ✅ Enunciado:
 Você pergunta a uma garotinha "Quantos anos você tem?" Ela sempre responde "x years old", onde x é um número aleatório entre 0 e 9.
@@ -1105,7 +1105,45 @@ Assuma que a string de entrada do teste é sempre uma string válida. Por exempl
 | `return`                          | Retorna o valor inteiro encontrado.                          |
 
 
+## 🧪 31. Validador de PIN do Caixa Eletrônico
 
+### ✅ Enunciado:
+Caixas eletrônicos aceitam códigos PIN de 4 ou 6 dígitos e códigos PIN não podem conter nada além de exatamente 4 dígitos ou exatamente 6 dígitos.
+
+Se a função receber uma string de PIN válida, retorne `true`, caso contrário, retorne `false`.
+
+**Exemplos (Entrada --> Saída)**
+
+| Entrada   | Saída |
+|-----------|-------|
+| `"1234"`  | `true`  |
+| `"12345"` | `false` |
+| `"a234"`  | `false` |
+
+### 💡 Lógica do Algoritmo:
+1.  **Verificar o comprimento:** O PIN deve ter exatamente 4 ou 6 caracteres. Se não tiver, é inválido.
+2.  **Verificar o conteúdo:** Todos os caracteres do PIN devem ser dígitos numéricos. Percorrer a string e verificar cada caractere. Se algum não for um dígito, o PIN é inválido.
+3.  Se ambas as condições forem satisfeitas, o PIN é válido.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+> Onde `n` é o comprimento da string de entrada (4 ou 6).
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                 | O que faz                                                    |
+|----------------------------------|--------------------------------------------------------------|
+| `pin.length()`                   | Retorna o número de caracteres na string `pin`.              |
+| `for (char c : pin.toCharArray())` | Itera sobre cada caractere da string `pin`.                 |
+| `Character.isDigit(c)`           | Verifica se o caractere `c` é um dígito numérico.            |
+| `return true / false`            | Retorna o resultado booleano da validação.                   |
 
 
 

@@ -1,4 +1,4 @@
-public class Fibomacci {
+public class Fibonacci {
 
     public static int fibonacciRecursivo(int n){
         if(n <= 1){
