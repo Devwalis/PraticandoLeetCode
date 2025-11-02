@@ -1146,6 +1146,42 @@ Se a função receber uma string de PIN válida, retorne `true`, caso contrário
 | `return true / false`            | Retorna o resultado booleano da validação.                   |
 
 
+## 🧪 32. Saudação Personalizada
+
+### ✅ Enunciado:
+Crie uma função que forneça uma saudação personalizada. Esta função recebe dois parâmetros: `name` (nome) e `owner` (proprietário).
+
+Use condicionais para retornar a mensagem apropriada:
+
+| Caso                  | Retorno        |
+|-----------------------|----------------|
+| `name` igual a `owner` | `'Hello boss'` |
+| Caso contrário        | `'Hello guest'`|
+
+### 💡 Lógica do Algoritmo:
+- A lógica é direta e envolve uma única condição.
+- Compare as duas strings (`name` e `owner`).
+- Se forem iguais, retorne a saudação para o "chefe".
+- Caso contrário, retorne a saudação para o "convidado".
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A comparação de strings (`equals`) em Java tem uma complexidade que depende do menor comprimento das strings, mas para strings de tamanho "normal" e no contexto de desafios simples, é frequentemente considerada O(1) ou O(min(len1, len2)).
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                 | O que faz                                                    |
+|----------------------------------|--------------------------------------------------------------|
+| `name.equals(owner)`             | Compara duas strings para verificar se são iguais em conteúdo (case-sensitive). |
+| `if-else`                        | Estrutura condicional para executar blocos de código diferentes com base em uma condição. |
+| `return`                         | Retorna o valor (string de saudação) da função.              |
 
 
 ## 📂 Organização
