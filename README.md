@@ -1181,7 +1181,47 @@ Use condicionais para retornar a mensagem apropriada:
 |----------------------------------|--------------------------------------------------------------|
 | `name.equals(owner)`             | Compara duas strings para verificar se são iguais em conteúdo (case-sensitive). |
 | `if-else`                        | Estrutura condicional para executar blocos de código diferentes com base em uma condição. |
-| `return`                         | Retorna o valor (string de saudação) da função.              |
+| `return`                         | Retorna o valor (string de saudação) da função.   
+
+
+## 🧪 33. Saudação Multigingue
+
+         *Possíveis entradas inválidas incluem:**
+- `IP_ADDRESS_INVALID` - não é um endereço IPV4 ou IPV6 válido
+- `IP_ADDRESS_NOT_FOUND` - endereço IP não encontrado no banco de dados
+- `IP_ADDRESS_REQUIRED` - nenhum endereço IP foi fornecido
+
+### 💡 Lógica do Algoritmo:
+1.  **Armazenamento dos idiomas:** A melhor estrutura de dados para armazenar pares de chave-valor (idioma-saudação) para buscas rápidas é um `Map` (especificamente um `HashMap` em Java).
+2.  **Inicialização:** O `Map` deve ser preenchido uma única vez com todas as saudações conhecidas. Pode ser um `Map` estático e final para evitar recriá-lo.
+3.  **Função de boas-vindas:**
+    *   Recebe a `String language` como parâmetro.
+    *   Verifica se o `Map` contém a chave (`language`).
+    *   Se contiver, retorna o valor (saudação) associado.
+    *   Se não contiver (incluindo entradas inválidas como os "IP_ADDRESS_..." ou idiomas não listados), retorna a saudação padrão em Inglês ("Welcome").
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(L)  |
+
+> Onde `L` é o número de idiomas no "banco de dados". A busca em um `HashMap` é, em média, O(1). O espaço é proporcional ao número de idiomas armazenados.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                       | O que faz                                                    |
+|----------------------------------------|--------------------------------------------------------------|
+| `Map<String, String>`                  | Interface que representa um mapeamento de chaves para valores. `HashMap` é uma implementação comum. |
+| `static final Map<String, String> ...` | Declara um mapa que é inicializado uma vez e não pode ser alterado (constante). |
+| `new HashMap<>()`                      | Cria uma nova instância de um `HashMap`.                     |
+| `put("chave", "valor")`                | Adiciona um par chave-valor ao mapa.                         |
+| `idiomas.get(language)`                | Retorna o valor associado à `language` no mapa, ou `null` se a chave não existir. |
+| `idiomas.containsKey(language)`        | Verifica se o mapa contém a `language` como chave.           |
+| `return`                               | Retorna a string de saudação.                                |  |
 
 
 ## 📂 Organização
