@@ -42,6 +42,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 33. [Saudação Multigingue](#-33-saudação-multigingue)
 34. [Soma entre Dois Números](#-34-soma-entre-dois-números)
 35. [Soma de uma Sequência de Inteiros](#-35-soma-de-uma-sequência-de-inteiros)
+36. [Peças Máximas de Pizza](#-36-Peças-Máximas-de-Pizza)
+
+
 
 
 
@@ -1336,9 +1339,72 @@ Esta é a primeira kata da série:
 | `sum += i;`                       | Adiciona o valor atual `i` à soma acumulada.                 |
 | `return sum;`                     | Retorna o resultado final da soma.                           |
 
-  
+  ## 🧪 36. Peças Máximas de Pizza
 
-Aqui está o código Java para o problema "Soma de uma Sequência de Inteiros":
+### ✅ Enunciado:
+Em sua viagem à Itália, Elizabeth Gilbert fez questão de comer a pizza perfeita. Um dia ela pediu uma para o jantar, e então alguns amigos italianos apareceram em seu quarto. O problema é que muitas pessoas pediram um pedaço de pizza naquele momento, e ela tinha uma faca que só faz cortes retos.
+
+Dado o número de cortes de pizza, encontre a quantidade máxima de pedaços de pizza que você pode obter (não necessariamente de tamanho igual). Se o número de cortes for negativo, retorne `-1` em vez disso.
+
+**Exemplos:**
+
+| Cortes | Peças Máximas |
+|--------|---------------|
+| `0`    | `1`           |
+| `1`    | `2`           |
+| `2`    | `4`           |
+| `3`    | `7`           |
+| `4`    | `11`          |
+| `5`    | `16`          |
+| `-1`   | `-1`          |
+
+### 💡 Lógica do Algoritmo:
+
+A relação entre o número de cortes (`n`) e o número máximo de pedaços (`P`) é um problema clássico de geometria combinatória. Cada novo corte deve cruzar todos os cortes anteriores sem passar por uma interseção existente, para maximizar o número de novas regiões.
+
+-   **0 cortes:** 1 pedaço (a pizza inteira).
+-   **1 corte:** Divide a pizza em 2 pedaços.
+-   **2 cortes:** O segundo corte cruza o primeiro, adicionando 2 novos pedaços. Total: 1 + 1 + 2 = 4 pedaços.
+-   **3 cortes:** O terceiro corte cruza os dois anteriores, adicionando 3 novos pedaços. Total: 4 + 3 = 7 pedaços.
+-   **`n` cortes:** O `n`-ésimo corte adiciona `n` novos pedaços.
+
+Portanto, o número máximo de pedaços é `P(n) = P(n-1) + n`.
+Com `P(0) = 1`.
+
+Isso forma uma progressão:
+`P(n) = 1 + 1 + 2 + 3 + ... + n`
+`P(n) = 1 + (Soma dos inteiros de 1 a n)`
+
+A soma dos inteiros de 1 a `n` é dada pela fórmula `n * (n + 1) / 2`.
+Então, a fórmula para o número máximo de pedaços é:
+`P(n) = 1 + n * (n + 1) / 2`
+
+**Passos do Algoritmo:**
+1.  Verifique se o número de cortes (`n`) é negativo. Se for, retorne `-1`.
+2.  Aplique a fórmula `1 + n * (n + 1) / 2` para calcular o número máximo de pedaços.
+3.  Retorne o resultado.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A complexidade é constante, pois envolve apenas algumas operações aritméticas, independentemente do número de cortes (desde que não seja um número excessivamente grande que cause overflow de tipo de dados).
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `if (cuts < 0)`                   | Verifica se a entrada é negativa para retornar `-1`.         |
+| `long`                            | Tipo de dado para garantir que o resultado da soma não exceda o limite de `int` para valores grandes de `n`. |
+| `n * (n + 1) / 2`                 | Fórmula para a soma dos primeiros `n` inteiros.              |
+| `return`                          | Retorna o resultado calculado.                               |
+
+
 
 
 
