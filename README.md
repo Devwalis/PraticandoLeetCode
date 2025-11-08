@@ -39,6 +39,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 30. [Bem-vindo com Nome, Cidade e Estado](#30-Bem-vindo-nome-cidade-estado)
 31. [Dígitos em Ordem Reversa](#31-Dígitos-em-Ordem-Reversa)
 32. [Perguntar Idade de uma criança](#32-Perguntar-idade-de-uma-criança)
+33. [Saudação Multigingue](#-33-saudação-multigingue)
+34. [Soma entre Dois Números](#-34-soma-entre-dois-números)
+35. [Soma de uma Sequência de Inteiros](#-35-soma-de-uma-sequência-de-inteiros)
 
 
 
