@@ -1280,6 +1280,65 @@ Para uma solução mais eficiente em casos com intervalos muito grandes, pode-se
 
 
 
+    
+## 🧪 35. Soma de uma Sequência de Inteiros
+
+### ✅ Enunciado:
+Sua tarefa é escrever uma função que retorne a soma de uma sequência de inteiros.
+
+A sequência é definida por 3 valores não negativos: `begin` (início), `end` (fim), `step` (passo).
+
+Se o valor de `inicio` for maior que o `fim`, sua função deve retornar `0`. Se o `end` não for o resultado de um número inteiro de passos, então não o adicione à soma. Veja o 4º exemplo abaixo.
+
+**Exemplos:**
+
+| Entrada (begin, end, step) | Saída | Explicação          |
+|----------------------------|-------|---------------------|
+| `(2, 2, 2)`                | `2`   | `(2)`               |
+| `(2, 6, 2)`                | `12`  | `(2 + 4 + 6)`       |
+| `(1, 5, 1)`                | `15`  | `(1 + 2 + 3 + 4 + 5)` |
+| `(1, 5, 3)`                | `5`   | `(1 + 4)`           |
+
+Esta é a primeira kata da série:
+- Sum of a sequence (esta kata)
+- Sum of a Sequence [Hard-Core Version]
+
+### 💡 Lógica do Algoritmo:
+1.  **Condição de Saída Inicial:** Verifique se `begin` é maior que `end`. Se for, a sequência é "vazia" ou inválida para soma crescente, então retorne `0`.
+2.  **Inicializar Soma:** Crie uma variável `sum` e inicialize-a com 0.
+3.  **Iteração:** Use um laço `for` que começa em `begin`.
+    *   A condição de parada do laço deve ser `i <= end`.
+    *   O incremento do laço deve ser `i += step`.
+4.  **Acumular Soma:** Dentro do laço, adicione o valor atual de `i` à variável `sum`.
+5.  **Retornar Soma:** Após o laço ter terminado, retorne o valor final de `sum`. A regra de "não adicionar se `end` não for resultado de um passo" é naturalmente tratada pela condição `i <= end` e o incremento `i += step`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O((end - begin) / step) |
+| Espaço | O(1)  |
+
+> A complexidade de tempo é proporcional ao número de elementos na sequência gerada, que é determinada pela diferença entre `fim` e `inicio` dividida pelo `passo`. O espaço é constante, pois usamos apenas algumas variáveis.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `if (inicio > fim)`                | Verifica a condição para retornar 0 imediatamente.           |
+| `long sum = 0;`                   | Declara e inicializa uma variável `long` para a soma, para evitar overflow caso a soma seja muito grande. |
+| `for (long i = inicio; i <= fim; i += step)` | Laço que itera desde `inicio` até `fim`, incrementando por `passo` a cada vez. |
+| `sum += i;`                       | Adiciona o valor atual `i` à soma acumulada.                 |
+| `return sum;`                     | Retorna o resultado final da soma.                           |
+
+  
+
+Aqui está o código Java para o problema "Soma de uma Sequência de Inteiros":
+
+
+
 
 
 
