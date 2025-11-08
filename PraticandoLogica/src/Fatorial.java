@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class Fatorial {
     public static long fatorial(int n ){
         if(n == 0 || n == 1){

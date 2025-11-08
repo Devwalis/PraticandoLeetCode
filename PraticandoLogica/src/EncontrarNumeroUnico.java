@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class EncontrarNumeroUnico{
     public static int encontrarNumeroUnico(int[] nums){
      int   resultado = 0;

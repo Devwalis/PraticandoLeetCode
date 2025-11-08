@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class ReverterDigitos {
     public static int[] digitalize(long numero){
         String numStr = String.valueOf(numero);

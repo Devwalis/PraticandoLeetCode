@@ -1,3 +1,4 @@
+
 class Node{
     int valor;
     Node proximo;

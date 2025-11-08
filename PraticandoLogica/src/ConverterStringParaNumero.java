@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class ConverterStringParaNumero{
 
     public static int converteString(String str ){

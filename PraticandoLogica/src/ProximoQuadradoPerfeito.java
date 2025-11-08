@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class ProximoQuadradoPerfeito {
     public static long quadradoPerfeito(long numero){
         double raiz = Math.sqrt(numero);

@@ -1,4 +1,4 @@
-package PraticandoLogica.src;
+package PraticandoLogica;
 
 public class SaudacaoPersonalizada {
     

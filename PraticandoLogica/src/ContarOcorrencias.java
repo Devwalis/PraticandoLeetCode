@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class ContarOcorrencias {
 
     public static int contar(int[] array, int numeroDesejado){

@@ -1,4 +1,4 @@
-package PraticandoLogica.src;
+package PraticandoLogica;
 
 import java.util.Arrays;
 import java.util.Scanner;

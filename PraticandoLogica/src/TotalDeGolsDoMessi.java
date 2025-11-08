@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class TotalDeGolsDoMessi {
     public static int totalGols(int laLiga, int copaDelRey, int champions){
         return laLiga + copaDelRey + champions;

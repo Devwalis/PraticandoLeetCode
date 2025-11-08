@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class VidaAposDano {
     public static int combat(int health, int damage){
         return Math.max(0, health - damage);

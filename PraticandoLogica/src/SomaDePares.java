@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class SomaDePares{
     public static int somarPares(int[] numeros){
         int soma = 0;

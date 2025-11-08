@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class CalcularFatorial {
 
     public static int calcularFatorial(int n){

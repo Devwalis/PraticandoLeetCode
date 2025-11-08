@@ -1,3 +1,4 @@
+package PraticandoLogica;
 import java.util.Scanner;
 
 public class NumeroPrimo {

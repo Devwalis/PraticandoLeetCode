@@ -1224,6 +1224,65 @@ Use condicionais para retornar a mensagem apropriada:
 | `return`                               | Retorna a string de saudação.                                |  |
 
 
+
+## 🧪 34. Soma entre Dois Números
+
+### ✅ Enunciado:
+Dados dois inteiros `a` e `b`, que podem ser positivos ou negativos, encontre a soma de todos os inteiros entre eles (inclusive) e retorne-a. Se os dois números forem iguais, retorne `a` ou `b`.
+
+**Observação:** `a` e `b` não estão ordenados!
+
+**Exemplos (a, b) --> saída (explicação)**
+
+| Entrada (a, b) | Saída | Explicação          |
+|----------------|-------|---------------------|
+| `(1, 0)`       | `1`   | `(1 + 0 = 1)`       |
+| `(1, 2)`       | `3`   | `(1 + 2 = 3)`       |
+| `(0, 1)`       | `1`   | `(0 + 1 = 1)`       |
+| `(1, 1)`       | `1`   | `(1 since both are same)` |
+| `(-1, 0)`      | `-1`  | `(-1 + 0 = -1)`     |
+| `(-1, 2)`      | `2`   | `(-1 + 0 + 1 + 2 = 2)` |
+
+Sua função deve retornar apenas um número, sem a explicação sobre como você chegou a esse número.
+
+### 💡 Lógica do Algoritmo:
+1.  **Verificar igualdade:** Primeiro, verifique se `a` e `b` são iguais. Se forem, retorne `a` (ou `b`).
+2.  **Determinar o menor e o maior:** Como `a` e `b` não estão ordenados, precisamos descobrir qual é o menor (`min`) e qual é o maior (`max`) para iterar corretamente.
+3.  **Somar os números:** Use um laço de repetição (`for`) que começa no `min` e vai até o `max` (inclusive), somando cada número a uma variável acumuladora.
+4.  **Retornar a soma:** Após o laço, a variável acumuladora conterá a soma total.
+
+**Alternativa (Fórmula Matemática - Soma de uma PA):**
+Para uma solução mais eficiente em casos com intervalos muito grandes, pode-se usar a fórmula da soma de uma progressão aritmética: `(n * (primeiro + ultimo)) / 2`, onde `n` é o número de termos.
+`n = (max - min) + 1`
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(|a-b|) |
+| Espaço | O(1)  |
+
+> A complexidade de tempo depende da distância entre `a` e `b`, pois precisamos iterar sobre todos os números nesse intervalo. Usando a fórmula matemática, a complexidade seria O(1).
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `if (a == b)`                     | Verifica se `a` e `b` são iguais.                            |
+| `Math.min(a, b)`                  | Retorna o menor valor entre `a` e `b`.                       |
+| `Math.max(a, b)`                  | Retorna o maior valor entre `a` e `b`.                       |
+| `int soma = 0;`                   | Inicializa uma variável para acumular a soma.                |
+| `for (int i = min; i <= max; i++)`| Laço que itera do menor ao maior número.                     |
+| `soma += i;`                      | Adiciona o número atual `i` à soma.                          |
+| `return soma;`                    | Retorna o resultado final.                                   |
+
+
+
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  

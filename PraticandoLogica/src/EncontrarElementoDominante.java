@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 public class EncontrarElementoDominante {
     
     public static int encontrarDominante(int[] nums){

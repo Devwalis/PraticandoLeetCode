@@ -1,3 +1,4 @@
+package PraticandoLogica;
 public class InverteString {
 
     public static String inverter(String str){
