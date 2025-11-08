@@ -1,5 +1,5 @@
 
-package PraticandoLogica;
+package PraticandoLogica.src;
 public class SomaEntreDoisNumeros {
 
     public static int somaDeDoisNumeros(int a, int b){

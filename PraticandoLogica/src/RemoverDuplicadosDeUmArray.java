@@ -1,3 +1,4 @@
+package PraticandoLogica.src;
 import java.util.Scanner;
 
 public class RemoverDuplicadosDeUmArray {

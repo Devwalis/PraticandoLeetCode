@@ -1,4 +1,4 @@
-package PraticandoLogica;
+package PraticandoLogica.src;
 import java.util.Scanner;
 
 public class MaiorNumero {

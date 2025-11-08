@@ -1,4 +1,4 @@
-package PraticandoLogica;
+package PraticandoLogica.src;
 public class MascararString{
 
     public static String maskify(String str){
