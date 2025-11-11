@@ -1406,6 +1406,59 @@ Então, a fórmula para o número máximo de pedaços é:
 | `return`                          | Retorna o resultado calculado.                               |
 
 
+    
+# 🧪 37. Acumular Caracteres (Accum)
+
+✅ **Enunciado:**
+
+Crie uma função `accum` que recebe uma string e transforma cada caractere em uma sequência repetida, separada por hífens. O primeiro caractere de cada sequência deve ser maiúsculo e os restantes minúsculos. O número de repetições é o índice do caractere + 1.
+
+**Exemplos:**
+
+  
+
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+code Code
+
+    
+💡 **Lógica do Algoritmo:**
+
+1.  Inicialize um `StringBuilder` para construir a string resultante.
+2.  Percorra a string de entrada usando um laço `for` e o índice `i`.
+3.  Para cada caractere na posição `i`:
+    *   Converta o caractere para maiúsculo e adicione-o ao `StringBuilder`.
+    *   Converta o caractere para minúsculo e adicione-o `i` vezes (total de `i + 1` repetições para o caractere atual).
+    *   Se não for o último caractere, adicione um hífen (`-`) ao `StringBuilder`.
+4.  Retorne a string final do `StringBuilder`.
+
+🔍 **Complexidade:**
+
+| Tipo   | Valor |
+| :----- | :---- |
+| Tempo  | O(n^2) |
+| Espaço | O(n^2) |
+
+*   **Tempo**: O laço externo percorre `n` caracteres. O laço interno para repetir os caracteres executa `i` vezes. No pior caso, o último caractere será repetido `n-1` vezes. A soma das repetições é aproximadamente `1 + 2 + ... + n`, que é `n*(n+1)/2`, resultando em O(n^2).
+*   **Espaço**: O `StringBuilder` pode crescer até um tamanho que é a soma dos caracteres repetidos e dos hífens. No pior caso, o tamanho da string resultante é também aproximadamente `n^2`.
+
+📘 **Tabela de Métodos / Conceitos Utilizados:**
+
+| Método / Conceito         | O que faz                                                    | Exemplo de uso                                         |
+| :------------------------ | :----------------------------------------------------------- | :----------------------------------------------------- |
+| `StringBuilder`           | Classe mutável e eficiente para construção de strings.       | `StringBuilder result = new StringBuilder();`          |
+| `append(char/String)`     | Adiciona um caractere ou string ao final do `StringBuilder`. | `result.append(c);`                                    |
+| `charAt(index)`           | Retorna o caractere na posição especificada da string.       | `char c = s.charAt(i);`                                |
+| `Character.toUpperCase(c)`| Converte um caractere para sua versão maiúscula.             | `result.append(Character.toUpperCase(c));`             |
+| `Character.toLowerCase(c)`| Converte um caractere para sua versão minúscula.             | `result.append(Character.toLowerCase(c));`             |
+| `for`                     | Laço de repetição para iterar sobre os caracteres da string. | `for (int i = 0; i < s.length(); i++) { ... }`        |
+| `s.length()`              | Retorna o comprimento da string.                             | `s.length()`                                           |
+| `toString()`              | Converte o `StringBuilder` de volta para uma `String`.       | `return result.toString();`                            |
+
+  
+
+
 
 
 

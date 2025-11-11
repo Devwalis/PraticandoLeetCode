@@ -29,4 +29,12 @@ public class AcumularCaracters{
 
         return result.toString();
     }
+
+    public static void main(String[] args){
+        System.out.println(accum("abcd"));
+        System.out.println(accum("readf"));
+        System.out.println(accum("xeucy"));
+        System.out.println(accum("dasdr"));
+        System.out.println(accum("affet"));
+    }
 }
