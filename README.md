@@ -44,6 +44,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 35. [Soma de uma Sequência de Inteiros](#-35-soma-de-uma-sequência-de-inteiros)
 36. [Peças Máximas de Pizza](#-36-Peças-Máximas-de-Pizza)
 37. [Acumular Caracteres](#-37-Acumular-Caracteres)
+38. [Soma dos Quadrados](#-38-Soma-Dos-Quadrado)
 
 
 
@@ -1455,6 +1456,47 @@ code Code
 | `for`                     | Laço de repetição para iterar sobre os caracteres da string. | `for (int i = 0; i < s.length(); i++) { ... }`        |
 | `s.length()`              | Retorna o comprimento da string.                             | `s.length()`                                           |
 | `toString()`              | Converte o `StringBuilder` de volta para uma `String`.       | `return result.toString();`                            |
+
+
+# 🧪 38. Soma dos Quadrados
+
+✅ **Enunciado:**
+
+Complete a função `squareSum` para que ela eleve cada número ao quadrado e, em seguida, some os resultados.
+
+**Exemplo:**
+
+Para `[1, 2, 2]` deve retornar `9` porque `1^2 + 2^2 + 2^2 = 9`.
+
+💡 **Lógica do Algoritmo:**
+
+1.  Inicialize uma variável `soma` com `0`.
+2.  Percorra cada número no array de entrada.
+3.  Para cada número, eleve-o ao quadrado (`numero * numero`).
+4.  Adicione o resultado do quadrado à variável `soma`.
+5.  Após percorrer todos os números, retorne o valor final de `soma`.
+
+🔍 **Complexidade:**
+
+| Tipo   | Valor |
+| :----- | :---- |
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+*   **Tempo**: O algoritmo percorre o array de entrada uma única vez. A quantidade de operações (multiplicação e soma) é diretamente proporcional ao número de elementos (`n`) no array.
+*   **Espaço**: O algoritmo utiliza apenas uma variável adicional (`soma`) para armazenar o resultado, independentemente do tamanho do array de entrada. Portanto, o uso de espaço é constante.
+
+📘 **Tabela de Métodos / Conceitos Utilizados:**
+
+| Método / Conceito         | O que faz                                                               | Exemplo de uso                  |
+| :------------------------ | :---------------------------------------------------------------------- | :------------------------------ |
+| `int soma = 0;`           | Declara e inicializa uma variável para acumular a soma dos quadrados.   | `int totalSum = 0;`             |
+| `for (int num : numeros)` | Laço `for-each` para iterar sobre cada elemento de um array.            | `for (int n : array) { ... }`   |
+| `num * num`               | Operação de elevação ao quadrado de um número.                          | `int square = 5 * 5;`           |
+| `soma += (num * num);`    | Adiciona o quadrado do número atual à variável `soma`.                  | `totalSum += (n * n);`          |
+| `return soma;`            | Retorna o valor acumulado da soma dos quadrados.                        | `return totalSum;`              |
+
+
 
   
 
