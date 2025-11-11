@@ -43,6 +43,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 34. [Soma entre Dois Números](#-34-soma-entre-dois-números)
 35. [Soma de uma Sequência de Inteiros](#-35-soma-de-uma-sequência-de-inteiros)
 36. [Peças Máximas de Pizza](#-36-Peças-Máximas-de-Pizza)
+37. [Acumular Caracteres](#-37-Acumular-Caracteres)
 
 
 
@@ -1373,7 +1374,7 @@ Com `P(0) = 1`.
 
 Isso forma uma progressão:
 `P(n) = 1 + 1 + 2 + 3 + ... + n`
-`P(n) = 1 + (Soma dos inteiros de 1 a n)`
+`P(n) = 1 + (Soma dos inteiros de 1 a n)` 
 
 A soma dos inteiros de 1 a `n` é dada pela fórmula `n * (n + 1) / 2`.
 Então, a fórmula para o número máximo de pedaços é:
@@ -1403,6 +1404,8 @@ Então, a fórmula para o número máximo de pedaços é:
 | `long`                            | Tipo de dado para garantir que o resultado da soma não exceda o limite de `int` para valores grandes de `n`. |
 | `n * (n + 1) / 2`                 | Fórmula para a soma dos primeiros `n` inteiros.              |
 | `return`                          | Retorna o resultado calculado.                               |
+
+
 
 
 
