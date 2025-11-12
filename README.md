@@ -45,6 +45,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 36. [Peças Máximas de Pizza](#-36-Peças-Máximas-de-Pizza)
 37. [Acumular Caracteres](#-37-Acumular-Caracteres)
 38. [Soma dos Quadrados](#-38-Soma-Dos-Quadrado)
+39. [Quadrado dos Dígitos](#-39-Quadrado-dos-Dígitos)
 
 
 
@@ -1495,6 +1496,58 @@ Para `[1, 2, 2]` deve retornar `9` porque `1^2 + 2^2 + 2^2 = 9`.
 | `num * num`               | Operação de elevação ao quadrado de um número.                          | `int square = 5 * 5;`           |
 | `soma += (num * num);`    | Adiciona o quadrado do número atual à variável `soma`.                  | `totalSum += (n * n);`          |
 | `return soma;`            | Retorna o valor acumulado da soma dos quadrados.                        | `return totalSum;`              |
+
+
+
+# 🧪 39. Quadrado dos Dígitos
+
+✅ **Enunciado:**
+
+Neste exercício, você deve elevar cada dígito de um número ao quadrado e concatenar os resultados.
+
+**Exemplos:**
+
+*   Se o número for `9119`, o resultado será `811181`, porque `9^2` é `81` e `1^2` é `1`. (81-1-1-81)
+*   Para um input de `765`, o resultado será `493625`, porque `7^2` é `49`, `6^2` é `36`, e `5^2` é `25`. (49-36-25)
+
+**Observação:** A função aceita um número inteiro e retorna um número inteiro.
+
+💡 **Lógica do Algoritmo:**
+
+1.  Converta o número inteiro de entrada para uma string para poder acessar seus dígitos individualmente.
+2.  Crie um `StringBuilder` para concatenar os quadrados dos dígitos.
+3.  Percorra cada caractere da string (que representa um dígito).
+4.  Para cada caractere:
+    *   Converta o caractere de volta para um número inteiro.
+    *   Eleve esse número ao quadrado.
+    *   Converta o resultado do quadrado de volta para uma string e adicione-o ao `StringBuilder`.
+5.  Após processar todos os dígitos, converta a string final do `StringBuilder` de volta para um número inteiro.
+6.  Retorne esse número inteiro.
+
+🔍 **Complexidade:**
+
+| Tipo   | Valor               |
+| :----- | :------------------ |
+| Tempo  | O(log10(n) \* D)    |
+| Espaço | O(log10(n) \* D)    |
+
+*   **Tempo**: O tempo é proporcional ao número de dígitos no número de entrada (`log10(n)`). Para cada dígito, realizamos operações de conversão e quadratura, além da concatenação. A concatenação de strings no `StringBuilder` é eficiente, mas cada dígito quadrado pode ter até `D` dígitos (onde `D` é o número máximo de dígitos de `9^2 = 81`, ou seja, 2). Portanto, o tempo é aproximadamente `log10(n)` (número de iterações) \* `D` (operações por iteração, como conversão de int para string).
+*   **Espaço**: O `StringBuilder` armazena a string resultante. O tamanho dessa string é proporcional ao número de dígitos no número original multiplicado pelo número máximo de dígitos de um dígito ao quadrado. Portanto, o espaço é aproximadamente `log10(n)` \* `D`.
+
+📘 **Tabela de Métodos / Conceitos Utilizados:**
+
+| Método / Conceito                  | O que faz                                                            | Exemplo de uso                                       |
+| :--------------------------------- | :------------------------------------------------------------------- | :--------------------------------------------------- |
+| `String.valueOf(num)`              | Converte um número inteiro para sua representação em string.         | `String s = String.valueOf(9119);`                   |
+| `StringBuilder`                    | Classe mutável e eficiente para construção de strings.               | `StringBuilder result = new StringBuilder();`        |
+| `charAt(index)`                    | Retorna o caractere na posição especificada da string.               | `char digitChar = s.charAt(i);`                      |
+| `Character.getNumericValue(char)`  | Converte um caractere que representa um dígito para seu valor inteiro. | `int digit = Character.getNumericValue('9');`        |
+| `Math.pow(base, expoente)`         | Eleva um número à potência. Retorna um `double`. (Alternativa: `digit * digit`) | `double squared = Math.pow(9, 2);`                   |
+| `(int) valor`                      | Converte um `double` para `int`, truncando a parte decimal.          | `int val = (int) squared;`                           |
+| `result.append(valor)`             | Adiciona a representação em string do `valor` ao `StringBuilder`.    | `result.append(81);`                                 |
+| `Integer.parseInt(str)`            | Converte uma string numérica para um número inteiro.                 | `int finalNum = Integer.parseInt("811181");`         |
+| `for`                              | Laço de repetição para iterar sobre os caracteres da string.         | `for (int i = 0; i < s.length(); i++) { ... }`      |
+| `s.length()`                       | Retorna o comprimento da string.                                     | `s.length()`                                         |
 
 
 
