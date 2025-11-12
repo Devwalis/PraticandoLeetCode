@@ -1601,7 +1601,63 @@ Um isograma é uma palavra que não possui letras repetidas, sejam elas consecut
 
 
 
+# 🧪 41. Verificar Ordenação de Array
 
+✅ **Enunciado:**
+
+Complete o método que aceita um array de inteiros e retorna um dos seguintes:
+
+*   `"yes, ascending"` - se os números no array estiverem ordenados em ordem crescente.
+*   `"yes, descending"` - se os números no array estiverem ordenados em ordem decrescente.
+*   `"no"` - caso contrário.
+
+A ordem não precisa ser estrita: um array ordenado pode conter duplicatas consecutivas, por exemplo, `[1, 1, 2, 3]` está ordenado em ordem crescente.
+
+É garantido que sempre haverá uma única resposta válida. Mais precisamente:
+
+*   Não haverá arrays com menos de 2 elementos.
+*   Não haverá arrays onde todos os elementos são iguais.
+
+💡 **Lógica do Algoritmo:**
+
+1.  **Verificar Ordem Crescente:**
+    *   Percorra o array do segundo elemento até o final.
+    *   Se, em algum momento, `array[i] < array[i-1]`, significa que a ordem crescente foi quebrada. Interrompa a verificação para ordem crescente.
+    *   Se o laço terminar sem quebrar a ordem crescente, então o array está em ordem crescente.
+2.  **Verificar Ordem Decrescente:**
+    *   Percorra o array do segundo elemento até o final.
+    *   Se, em algum momento, `array[i] > array[i-1]`, significa que a ordem decrescente foi quebrada. Interrompa a verificação para ordem decrescente.
+    *   Se o laço terminar sem quebrar a ordem decrescente, então o array está em ordem decrescente.
+3.  **Retorno:**
+    *   Se o array passou na verificação de ordem crescente, retorne `"yes, ascending"`.
+    *   Caso contrário, se passou na verificação de ordem decrescente, retorne `"yes, descending"`.
+    *   Se não passou em nenhuma das verificações, retorne `"no"`.
+
+**Observação da garantia:** As garantias de que "não haverá arrays com menos de 2 elementos" e "não haverá arrays onde todos os elementos são iguais" simplificam o problema, pois eliminam casos de borda ambíguos ou que precisariam de tratamento especial. Isso significa que podemos ter certeza de que uma das três respostas será sempre a correta e única.
+
+🔍 **Complexidade:**
+
+| Tipo   | Valor |
+| :----- | :---- |
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+*   **Tempo**: O algoritmo percorre o array no máximo duas vezes (uma para tentar a ordem crescente e outra para tentar a ordem decrescente). Cada percurso é linear (O(n)). As operações dentro do loop são constantes. Portanto, a complexidade de tempo é O(n).
+*   **Espaço**: O algoritmo utiliza apenas algumas variáveis booleanas e de índice, independentemente do tamanho do array de entrada. Portanto, o uso de espaço é constante (O(1)).
+
+📘 **Tabela de Métodos / Conceitos Utilizados:**
+
+| Método / Conceito                 | O que faz                                                               | Exemplo de uso                                               |
+| :-------------------------------- | :---------------------------------------------------------------------- | :----------------------------------------------------------- |
+| `boolean isAscending = true;`     | Declara e inicializa uma flag para verificar a ordem crescente.         | `boolean asc = true;`                                        |
+| `boolean isDescending = true;`    | Declara e inicializa uma flag para verificar a ordem decrescente.       | `boolean desc = true;`                                       |
+| `for (int i = 1; i < array.length; i++)` | Laço `for` para iterar sobre o array a partir do segundo elemento, comparando com o anterior. | `for (int i = 1; i < arr.length; i++) { ... }`              |
+| `array[i] < array[i-1]`           | Compara o elemento atual com o elemento anterior para verificar a ordem crescente. | `if (arr[i] < arr[i-1])`                                    |
+| `array[i] > array[i-1]`           | Compara o elemento atual com o elemento anterior para verificar a ordem decrescente. | `if (arr[i] > arr[i-1])`                                    |
+| `isAscending = false;`            | Define a flag como `false` quando a condição de ordem crescente é quebrada. | `asc = false;`                                               |
+| `isDescending = false;`           | Define a flag como `false` quando a condição de ordem decrescente é quebrada. | `desc = false;`                                              |
+| `if (condicao) return "string";`  | Estrutura condicional para retornar o resultado apropriado.             | `if (isAscending) return "yes, ascending";`                  |
+| `return "string";`                | Retorna a string final com a classificação da ordenação.                | `return "no";`                                               |
 
 
 
