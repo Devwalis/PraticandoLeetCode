@@ -46,6 +46,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 37. [Acumular Caracteres](#-37-Acumular-Caracteres)
 38. [Soma dos Quadrados](#-38-Soma-Dos-Quadrado)
 39. [Quadrado dos Dígitos](#-39-Quadrado-dos-Dígitos)
+40. [É um Isograma](#-40-É-um-Isograma)
 
 
 
@@ -1553,7 +1554,50 @@ Neste exercício, você deve elevar cada dígito de um número ao quadrado e con
 
   
 
+# 🧪 40. É um Isograma?
 
+✅ **Enunciado:**
+
+Um isograma é uma palavra que não possui letras repetidas, sejam elas consecutivas ou não. Implemente uma função que determine se uma string, que contém apenas letras, é um isograma. Assuma que a string vazia é um isograma. Ignore a diferença entre maiúsculas e minúsculas.
+
+**Exemplos:**
+
+*   `"Dermatoglyphics"` --> `true`
+*   `"aba"` --> `false`
+*   `"moOse"` --> `false` (ignorar maiúsculas/minúsculas)
+
+💡 **Lógica do Algoritmo:**
+
+1.  **Tratamento da String:** Converta a string de entrada para letras minúsculas para ignorar a distinção entre maiúsculas e minúsculas.
+2.  **Verificação da String Vazia:** Se a string resultante estiver vazia, ela é um isograma por definição, então retorne `true`.
+3.  **Uso de um Conjunto (Set):** Utilize um `HashSet<Character>` para armazenar as letras que já foram encontradas. `Set` é ideal porque não permite elementos duplicados.
+4.  **Iteração:** Percorra cada caractere da string (agora em minúsculas).
+5.  **Verificação de Duplicatas:** Para cada caractere:
+    *   Tente adicioná-lo ao `HashSet`.
+    *   Se o método `add()` retornar `false`, significa que o caractere já estava no `Set`, ou seja, é uma letra repetida. Nesse caso, a string não é um isograma, então retorne `false`.
+6.  **Conclusão:** Se o laço for concluído sem encontrar letras repetidas, significa que a string é um isograma. Retorne `true`.
+
+🔍 **Complexidade:**
+
+| Tipo   | Valor |
+| :----- | :---- |
+| Tempo  | O(n)  |
+| Espaço | O(k)  |
+
+*   **Tempo**: O algoritmo percorre a string de entrada uma única vez (após a conversão para minúsculas, que também é O(n)). As operações de `add()` e verificação em um `HashSet` têm complexidade média O(1). Portanto, o tempo total é dominado pelo percurso da string, resultando em O(n), onde `n` é o comprimento da string.
+*   **Espaço**: O `HashSet` armazena no máximo `k` caracteres únicos, onde `k` é o número de letras distintas no alfabeto (26 para o alfabeto inglês). Este `k` é uma constante, portanto, o uso de espaço é considerado O(1) na prática, ou O(k) se considerarmos o limite do alfabeto.
+
+📘 **Tabela de Métodos / Conceitos Utilizados:**
+
+| Método / Conceito                 | O que faz                                                                    | Exemplo de uso                                                 |
+| :-------------------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------- |
+| `String.toLowerCase()`            | Converte todos os caracteres da string para letras minúsculas.               | `"Moose".toLowerCase()` → `"moose"`                            |
+| `String.isEmpty()`                | Verifica se a string está vazia.                                             | `"".isEmpty()` → `true`                                        |
+| `Set<Character>`                  | Uma interface que representa uma coleção de elementos únicos.                | `Set<Character> seen = new HashSet<>();`                       |
+| `HashSet<Character>`              | Uma implementação concreta de `Set` que armazena elementos em uma tabela hash. | `Set<Character> chars = new HashSet<>();`                      |
+| `set.add(elemento)`               | Tenta adicionar um elemento ao `Set`. Retorna `true` se adicionado com sucesso, `false` se o elemento já existia. | `seen.add('a')` → `true`; `seen.add('a')` → `false`            |
+| `for (char c : string.toCharArray())` | Laço `for-each` para iterar sobre cada caractere de uma string convertida em array de caracteres. | `for (char ch : "abc".toCharArray()) { ... }`                  |
+| `return boolean;`                 | Retorna um valor booleano (`true` ou `false`).                              | `return true;`                                                 |
 
 
 
