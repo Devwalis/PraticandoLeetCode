@@ -47,6 +47,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 38. [Soma dos Quadrados](#-38-Soma-Dos-Quadrado)
 39. [Quadrado dos Dígitos](#-39-Quadrado-dos-Dígitos)
 40. [É um Isograma](#-40-É-um-Isograma)
+41. [Verificar Ordenação de um array](#-41-verificar-ordenação-de-array)
+42. [Arredondar para Duas Casas Decimais](#-41-Arredondar-para-Duas-Casas-Decimais)
 
 
 
@@ -1658,7 +1660,65 @@ A ordem não precisa ser estrita: um array ordenado pode conter duplicatas conse
 | `isDescending = false;`           | Define a flag como `false` quando a condição de ordem decrescente é quebrada. | `desc = false;`                                              |
 | `if (condicao) return "string";`  | Estrutura condicional para retornar o resultado apropriado.             | `if (isAscending) return "yes, ascending";`                  |
 | `return "string";`                | Retorna a string final com a classificação da ordenação.                | `return "no";`                                               |
+# 🧪 42. Arredondar para Duas Casas Decimais
 
+✅ **Enunciado:**
+
+Como existem muitos exercícios que exigem arredondar números para duas casas decimais, você decidiu extrair o método para facilitar o processo.
+
+Mas você nem consegue acertar isso!
+
+Rápido, corrija o bug antes que todos no CodeWars percebam que você não consegue nem arredondar um número corretamente!
+
+**Exemplos (esperados):**
+
+*   `roundToTwoDecimalPlaces(3.14159)` --> `3.14`
+*   `roundToTwoDecimalPlaces(10.00000)` --> `10.00`
+*   `roundToTwoDecimalPlaces(5.6789)` --> `5.68`
+*   `roundToTwoDecimalPlaces(1.2)` --> `1.20`
+*   `roundToTwoDecimalPlaces(0.005)` --> `0.01`
+
+💡 **Lógica do Algoritmo:**
+
+O problema de arredondamento de `double` ou `float` para um número específico de casas decimais não é trivial devido à forma como os números de ponto flutuante são representados internamente no computador (podem ter imprecisões). Multiplicar por 100, arredondar e depois dividir por 100 nem sempre funciona para todos os casos (especialmente os `0.005`).
+
+A abordagem mais robusta e recomendada em Java é usar a classe `BigDecimal` para garantir precisão no arredondamento:
+
+1.  Crie um objeto `BigDecimal` a partir do `double` de entrada.
+    *   *Nota de segurança*: É mais seguro converter o `double` para `String` primeiro (`String.valueOf(number)`) e depois criar o `BigDecimal` a partir da `String` para evitar pequenas imprecisões de ponto flutuante na construção do `BigDecimal` direto de um `double`.
+2.  Use o método `setScale()` de `BigDecimal` para definir o número desejado de casas decimais (2, neste caso) e o modo de arredondamento.
+    *   `RoundingMode.HALF_UP` é um modo de arredondamento comum que arredonda para cima se o dígito a ser descartado for 5 ou maior.
+3.  Converta o `BigDecimal` resultante de volta para um `double`.
+
+**Alternativa (menos robusta para todos os casos, mas funciona para muitos):**
+
+1.  Multiplique o número por 100.
+2.  Arredonde o número para o inteiro mais próximo usando `Math.round()`.
+3.  Divida o resultado por `100.0` (usando um `double` para garantir divisão de ponto flutuante).
+    *   Esta abordagem pode ter problemas com números como `0.005` ou outros valores que, devido a imprecisões de ponto flutuante, podem não ser representados exatamente como esperado antes do `Math.round()`. A solução com `BigDecimal` é superior para precisão.
+
+🔍 **Complexidade:**
+
+| Tipo   | Valor |
+| :----- | :---- |
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+*   **Tempo**: As operações de conversão para `BigDecimal`, definição de escala e conversão de volta para `double` são operações de tempo constante, independentemente do valor do número.
+*   **Espaço**: O uso de `BigDecimal` e outras variáveis auxiliares é constante, pois não depende do "tamanho" do número de entrada.
+
+📘 **Tabela de Métodos / Conceitos Utilizados:**
+
+| Método / Conceito                 | O que faz                                                                                              | Exemplo de uso                                                                                                 |
+| :-------------------------------- | :----------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| `BigDecimal(String val)`          | Construtor que cria um `BigDecimal` a partir da representação de uma `String` de um número. **Recomendado para doubles.** | `new BigDecimal(String.valueOf(3.14159))`                                                                      |
+| `BigDecimal(double val)`          | Construtor que cria um `BigDecimal` a partir de um `double`. Pode ter problemas de precisão inerentes ao `double`. | `new BigDecimal(3.14159)` (usado com cautela)                                                                  |
+| `setScale(int newScale, RoundingMode roundingMode)` | Retorna um `BigDecimal` arredondado para o número especificado de casas decimais (`newScale`) usando o modo de arredondamento fornecido. | `bd.setScale(2, RoundingMode.HALF_UP)`                                                                         |
+| `RoundingMode.HALF_UP`            | Uma enumeração que define o modo de arredondamento. `HALF_UP` arredonda para cima se o dígito a ser descartado for `>= 5`. | `RoundingMode.HALF_UP`                                                                                         |
+| `BigDecimal.doubleValue()`        | Converte este `BigDecimal` em um `double`.                                                             | `bigDecimalResult.doubleValue()`                                                                               |
+| `double numero`                   | Parâmetro de entrada da função, um número de ponto flutuante.                                          | `double val = 3.14159;`                                                                                        |
+| `import java.math.BigDecimal;`    | Importa a classe `BigDecimal` do pacote `java.math`.                                                   | `import java.math.BigDecimal;`                                                                                 |
+| `import java.math.RoundingMode;`  | Importa a enumeração `RoundingMode` do pacote `java.math`.                                             | `import java.math.RoundingMode;`                                                                               |
 
 
 
