@@ -49,7 +49,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 40. [É um Isograma](#-40-É-um-Isograma)
 41. [Verificar Ordenação de um array](#-41-verificar-ordenação-de-array)
 42. [Arredondar para Duas Casas Decimais](#-41-Arredondar-para-Duas-Casas-Decimais)
-
+43. [Verificar se é Fator](#-43-Verificar-se-é-fator)
 
 
 
