@@ -49,7 +49,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 40. [É um Isograma](#-40-É-um-Isograma)
 41. [Verificar Ordenação de um array](#-41-verificar-ordenação-de-array)
 42. [Arredondar para Duas Casas Decimais](#-41-Arredondar-para-Duas-Casas-Decimais)
-
+43. [Verificar se é Fator](#-43-Verificar-se-é-fator)
 
 
 
@@ -1719,6 +1719,61 @@ A abordagem mais robusta e recomendada em Java é usar a classe `BigDecimal` par
 | `double numero`                   | Parâmetro de entrada da função, um número de ponto flutuante.                                          | `double val = 3.14159;`                                                                                        |
 | `import java.math.BigDecimal;`    | Importa a classe `BigDecimal` do pacote `java.math`.                                                   | `import java.math.BigDecimal;`                                                                                 |
 | `import java.math.RoundingMode;`  | Importa a enumeração `RoundingMode` do pacote `java.math`.                                             | `import java.math.RoundingMode;`                                                                               |
+
+
+# 🧪 43. Verificar se é Fator
+
+## ✅ Enunciado
+
+Esta função deve testar se o `factor` é um fator de `base`.
+
+Retorne `true` se for um fator ou `false` se não for.
+
+### Sobre fatores:
+
+Fatores são números que você pode multiplicar para obter outro número.
+
+- 2 e 3 são fatores de 6 porque: 2 * 3 = 6
+- Você pode encontrar um fator dividindo números. Se o resto for 0, então o número é um fator
+- Você pode usar o operador de módulo (`%`) na maioria das linguagens para verificar o resto
+
+**Exemplo:** 2 não é um fator de 7 porque: 7 % 2 = 1
+
+**Nota:** `base` é um número não negativo, `factor` é um número positivo.
+
+## 💡 Lógica do Algoritmo
+
+O problema define claramente que um `factor` de `base` é um número que, quando `base` é dividido por ele, o resto é 0.
+
+Em Java (e na maioria das linguagens de programação), o operador de módulo (`%`) retorna o resto de uma divisão.
+
+Portanto, a lógica é simplesmente calcular `base % factor`:
+
+- Se o resultado dessa operação for 0, o `factor` é um fator de `base`, e a função deve retornar `true`
+- Caso contrário (se o resto não for 0), o `factor` não é um fator, e a função deve retornar `false`
+
+As restrições (`base` não negativo, `factor` positivo) garantem que não precisamos nos preocupar com divisão por zero ou outros casos especiais.
+
+## 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** A função executa uma única operação de módulo (`%`). Esta é uma operação de tempo constante, independentemente dos valores de `base` e `factor` (dentro dos limites dos tipos de dados)
+
+- **Espaço:** A função utiliza apenas algumas variáveis para armazenar os parâmetros e o resultado temporário da operação. Isso é um uso de espaço constante
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|-------------------|-----------|----------------|
+| `int base` | Primeiro parâmetro da função, o número a ser verificado | `int dividend = 10;` |
+| `int factor` | Segundo parâmetro da função, o possível fator | `int divisor = 2;` |
+| `base % factor` | Operador de módulo. Retorna o resto da divisão de `base` por `factor` | `10 % 2 → 0; 7 % 2 → 1` |
+| `== 0` | Operador de comparação para verificar se o resto é zero | `(10 % 2) == 0 → true` |
+| `return boolean;` | Retorna um valor booleano (`true` ou `false`) | `return true;` |
 
 
 
