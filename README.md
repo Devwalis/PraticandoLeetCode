@@ -51,7 +51,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 42. [Arredondar para Duas Casas Decimais](#-41-Arredondar-para-Duas-Casas-Decimais)
 43. [Verificar se é Fator](#-43-Verificar-se-é-fator)
 44. [Tornar Negativo](#-44-tornar-negativo)
-
+45. [Substituir Letras por posições](#-45-substituir-letras-por-posição)
 
 
 
