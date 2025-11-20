@@ -1777,6 +1777,47 @@ As restrições (`base` não negativo, `factor` positivo) garantem que não prec
 
 
 
+## 🧪 44. Tornar Negativo
+
+### ✅ Enunciado
+Nesta tarefa simples, você recebe um número e deve torná-lo negativo. Mas talvez o número já seja negativo?
+
+**Exemplos:**
+
+| Entrada | Saída |
+|---------|-------|
+| `1`     | `-1`  |
+| `-5`    | `-5`  |
+| `0`     | `0`   |
+
+### 💡 Lógica do Algoritmo
+1.  **Verificação Condicional:**
+    - Verifica se o número recebido é maior que zero (`x > 0`).
+    - Se for verdadeiro (positivo), retorna o valor negativo (`-x`).
+    - Se for falso (já é negativo ou zero), retorna o próprio número (`x`).
+
+2.  **Alternativa com Matemática:**
+    - Utiliza a função de valor absoluto para garantir que o número seja positivo e aplica o sinal negativo na frente: `-Math.abs(x)`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** A operação envolve apenas uma verificação e uma inversão de sinal, ou uma chamada matemática simples.
+- **Espaço:** Nenhuma estrutura de dados adicional é utilizada.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                      | Exemplo de uso                |
+|-------------------------|----------------------------------------------------------------|-------------------------------|
+| `if (x > 0)`            | Estrutura condicional para verificar se o número é positivo.   | `if (num > 0) { ... }`        |
+| `-x` (Operador Unário)  | Inverte o sinal do número (positivo vira negativo).            | `return -num;`                |
+| `Math.abs(x)`           | Retorna o valor absoluto (sempre positivo) de um número.       | `Math.abs(-5) // retorna 5`   |
+| `condição ? true : false` | Operador ternário para simplificar o `if/else` em uma linha. | `return (x > 0) ? -x : x;`    |
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
