@@ -51,6 +51,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 42. [Arredondar para Duas Casas Decimais](#-41-Arredondar-para-Duas-Casas-Decimais)
 43. [Verificar se é Fator](#-43-Verificar-se-é-fator)
 44. [Tornar Negativo](#-44-tornar-negativo)
+45. [Substituir Letras por posições](#-45-substituir-letras-por-posição)
 
 
 
@@ -1818,6 +1819,55 @@ Nesta tarefa simples, você recebe um número e deve torná-lo negativo. Mas tal
 | `-x` (Operador Unário)  | Inverte o sinal do número (positivo vira negativo).            | `return -num;`                |
 | `Math.abs(x)`           | Retorna o valor absoluto (sempre positivo) de um número.       | `Math.abs(-5) // retorna 5`   |
 | `condição ? true : false` | Operador ternário para simplificar o `if/else` em uma linha. | `return (x > 0) ? -x : x;`    |
+
+
+
+## 🧪 45. Substituir Letras por Posição
+
+### ✅ Enunciado
+Neste exercício, você deve receber uma string e substituir cada letra pela sua posição no alfabeto.
+
+Se houver algo no texto que não seja uma letra, ignore-o e não o inclua no retorno.
+
+**Regra:** `"a" = 1`, `"b" = 2`, etc.
+
+**Exemplo:**
+Entrada: `"The sunset sets at twelve o' clock."`
+Saída: `"20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"`
+
+### 💡 Lógica do Algoritmo
+O computador enxerga caracteres como números (Tabela ASCII).
+- A letra `'a'` minúscula tem o valor **97**. Para transformá-la em **1**, subtraímos **96**.
+- A letra `'A'` maiúscula tem o valor **65**. Para transformá-la em **1**, subtraímos **64**.
+
+**Passo a passo:**
+1. Criar um construtor de texto (`StringBuilder`) para montar o resultado.
+2. Percorrer a string caractere por caractere.
+3. Verificar manualmente se o caractere está entre `'a'` e `'z'` ou entre `'A'` e `'Z'`.
+4. Se for letra, aplicar a subtração matemática correspondente para achar a posição (1-26).
+5. Adicionar o número encontrado ao resultado, seguido de um espaço.
+6. Ignorar qualquer símbolo que não entre nas condições acima.
+7. Ao final, remover o espaço extra que ficou no final da string.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** O algoritmo percorre a string apenas uma vez.
+- **Espaço:** O espaço utilizado cresce proporcionalmente ao tamanho da string de entrada para formar o resultado.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                           | Exemplo de uso                               |
+|-------------------------|---------------------------------------------------------------------|----------------------------------------------|
+| `charAt(i)`             | Pega o caractere na posição `i`.                                    | `text.charAt(0)`                             |
+| `c >= 'a' && c <= 'z'`  | Verifica se o caractere está no intervalo de letras minúsculas ASCII.| `if (c >= 'a' && c <= 'z')`                  |
+| `c - 96`                | Matemática ASCII: converte o código da letra ('a'=97) para índice (1).| `int pos = 'a' - 96; // 1`                   |
+| `StringBuilder`         | Classe eficiente para concatenar muitas strings/números.            | `sb.append(numero)`                          |
+| `trim()`                | Remove espaços em branco do início e do fim da string final.        | `"1 2 3 ".trim() -> "1 
 
 ## 📂 Organização
 
