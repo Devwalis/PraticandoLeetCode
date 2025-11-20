@@ -40,8 +40,9 @@ public class SubstituirLetrasPorPosicoes {
         return resultado.toString().trim();
 
     }
-
-    
+public static void main(String[] args) {
+    System.out.println(PosicaoAlfabeto("O pôr do sol se põe às doze horas."));
+}
     
 
     
