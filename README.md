@@ -74,7 +74,7 @@ Verifique se uma string é um palíndromo, ou seja, se pode ser lida da mesma fo
 
 | Método                          | O que faz                                                                                   | Exemplo de uso                             |
 |--------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------|
-| `replaceAll("\\s+", "")`       | Substitui todos os espaços da string por nada (`""`). A expressão `\\s+` representa qualquer espaço em branco. | `"A B C".replaceAll("\\s+", "") → "ABC"`  |
+| `replaceAll("\\s+", "")`       | Substitui todos os espaços da string por nada (`" "`). A expressão `\\s+` representa qualquer espaço em branco. | `"A B C".replaceAll("\\s+", "") → "ABC"`  |
 | `toLowerCase()`                | Converte todos os caracteres da string para letras minúsculas.                              | `"Radar".toLowerCase() → "radar"`         |
 | `length()`                     | Retorna o número de caracteres da string.                                                    | `"radar".length() → 5`                     |
 | `charAt(index)`                | Retorna o caractere na posição indicada pelo índice. O índice começa do zero.               | `"radar".charAt(0) → 'r'"`                 |
