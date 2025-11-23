@@ -52,6 +52,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 43. [Verificar se é Fator](#-43-Verificar-se-é-fator)
 44. [Tornar Negativo](#-44-tornar-negativo)
 45. [Substituir Letras por posições](#-45-substituir-letras-por-posição)
+46. [Remover menor valor](#-46-Remover-menor-valor)
 
 
 
@@ -1868,6 +1869,51 @@ O computador enxerga caracteres como números (Tabela ASCII).
 | `c - 96`                | Matemática ASCII: converte o código da letra ('a'=97) para índice (1).| `int pos = 'a' - 96; // 1`                   |
 | `StringBuilder`         | Classe eficiente para concatenar muitas strings/números.            | `sb.append(numero)`                          |
 | `trim()`                | Remove espaços em branco do início e do fim da string final.        | `"1 2 3 ".trim() -> "1 
+
+
+
+## 🧪 46. Remover o Menor Valor
+
+### ✅ Enunciado
+O "Museu das Coisas Incrivelmente Chatas" quer se livrar de algumas exposições. Miriam, a arquiteta, decidiu remover a exposição mais chata (a que tem a menor avaliação).
+
+Sua tarefa é escrever um programa que remova o **menor valor** de um array de inteiros.
+- **Não altere** o array original (imutabilidade).
+- Se houver múltiplos elementos com o mesmo menor valor, remova o que tiver o **menor índice** (o que aparece primeiro).
+- Se o array for vazio, retorne um array vazio.
+- A ordem dos elementos restantes deve ser mantida.
+
+**Exemplos:**
+*   Entrada: `[1, 2, 3, 4, 5]` → Saída: `[2, 3, 4, 5]`
+*   Entrada: `[5, 3, 2, 1, 4]` → Saída: `[5, 3, 2, 4]`
+*   Entrada: `[2, 2, 1, 2, 1]` → Saída: `[2, 2, 2, 1]`
+
+### 💡 Lógica do Algoritmo
+Como não podemos usar métodos prontos de remoção (pois arrays em Java têm tamanho fixo), a lógica deve ser feita em duas etapas manuais:
+
+1.  **Encontrar o Alvo:** Primeiro, precisamos descobrir **qual** é o índice do menor número. Percorremos o array comparando os valores.
+    *   *Detalhe importante:* Se encontrarmos um número igual ao menor atual, **não** atualizamos o índice. Isso garante que, em caso de empate, removeremos sempre o primeiro que apareceu (menor índice).
+    
+2.  **Copiar e Pular:** Criamos um **novo array** com tamanho `N-1`. Percorremos o array original novamente e copiamos todos os números para o novo, **exceto** quando o índice for igual ao índice do menor valor que encontramos no passo 1.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** Percorremos o array duas vezes (uma para achar o menor, outra para copiar). `2N` ainda é considerado `O(n)`.
+- **Espaço:** Criamos um novo array quase do mesmo tamanho do original para retornar o resultado.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito        | O que faz                                                                 | Exemplo de uso                         |
+|--------------------------|---------------------------------------------------------------------------|----------------------------------------|
+| `numbers.length`         | Retorna o tamanho total do array.                                         | `int tamanho = array.length;`          |
+| `new int[tamanho - 1]`   | Cria um novo array de inteiros com uma posição a menos.                   | `int[] resultado = new int[4];`        |
+| `continue`               | Pula a iteração atual do laço `for` e vai para a próxima.                 | `if (i == alvo) continue;`             |
+| `if (numeros == null)`   | Verificação de segurança para evitar erros se a entrada não existir.      | `if (arr == null) return ...`          |
 
 ## 📂 Organização
 
