@@ -53,6 +53,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 44. [Tornar Negativo](#-44-tornar-negativo)
 45. [Substituir Letras por posições](#-45-substituir-letras-por-posição)
 46. [Remover menor valor](#-46-Remover-menor-valor)
+47. [Caracter Do Meio](#-47-caracteres-do-meio)
 
 
 
@@ -1914,6 +1915,52 @@ Como não podemos usar métodos prontos de remoção (pois arrays em Java têm t
 | `new int[tamanho - 1]`   | Cria um novo array de inteiros com uma posição a menos.                   | `int[] resultado = new int[4];`        |
 | `continue`               | Pula a iteração atual do laço `for` e vai para a próxima.                 | `if (i == alvo) continue;`             |
 | `if (numeros == null)`   | Verificação de segurança para evitar erros se a entrada não existir.      | `if (arr == null) return ...`          |
+
+
+## 🧪 47. Caracteres do Meio
+
+### ✅ Enunciado
+Você receberá uma string não vazia. Seu trabalho é retornar o(s) caractere(s) do meio da string.
+
+*   Se o tamanho da string for **ímpar**, retorne o caractere do meio.
+*   Se o tamanho da string for **par**, retorne os 2 caracteres do meio.
+
+**Exemplos:**
+
+| Entrada | Saída | Explicação |
+|---------|-------|------------|
+| `"test"` | `"es"` | Tamanho 4 (par). Meio: índices 1 e 2. |
+| `"testing"` | `"t"` | Tamanho 7 (ímpar). Meio: índice 3. |
+| `"middle"` | `"dd"` | Tamanho 6 (par). Meio: índices 2 e 3. |
+| `"A"` | `"A"` | Tamanho 1 (ímpar). Meio: índice 0. |
+
+### 💡 Lógica do Algoritmo
+O segredo está em como a divisão de inteiros funciona e como manipular os índices da string (começando em 0).
+
+1.  Calculamos a metade: `tamanho / 2`.
+2.  Verificamos se é **Par** ou **Ímpar** usando o resto da divisão (`% 2`).
+3.  **Se for PAR:** O "meio" cai exatamente no primeiro caractere da segunda metade. Precisamos dele e do anterior.
+    *   Usamos `substring(metade - 1, metade + 1)`.
+4.  **Se for ÍMPAR:** O resultado da divisão aponta exatamente para o índice central.
+    *   Usamos `substring(metade, metade + 1)`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** O acesso a caracteres de uma string e operações matemáticas básicas são instantâneos, independente do tamanho da string (a string é acessada diretamente pelo índice).
+- **Espaço:** Retornamos apenas uma string minúscula (1 ou 2 caracteres).
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito         | O que faz                                                                 | Exemplo de uso                  |
+|---------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `word.length()`           | Retorna o número de caracteres na string.                                 | `"abc".length() // 3`           |
+| `tamanho % 2 == 0`        | Verifica se um número é par (resto da divisão por 2 é zero).              | `4 % 2 // 0 (true)`             |
+| `substring(inicio, fim)`  | Extrai uma parte da string. **Atenção:** O índice `fim` não é incluído.   | `"Java".substring(0, 2) // "Ja"`|
 
 ## 📂 Organização
 
