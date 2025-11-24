@@ -54,6 +54,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 45. [Substituir Letras por posições](#-45-substituir-letras-por-posição)
 46. [Remover menor valor](#-46-Remover-menor-valor)
 47. [Caracter Do Meio](#-47-caracteres-do-meio)
+48. [Velocidade da barata](#-48)
 
 
 
@@ -1961,6 +1962,55 @@ O segredo está em como a divisão de inteiros funciona e como manipular os índ
 | `word.length()`           | Retorna o número de caracteres na string.                                 | `"abc".length() // 3`           |
 | `tamanho % 2 == 0`        | Verifica se um número é par (resto da divisão por 2 é zero).              | `4 % 2 // 0 (true)`             |
 | `substring(inicio, fim)`  | Extrai uma parte da string. **Atenção:** O índice `fim` não é incluído.   | `"Java".substring(0, 2) // "Ja"`|
+
+
+## 🧪 48. Velocidade da Barata
+
+### ✅ Enunciado
+A barata é um dos insetos mais rápidos. Escreva uma função que receba sua velocidade em **km por hora** e retorne em **cm por segundo**.
+
+O resultado deve ser um número inteiro, arredondado para baixo (piso/floor).
+
+**Exemplo:**
+`1.08` km/h --> `30` cm/s
+
+**Nota:** A entrada é um número Real (`double`) >= 0. O resultado deve ser um Inteiro (`int`).
+
+### 💡 Lógica do Algoritmo
+O problema é uma questão de física simples (conversão de unidades).
+
+1.  **Quilômetros para Centímetros:**
+    Sabemos que `1 km = 1000 m` e `1 m = 100 cm`.
+    Logo, `1 km = 100.000 cm`.
+2.  **Horas para Segundos:**
+    Sabemos que `1 h = 60 min` e `1 min = 60 s`.
+    Logo, `1 h = 3.600 s`.
+
+**Fórmula:**
+Para transformar a velocidade `X`, fazemos:
+`Resultado = (X * 100.000) / 3.600`
+
+**Arredondamento:**
+Como precisamos retornar um inteiro arredondado para baixo, o Java facilita isso. Ao converter um número decimal positivo (`double`) para inteiro (`int`), a linguagem simplesmente "corta" tudo que vem depois da vírgula (truncamento), o que equivale matematicamente à função *floor*.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Apenas uma operação matemática simples de multiplicação e divisão.
+- **Espaço:** Uso apenas de variáveis primitivas temporárias.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `double`                | Tipo primitivo para números com ponto flutuante (decimais).               | `double vel = 1.08;`            |
+| `(int) variavel`        | Casting explícito. Força a conversão de double para int, removendo decimais.| `(int) 29.9` resulta em `29`    |
+| `*` e `/`               | Operadores aritméticos básicos.                                           | `val * 100000 / 3600`           |
+
 
 ## 📂 Organização
 
