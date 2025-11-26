@@ -54,7 +54,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 45. [Substituir Letras por posições](#-45-substituir-letras-por-posição)
 46. [Remover menor valor](#-46-Remover-menor-valor)
 47. [Caracter Do Meio](#-47-caracteres-do-meio)
-48. [Velocidade da barata](#-48)
+48. [Velocidade da barata](#-48-Velocidade-da-barata)
 
 
 
