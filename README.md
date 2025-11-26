@@ -2068,6 +2068,57 @@ Portanto, a solução mais eficiente não requer loops nem arrays, apenas multip
 
 
 
+## 🧪 50. O Problema dos Canos de Lario e Muigi
+
+### ✅ Enunciado
+Parece que um encanador arruaceiro e seu irmão andaram correndo por aí e danificando suas fases novamente. Os canos que conectam as fases do seu nível precisam ser consertados.
+
+Os canos estão corretos quando cada cano após o primeiro é exatamente **1 a mais** que o anterior (uma sequência perfeita).
+
+**Tarefa:**
+Dada uma lista de números únicos ordenados em ordem crescente, retorne uma nova lista para que os valores incrementem de 1 em 1, indo do valor mínimo ao valor máximo da lista original (ambos inclusos).
+
+**Exemplo:**
+Entrada: `1, 3, 5, 6, 7, 8`
+Saída: `1, 2, 3, 4, 5, 6, 7, 8`
+
+### 💡 Lógica do Algoritmo
+O problema pede para recriar uma sequência completa (1, 2, 3...) baseada apenas nos limites da entrada.
+
+1.  **Limites:** Como a entrada já é ordenada, o **Mínimo** é o primeiro elemento (`arr[0]`) e o **Máximo** é o último elemento (`arr[length-1]`).
+2.  **Tamanho:** Para saber quantos números existem entre X e Y (inclusos), usamos a matemática: `Tamanho = Max - Min + 1`.
+3.  **Preenchimento:** Criamos um novo array com esse tamanho e usamos um laço `for`. Em cada posição `i`, o valor será o valor inicial (`Min`) somado a `i`.
+
+Exemplo mental com entrada `[4, 7]`:
+*   Min = 4, Max = 7.
+*   Tamanho = 7 - 4 + 1 = 4.
+*   Array[0] = 4 + 0 = 4
+*   Array[1] = 4 + 1 = 5
+*   Array[2] = 4 + 2 = 6
+*   Array[3] = 4 + 3 = 7
+*   Resultado: `[4, 5, 6, 7]`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(k)  |
+| Espaço | O(k)  |
+
+> Onde `k` é a diferença entre o maior e o menor número (o tamanho do intervalo).
+
+- **Tempo:** O algoritmo itera exatamente o número de vezes necessário para preencher a nova sequência.
+- **Espaço:** Aloca memória proporcional ao tamanho do intervalo de números.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito         | O que faz                                                                 | Exemplo de uso                  |
+|---------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `arr[arr.length - 1]`     | Acessa o último elemento de um array.                                     | `int max = nums[nums.length-1];`|
+| `max - min + 1`           | Fórmula para calcular a quantidade de inteiros em um intervalo fechado.   | `10 - 5 + 1 = 6` itens.         |
+| `min + i`                 | Lógica aritmética para gerar uma sequência crescente a partir de uma base.| `base + 0, base + 1...`         |
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
