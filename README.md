@@ -55,6 +55,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 46. [Remover menor valor](#-46-Remover-menor-valor)
 47. [Caracter Do Meio](#-47-caracteres-do-meio)
 48. [Velocidade da barata](#-48-Velocidade-da-barata)
+49. [Soma da Linha De Impares](#-49-Soma-da-linha-de-impares)
 
 
 
