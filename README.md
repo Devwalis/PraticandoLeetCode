@@ -2011,7 +2011,57 @@ Como precisamos retornar um inteiro arredondado para baixo, o Java facilita isso
 | `(int) variavel`        | Casting explícito. Força a conversão de double para int, removendo decimais.| `(int) 29.9` resulta em `29`    |
 | `*` e `/`               | Operadores aritméticos básicos.                                           | `val * 100000 / 3600`           |
 
+## 🧪 49. Soma da Linha de Ímpares
 
+### ✅ Enunciado
+Dado um triângulo de números ímpares consecutivos:
+
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+...
+
+Calcule a soma dos números na **n-ésima** linha deste triângulo (começando no índice 1).
+
+**Exemplos:**
+*   `1` --> `1`
+*   `2` --> `3 + 5 = 8`
+
+### 💡 Lógica do Algoritmo
+Podemos tentar resolver isso somando número por número ("Força Bruta") ou encontrando o padrão matemático ("Pensamento Crítico").
+
+Analisando as saídas:
+1.  Linha 1: Soma = 1
+2.  Linha 2: Soma = 8
+3.  Linha 3: Soma = 27 (`7 + 9 + 11`)
+4.  Linha 4: Soma = 64 (`13 + 15 + 17 + 19`)
+
+Os resultados (`1, 8, 27, 64...`) são exatamente o **cubo** do número da linha:
+*   $1^3 = 1$
+*   $2^3 = 8$
+*   $3^3 = 27$
+*   $4^3 = 64$
+
+Portanto, a solução mais eficiente não requer loops nem arrays, apenas multiplicar o número de entrada por ele mesmo 3 vezes (`n * n * n`).
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** A operação matemática de multiplicação é instantânea e constante, não importa o tamanho de `n`.
+- **Espaço:** Não armazenamos nada na memória.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `n * n * n`             | Calcula o cubo de um número (exponenciação simples).                      | `2 * 2 * 2 = 8`                 |
+| `return`                | Devolve o resultado imediato da operação matemática.                      | `return n * n * n;`             |
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
