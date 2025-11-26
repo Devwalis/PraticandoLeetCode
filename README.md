@@ -56,6 +56,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 47. [Caracter Do Meio](#-47-caracteres-do-meio)
 48. [Velocidade da barata](#-48-Velocidade-da-barata)
 49. [Soma da Linha De Impares](#-49-Soma-da-linha-de-impares)
+50. [O problema dos canos de Lario e Muigi](#-50-O-problema-dos-canos-de-Lario-e-Muigi)
 
 
 
@@ -2062,7 +2063,11 @@ Portanto, a solução mais eficiente não requer loops nem arrays, apenas multip
 | Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
 |-------------------------|---------------------------------------------------------------------------|---------------------------------|
 | `n * n * n`             | Calcula o cubo de um número (exponenciação simples).                      | `2 * 2 * 2 = 8`                 |
-| `return`                | Devolve o resultado imediato da operação matemática.                      | `return n * n * n;`             |
+| `return`                | Devolve o resultado imediato da operação matemática.                      | `return n * n * n;
+`             |
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
