@@ -23,4 +23,17 @@ public boolean adiciona(String elemento) throws Exception{
     } 
     return false;
 }
+
+public int tamanho(){
+    return this.tamanho();
+}
+
+
+@Override
+    public String toString(){
+        return "Vetor [elementos=" + Arrays.toString(elementos) +"tamanho=" + tamanho +"]";
+    }
+
+
+
 }
