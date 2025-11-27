@@ -1,4 +1,4 @@
-package PraticandoLogica.src.estruturaDeDados.test;
+package PraticandoLogica.src.test;
 
 import PraticandoLogica.src.estruturaDeDados.Vetor;
 
@@ -6,7 +6,7 @@ public class TestandoVetor {
 
     public static void main(String[] args){
 
-         Vetor vetor = new Vetor(5);
+         Vetor vetor = new Vetor(10);
 
 
          try
@@ -20,8 +20,14 @@ public class TestandoVetor {
          } catch(Exception e){
             e.printStackTrace();
          }
+
+
+         
       
 }
+
+
+
 
     }
 

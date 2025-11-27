@@ -2119,6 +2119,9 @@ Exemplo mental com entrada `[4, 7]`:
 | `min + i`                 | Lógica aritmética para gerar uma sequência crescente a partir de uma base.| `base + 0, base + 1...`         |
 
 
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
