@@ -2118,7 +2118,39 @@ Exemplo mental com entrada `[4, 7]`:
 | `max - min + 1`           | Fórmula para calcular a quantidade de inteiros em um intervalo fechado.   | `10 - 5 + 1 = 6` itens.         |
 | `min + i`                 | Lógica aritmética para gerar uma sequência crescente a partir de uma base.| `base + 0, base + 1...`         |
 
+## 🧪 51. Converter Booleano para String
 
+### ✅ Enunciado
+Implemente uma função que converta um valor booleano (`true` ou `false`) em sua representação como **String** (texto).
+
+**Nota:** Apenas entradas válidas serão fornecidas.
+
+### 💡 Lógica do Algoritmo
+O problema pede o mapeamento de um tipo de dado lógico (boolean) para um tipo de dado textual (String).
+
+Embora a linguagem Java tenha métodos prontos para isso (`String.valueOf(b)`), a lógica interna é simples:
+1.  Verificamos o valor de entrada.
+2.  Se for verdadeiro (`true`), retornamos o texto literal `"true"`.
+3.  Se não for verdadeiro (ou seja, `false`), retornamos o texto literal `"false"`.
+
+É uma estrutura de decisão binária simples (`if / else`).
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** A verificação condicional é instantânea.
+- **Espaço:** Não há alocação de memória dinâmica, apenas o retorno de constantes de string.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `if (b)`                | Verifica se a condição booleana é verdadeira.                             | `if (ligado) { ... }`           |
+| `return "texto"`        | Devolve uma string literal como resultado da função.                      | `return "true";`                |
 
 
 
