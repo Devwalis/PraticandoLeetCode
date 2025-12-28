@@ -57,6 +57,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 48. [Velocidade da barata](#-48-Velocidade-da-barata)
 49. [Soma da Linha De Impares](#-49-Soma-da-linha-de-impares)
 50. [O problema dos canos de Lario e Muigi](#-50-O-problema-dos-canos-de-Lario-e-Muigi)
+51. [Converter Boolean para String](#-51-converter-booleano-para-string)
+52. [Contando Ovelhas](#-52-contando-ovelhas)
 
 
 
@@ -2151,6 +2153,44 @@ Embora a linguagem Java tenha métodos prontos para isso (`String.valueOf(b)`), 
 |-------------------------|---------------------------------------------------------------------------|---------------------------------|
 | `if (b)`                | Verifica se a condição booleana é verdadeira.                             | `if (ligado) { ... }`           |
 | `return "texto"`        | Devolve uma string literal como resultado da função.                      | `return "true";`                |
+
+
+
+## 🧪 52. Contando Ovelhas
+
+### ✅ Enunciado
+Considere um array/lista de ovelhas onde algumas podem estar faltando em seus lugares. Precisamos de uma função que conte o número de ovelhas presentes no array (onde `true` significa presente).
+
+**Dica:** Não se esqueça de verificar por valores ruins como `null` ou `undefined`.
+
+**Exemplo:**
+Entrada: `[true, true, true, false, true, true, true, true, true, false, true, false, true, false, false, true, true, true, true, true, false, false, true, true]`
+Saída: `17`
+
+### 💡 Lógica do Algoritmo
+O desafio principal é lidar com a possibilidade de valores `null` dentro do array de objetos `Boolean`.
+
+1.  **Iteração:** Percorremos o array item a item.
+2.  **Verificação de Nulo:** Antes de verificar se é verdadeiro, **devemos** verificar se o valor é diferente de `null`. Tentar ler o valor booleano de um nulo causa erro (`NullPointerException` em Java).
+3.  **Contagem:** Se o valor não for nulo e for igual a `true`, incrementamos o contador.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Percorremos o array uma única vez.
+- **Espaço:** Usamos apenas uma variável inteira para o contador.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `Boolean[]`             | Array de objetos Wrapper (aceita `true`, `false` e `null`).               | `Boolean[] arr = {true, null};` |
+| `sheep != null`         | Verificação defensiva obrigatória para evitar quebra do programa.         | `if (obj != null) { ... }`      |
+| `sheep == true`         | Verifica se o valor booleano é verdadeiro.                                | `if (sheep) { ... }`            |
 
 
 
