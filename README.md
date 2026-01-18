@@ -59,6 +59,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 50. [O problema dos canos de Lario e Muigi](#-50-O-problema-dos-canos-de-Lario-e-Muigi)
 51. [Converter Boolean para String](#-51-converter-booleano-para-string)
 52. [Contando Ovelhas](#-52-contando-ovelhas)
+53. [Definir Alarme](#-53-Definir-Alarme)
 
 
 
@@ -2191,6 +2192,49 @@ O desafio principal é lidar com a possibilidade de valores `null` dentro do arr
 | `Boolean[]`             | Array de objetos Wrapper (aceita `true`, `false` e `null`).               | `Boolean[] arr = {true, null};` |
 | `sheep != null`         | Verificação defensiva obrigatória para evitar quebra do programa.         | `if (obj != null) { ... }`      |
 | `sheep == true`         | Verifica se o valor booleano é verdadeiro.                                | `if (sheep) { ... }`            |
+
+
+## 🧪 53. Definir Alarme (Lógica Booleana)
+
+### ✅ Enunciado
+Escreva uma função chamada `setAlarm` que recebe dois parâmetros. O primeiro parâmetro, `employed` (empregado), é verdadeiro quando você está empregado, e o segundo parâmetro, `vacation` (férias), é verdadeiro quando você está de férias.
+
+A função deve retornar `true` se você estiver empregado e **não** estiver de férias (pois essas são as circunstâncias em que você precisa definir um alarme). Caso contrário, deve retornar `false`.
+
+**Tabela Verdade:**
+
+| Employed | Vacation | Saída (Alarme?) |
+| :--- | :--- | :--- |
+| `true` | `true` | `false` |
+| `true` | `false` | `true` |
+| `false` | `true` | `false` |
+| `false` | `false` | `false` |
+
+### 💡 Lógica do Algoritmo
+Este é um exercício clássico de operadores lógicos.
+Para o alarme tocar, duas condições precisam ser satisfeitas simultaneamente:
+1.  A pessoa precisa ter um emprego (`employed == true`).
+2.  A pessoa **NÃO** pode estar de férias (`vacation == false`).
+
+Em lógica de programação, "E" é representado por `&&` e "NÃO" é representado por `!`.
+Portanto, a fórmula é: `employed && !vacation`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Apenas uma operação lógica básica, instantânea.
+- **Espaço:** Não usa memória adicional.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `&&` (AND)              | Operador lógico "E". Retorna true só se ambos os lados forem true.        | `true && false` -> `false`      |
+| `!` (NOT)               | Operador lógico de negação. Inverte o valor booleano.                     | `!true` -> `false`              |
 
 
 
