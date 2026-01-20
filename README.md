@@ -2237,6 +2237,49 @@ Portanto, a fórmula é: `employed && !vacation`.
 | `!` (NOT)               | Operador lógico de negação. Inverte o valor booleano.                     | `!true` -> `false`              |
 
 
+## 🧪 54. Remover Espaços da String
+
+### ✅ Enunciado
+Escreva uma função que remova os espaços de uma string e retorne a string resultante.
+
+**Exemplos:**
+
+| Entrada | Saída |
+|---------|-------|
+| `"8 j 8   mBliB8g  imjB8B8  jl  B"` | `"8j8mBliB8gimjB8B8jlB"` |
+| `"8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd"` | `"88Bifk8hB8BB8BBBB888chl8BhBfd"` |
+| `"8aaaaa dddd r     "` | `"8aaaaaddddr"` |
+
+### 💡 Lógica do Algoritmo
+Embora a linguagem Java possua métodos poderosos como `.replace()`, a lógica estrutural para resolver isso manualmente é um algoritmo de **filtragem**:
+
+1.  Criamos um acumulador (uma nova string ou `StringBuilder`) vazio.
+2.  Percorremos a string original do início ao fim, caractere por caractere.
+3.  Para cada caractere, fazemos uma pergunta: **"Este caractere é um espaço?"**
+    *   Se **NÃO** for um espaço (`!= ' '`), nós o adicionamos ao acumulador.
+    *   Se **FOR** um espaço, nós o ignoramos (não fazemos nada).
+4.  Ao final do laço, o acumulador conterá apenas os caracteres válidos.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** É necessário visitar cada caractere da string uma vez para verificar se é espaço ou não.
+- **Espaço:** No pior caso (uma string sem espaços), criaremos uma nova string do mesmo tamanho da original.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `StringBuilder`         | Classe para construir strings de forma dinâmica sem criar lixo na memória.| `sb.append('a');`               |
+| `charAt(i)`             | Acessa o caractere em uma posição específica.                             | `str.charAt(0);`                |
+| `!= ' '`                | Comparação de diferença. Verifica se o caractere não é um espaço vazio.   | `if (c != ' ')`                 |
+| `append()`              | Adiciona um caractere ao final da string que está sendo construída.       | `resultado.append(c);`          |
+
+
 
 ## 📂 Organização
 
