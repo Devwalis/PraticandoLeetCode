@@ -2279,6 +2279,45 @@ Embora a linguagem Java possua métodos poderosos como `.replace()`, a lógica e
 | `!= ' '`                | Comparação de diferença. Verifica se o caractere não é um espaço vazio.   | `if (c != ' ')`                 |
 | `append()`              | Adiciona um caractere ao final da string que está sendo construída.       | `resultado.append(c);`          |
 
+## 🧪 55. Binário Falso (Fake Binary)
+
+### ✅ Enunciado
+Dada uma string de dígitos, você deve substituir qualquer dígito **abaixo** de 5 por `'0'` e qualquer dígito 5 ou **acima** por `'1'`. Retorne a string resultante.
+
+**Nota:** A entrada nunca será uma string vazia.
+
+**Exemplos:**
+Entrada: `"45385593107843568"`
+Saída: `"01011110001100111"`
+
+### 💡 Lógica do Algoritmo
+O objetivo é transformar uma string numérica em uma representação binária falsa baseada em um limiar (threshold) de 5.
+
+A abordagem mais eficiente evita converter caracteres em números inteiros (`int`).
+1.  Percorremos a string caractere por caractere.
+2.  Utilizamos a comparação direta de caracteres ASCII.
+    *   Na computação, os caracteres numéricos são sequenciais (`'0'` vem antes de `'1'`, que vem antes de `'2'`, etc.).
+    *   Portanto, comparar se `caractere < '5'` é computacionalmente mais rápido e logicamente equivalente a converter para inteiro e comparar se `numero < 5`.
+3.  Se for menor, adicionamos `'0'` ao resultado. Caso contrário, adicionamos `'1'`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** Percorremos a string uma única vez (`n` é o número de dígitos).
+- **Espaço:** Criamos uma nova string de tamanho idêntico à original.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `charAt(i)`             | Acessa o caractere em uma posição específica da string.                   | `str.charAt(0);`                |
+| `c < '5'`               | Comparação direta de caracteres usando a tabela ASCII.                    | `if (c < '5') ...`              |
+| `StringBuilder`         | Classe para construir strings de forma eficiente dentro de laços.         | `sb.append('0');`               |
+
 
 
 
