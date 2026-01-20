@@ -2281,6 +2281,10 @@ Embora a linguagem Java possua métodos poderosos como `.replace()`, a lógica e
 
 
 
+
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
