@@ -10,6 +10,14 @@ public class RemoverAncoraDaURL {
         return url;
     }
 
+    /*
+    public static String removerUrlAnchor(String url){
+        return url.split("#")[0];
+    
+    }
+    
+    */
+
     public static void main(String[] args){
 
         System.out.println(removerUrlAnchor("www.codewars.com#about"));
