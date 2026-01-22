@@ -2320,7 +2320,44 @@ A abordagem mais eficiente evita converter caracteres em números inteiros (`int
 
 
 
+## 🧪 56. Remover Âncora da URL
 
+### ✅ Enunciado
+Complete a função para que ela retorne a URL com tudo que estiver após a âncora (`#`) removido.
+
+**Exemplos:**
+
+| Entrada | Saída |
+|---------|-------|
+| `"www.codewars.com#about"` | `"www.codewars.com"` |
+| `"www.codewars.com?page=1"` | `"www.codewars.com?page=1"` |
+
+### 💡 Lógica do Algoritmo
+O problema se resume a "cortar" uma string a partir de um caractere específico.
+
+1.  **Localizar:** Perguntamos à string: "Em qual índice está o caractere `#`?".
+2.  **Decidir:**
+    *   Se a resposta for `-1` (não encontrado), a URL já está limpa. Retornamos ela inteira.
+    *   Se a resposta for um número (ex: 16), sabemos que a âncora começa ali.
+3.  **Cortar:** Usamos a operação de `substring` para pegar os caracteres do índice `0` até o índice encontrado. O resto é descartado.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** O método `indexOf` precisa percorrer a string até achar o caractere (pior caso: percorre tudo).
+- **Espaço:** O método `substring` cria uma nova string na memória com o conteúdo recortado.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `url.indexOf('#')`      | Retorna o índice da primeira ocorrência do caractere. Retorna -1 se não achar. | `"abc#d".indexOf('#') // 3`     |
+| `url.substring(0, fim)` | Cria uma nova string começando no índice 0 até o índice `fim` (não incluso). | `"abc#d".substring(0, 3) // "abc"`|
+| `!= -1`                 | Verificação padrão para saber se algo foi encontrado dentro de uma string.| `if (pos != -1) ...`            |
 
 
 
