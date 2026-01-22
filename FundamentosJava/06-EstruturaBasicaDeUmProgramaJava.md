@@ -13,7 +13,7 @@ Mesmo programas simples obedecem a esse padrão, que prepara o desenvolvedor par
 
 Um programa Java é escrito em um arquivo com extensão:
 
-```text
+text
 .java
 
 Esse arquivo contém o código-fonte da aplicação e deve seguir algumas regras importantes:
