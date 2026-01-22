@@ -60,6 +60,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 51. [Converter Boolean para String](#-51-converter-booleano-para-string)
 52. [Contando Ovelhas](#-52-contando-ovelhas)
 53. [Definir Alarme](#-53-Definir-Alarme)
+54. [Remover Espaços Da String](#-54-remover-espaços-da-string)
+55. [Binario-falso](#-55-binário-falso-fake-binary)
+56. [Remover Âcora Da URL](#-56-remover-âncora-da-url)
 
 
 
