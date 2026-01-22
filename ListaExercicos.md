@@ -63,7 +63,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 54. [Remover Espaços Da String](#-54-remover-espaços-da-string)
 55. [Binario-falso](#-55-binário-falso-fake-binary)
 56. [Remover Âcora Da URL](#-56-remover-âncora-da-url)
-
+57. []
 
 
 
