@@ -9,11 +9,12 @@ public class Banjo {
 
 
         if(primeiraLetra == 'R' || primeiraLetra == 'r'){
-            return nome + "Toque banjo";
+            return nome + " Toque banjo";
 
-        }else{
-            return nome + "vc não toca banho";
+        }
+        else{
+            return nome + " vc não toca banho";
         }
     }
-    
+
 }
