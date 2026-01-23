@@ -64,6 +64,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 55. [Binario-falso](#-55-binário-falso-fake-binary)
 56. [Remover Âcora Da URL](#-56-remover-âncora-da-url)
 57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
+58. [Remover Exclmaçoes](#-58-Remover-Exclmações)
 
 
 
@@ -2401,6 +2402,49 @@ Essa abordagem é mais eficiente do que métodos que analisam a string inteira (
 | `name.charAt(0)`        | Retorna o caractere na posição 0 (início) da string.                      | `"Ana".charAt(0)` retorna `'A'` |
 | `||` (OU Lógico)        | Verifica se pelo menos uma das condições é verdadeira.                    | `if (x == 'A' || x == 'a')`     |
 | `+` (Concatenação)      | Junta duas strings ou uma string e uma variável.                          | `name + " plays banjo"`         |
+
+
+
+
+## 🧪 58. Remover Exclamações
+
+### ✅ Enunciado
+Escreva uma função `removeExclamationMarks` que remove todos os pontos de exclamação de uma determinada string.
+
+**Exemplos:**
+`"Hello World!"` --> `"Hello World"`
+`"Hi! Hello!"` --> `"Hi Hello"`
+
+### 💡 Lógica do Algoritmo
+O problema é um clássico filtro de caracteres.
+
+1.  Criamos um acumulador (como um `StringBuilder`).
+2.  Percorremos a string de entrada do início ao fim.
+3.  Para cada caractere, fazemos a verificação: **"Este caractere é diferente de `!`?"**
+    *   Se for diferente, adicionamos ao acumulador.
+    *   Se for igual a `!`, ignoramos e passamos para o próximo.
+4.  Retornamos o conteúdo acumulado.
+
+Essa abordagem manual é equivalente ao funcionamento interno do método `replace()`.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** Percorremos cada caractere da string uma única vez.
+- **Espaço:** No pior caso (string sem exclamações), criamos uma cópia do mesmo tamanho da original.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `!= '!'`                | Verifica se o caractere é diferente de ponto de exclamação.               | `if (c != '!')`                 |
+| `StringBuilder`         | Classe utilitária para montar strings dentro de loops sem desperdício de memória.| `sb.append(c);`           |
+| `toString()`            | Converte o objeto StringBuilder para uma String final.                    | `return sb.toString();`         |
+
 
 
 
