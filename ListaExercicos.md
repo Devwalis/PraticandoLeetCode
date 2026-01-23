@@ -63,7 +63,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 54. [Remover Espaços Da String](#-54-remover-espaços-da-string)
 55. [Binario-falso](#-55-binário-falso-fake-binary)
 56. [Remover Âcora Da URL](#-56-remover-âncora-da-url)
-57. []
+57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
 
 
 
@@ -2361,6 +2361,46 @@ O problema se resume a "cortar" uma string a partir de um caractere específico.
 | `url.indexOf('#')`      | Retorna o índice da primeira ocorrência do caractere. Retorna -1 se não achar. | `"abc#d".indexOf('#') // 3`     |
 | `url.substring(0, fim)` | Cria uma nova string começando no índice 0 até o índice `fim` (não incluso). | `"abc#d".substring(0, 3) // "abc"`|
 | `!= -1`                 | Verificação padrão para saber se algo foi encontrado dentro de uma string.| `if (pos != -1) ...`            |
+
+
+
+## 🧪 57. Você está tocando banjo?
+
+### ✅ Enunciado
+Crie uma função que responda à pergunta "Você está tocando banjo?".
+Se o seu nome começar com a letra "R" ou "r" minúsculo, você está tocando banjo!
+
+A função recebe um nome como único argumento e retorna uma das seguintes strings:
+- `nome + " plays banjo"`
+- `nome + " does not play banjo"`
+
+Os nomes fornecidos são sempre strings válidas.
+
+### 💡 Lógica do Algoritmo
+O problema exige a verificação apenas da **primeira letra** da string.
+1.  Acessamos o caractere no índice `0` da string (`name.charAt(0)`).
+2.  Verificamos se esse caractere é igual a `'R'` **OU** (`||`) se é igual a `'r'`.
+3.  Baseado nisso, concatenamos o nome original com a frase correspondente.
+
+Essa abordagem é mais eficiente do que métodos que analisam a string inteira (como regex), pois olhamos apenas para um único local na memória.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Acessar um índice específico de um array/string é uma operação constante.
+- **Espaço:** Criamos apenas uma nova string para o retorno.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `name.charAt(0)`        | Retorna o caractere na posição 0 (início) da string.                      | `"Ana".charAt(0)` retorna `'A'` |
+| `||` (OU Lógico)        | Verifica se pelo menos uma das condições é verdadeira.                    | `if (x == 'A' || x == 'a')`     |
+| `+` (Concatenação)      | Junta duas strings ou uma string e uma variável.                          | `name + " plays banjo"`         |
 
 
 
