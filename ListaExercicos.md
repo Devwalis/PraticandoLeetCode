@@ -2446,6 +2446,51 @@ Essa abordagem manual é equivalente ao funcionamento interno do método `replac
 | `toString()`            | Converte o objeto StringBuilder para uma String final.                    | `return sb.toString();`         |
 
 
+## 🧪 59. Número por Extenso (Switch)
+
+### ✅ Enunciado
+Quando fornecido um número entre 0-9, retorne-o por extenso (em palavras).
+**Nota:** A entrada é garantida estar dentro do intervalo de 0-9.
+
+**Exemplo:**
+Entrada: `1`
+Saída: `"One"`
+
+Se a sua linguagem suportar, tente usar uma declaração `switch`.
+
+### 💡 Lógica do Algoritmo
+O problema é um mapeamento simples de **1 para 1**. Para cada entrada numérica, existe exatamente uma saída de texto correspondente.
+
+Em vez de usar vários `if (numero == 1) ... else if (numero == 2)...`, utilizamos o `switch case`.
+1.  O `switch` avalia a variável passada.
+2.  Ele compara o valor com cada `case`.
+3.  Quando encontra o correspondente, executa o código e retorna o valor imediatamente.
+
+Isso torna o código extremamente legível e organizado para listas de valores discretos.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** O computador pula diretamente para o caso correto (tabela de salto), não precisando testar todas as condições anteriores sequencialmente como no `if-else`.
+- **Espaço:** Não há alocação de memória dinâmica.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `switch (var)`          | Inicia a estrutura de controle de fluxo baseada no valor de `var`.        | `switch(numero) { ... }`        |
+| `case X:`               | Define um bloco de código a ser executado se o valor for igual a `X`.     | `case 1: return "One";`         |
+| `default:`              | Define o comportamento padrão se nenhum `case` for atendido.              | `default: return "";`           |
+
+
+
+
+
+
 
 
 ## 📂 Organização
