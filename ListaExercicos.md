@@ -65,6 +65,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 56. [Remover Âcora Da URL](#-56-remover-âncora-da-url)
 57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
 58. [Remover Exclmaçoes](#-58-Remover-Exclmações)
+59. [Número por Extenso (Switch)](#-59-número-por-extenso-switch)
 
 
 
