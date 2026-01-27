@@ -65,6 +65,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 56. [Remover Âcora Da URL](#-56-remover-âncora-da-url)
 57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
 58. [Remover Exclmaçoes](#-58-Remover-Exclmações)
+59. [Número por Extenso (Switch)](#-59-número-por-extenso-switch)
+60. []()
 
 
 
@@ -2486,6 +2488,51 @@ Isso torna o código extremamente legível e organizado para listas de valores d
 | `case X:`               | Define um bloco de código a ser executado se o valor for igual a `X`.     | `case 1: return "One";`         |
 | `default:`              | Define o comportamento padrão se nenhum `case` for atendido.              | `default: return "";`           |
 
+
+
+
+60. X e O (Empate)
+
+### ✅ Enunciado
+Verifique se uma string tem a mesma quantidade de 'x's e 'o's. O método deve retornar um booleano e ser insensível a maiúsculas/minúsculas (case insensitive). A string pode conter qualquer caractere.
+
+**Exemplos:**
+| Entrada | Saída | Explicação |
+|---------|-------|------------|
+| `"ooxx"` | `true` | 2 'o' e 2 'x' |
+| `"xooxx"` | `false` | 2 'o' e 3 'x' |
+| `"ooxXm"` | `true` | 2 'o' e 2 'x' (X maiúsculo conta) |
+| `"zpzpzpp"` | `true` | 0 'o' e 0 'x' (0 == 0) |
+| `"zzoo"` | `false` | 2 'o' e 0 'x' |
+
+### 💡 Lógica do Algoritmo
+O problema é resolvido com dois contadores independentes.
+
+1.  Criamos `countX` e `countO` iniciados em 0.
+2.  Percorremos a string inteira.
+3.  Se encontrarmos um 'x' (ou 'X'), incrementamos `countX`.
+4.  Se encontrarmos um 'o' (ou 'O'), incrementamos `countO`.
+5.  Ao final, comparamos: `countX == countO`.
+
+Essa abordagem cobre automaticamente o caso onde não existem letras (ambos serão 0) e o caso de letras mistas (maiúsculas/minúsculas) através da condição `OR` (`||`).
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Percorremos a string uma única vez.
+- **Espaço:** Usamos apenas duas variáveis inteiras para armazenar a contagem.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `c == 'x' \|\| c == 'X'`| Verifica se o caractere é 'x' minúsculo OU 'X' maiúsculo.                 | Condicional composta.           |
+| `count++`               | Incrementa o valor da variável em 1.                                      | `x++` (x passa de 0 para 1)     |
+| `return x == o`         | Retorna o resultado da comparação de igualdade (booleano).                | `return 2 == 2;` (true)         |
 
 
 
