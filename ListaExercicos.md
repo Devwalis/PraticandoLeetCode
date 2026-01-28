@@ -66,8 +66,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
 58. [Remover Exclmaçoes](#-58-Remover-Exclmações)
 59. [Número por Extenso (Switch)](#-59-número-por-extenso-switch)
-60. [X e O (Empate)](#-60-x-e-o-empate)
-
+60. []()
 
 
 
@@ -2579,6 +2578,50 @@ Essa abordagem cobre automaticamente o caso onde não existem letras (ambos ser�
 | `count++`               | Incrementa o valor da variável em 1.                                      | `x++` (x passa de 0 para 1)     |
 | `return x == o`         | Retorna o resultado da comparação de igualdade (booleano).                | `return 2 == 2;` (true)         |
 
+
+
+
+
+## 🧪 61. Área ou Perímetro
+
+### ✅ Enunciado
+Você recebe o comprimento (`l`) e a largura (`w`) de um polígono de 4 lados. O polígono pode ser um retângulo ou um quadrado.
+
+*   Se for um **quadrado**, retorne sua **área**.
+*   Se for um **retângulo**, retorne seu **perímetro**.
+
+**Nota:** Para os fins deste exercício, assuma que é um quadrado se o comprimento e a largura forem iguais; caso contrário, é um retângulo.
+
+**Exemplos:**
+| Entrada (`l`, `w`) | Saída | Explicação |
+|--------------------|-------|------------|
+| `6, 10`            | `32`  | Lados diferentes (Retângulo) -> Perímetro: `6+6+10+10 = 32` |
+| `3, 3`             | `9`   | Lados iguais (Quadrado) -> Área: `3 * 3 = 9` |
+
+### 💡 Lógica do Algoritmo
+O problema é uma decisão simples baseada na comparação dos dois argumentos de entrada.
+
+1.  **Verificação:** Comparamos `l` e `w`.
+2.  **Caso Quadrado (`l == w`):** Aplicamos a fórmula da área: $Lado \times Lado$.
+3.  **Caso Retângulo (`l != w`):** Aplicamos a fórmula do perímetro: $2 \times (LadoA + LadoB)$.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Apenas uma comparação e uma operação aritmética simples.
+- **Espaço:** Não utiliza memória adicional.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `l == w`                | Operador de igualdade. Verifica se os valores são idênticos.              | `if (3 == 3)` (true)            |
+| `l * w`                 | Multiplicação (Área).                                                     | `3 * 3 = 9`                     |
+| `2 * (l + w)`           | Soma seguida de multiplicação (Perímetro).                                | `2 * (6 + 10) = 32`             |
 
 
 
