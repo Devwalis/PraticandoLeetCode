@@ -66,7 +66,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
 58. [Remover Exclmaçoes](#-58-Remover-Exclmações)
 59. [Número por Extenso (Switch)](#-59-número-por-extenso-switch)
-60. []()
+60. [60. X e O (Empate)](#-60-x-e-o-empate)
+61. [Área ou Perímetro](#-61-área-ou-perímetro)
+62. [Dobrar Valores do Array](#-62-Dobrar-Valores-do-Array)
 
 
 
@@ -2625,7 +2627,41 @@ O problema é uma decisão simples baseada na comparação dos dois argumentos d
 
 
 
+## 🧪 62. Dobrar Valores do Array (Maps)
 
+### ✅ Enunciado
+Dado um array de inteiros, retorne um **novo** array com cada valor duplicado.
+
+**Exemplo:**
+Entrada: `[1, 2, 3]`
+Saída: `[2, 4, 6]`
+
+### 💡 Lógica do Algoritmo
+Este problema trata de **mapeamento** (*mapping*), que é o ato de transformar uma lista de elementos em outra lista de mesmo tamanho, aplicando uma função a cada elemento.
+
+1.  **Alocação:** Como em Java não podemos redimensionar arrays dinamicamente de forma nativa e simples, precisamos instanciar um novo array (`int[]`) com o mesmo tamanho (`.length`) do array original.
+2.  **Iteração e Transformação:** Percorremos o array original índice por índice (`i`).
+3.  **Atribuição:** Para cada posição `i`, calculamos `valor * 2` e armazenamos na posição `i` do novo array.
+
+*Nota:* Essa abordagem garante que o array original permaneça intacto (imutabilidade dos dados de entrada).
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** É necessário visitar cada elemento uma vez para realizar a multiplicação.
+- **Espaço:** Criamos um novo array do mesmo tamanho `n` da entrada para armazenar o resultado.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `new int[tamanho]`      | Aloca espaço na memória para um novo array de inteiros.                   | `int[] res = new int[5];`       |
+| `arr.length`            | Propriedade que retorna o tamanho total do array.                         | `for (int i=0; i < arr.length)` |
+| `resultado[i] = valor`  | Atribuição direta de valor em uma posição específica do array.            | `res[0] = 10;`                  |
 
 
 
