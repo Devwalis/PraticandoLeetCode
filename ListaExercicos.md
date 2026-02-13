@@ -66,16 +66,16 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 57. [Você estar tocando banjo](#-57-voce-estar-tocando-banjo)
 58. [Remover Exclmaçoes](#-58-Remover-Exclmações)
 59. [Número por Extenso (Switch)](#-59-número-por-extenso-switch)
-60. []()
+60. [60. X e O](#-60-x-e-o-empate)
+61. [Area ou Perimetro](#-61-Area-ou-Perimetro)
+62. [Dobrar Valoresdo Array](#-62-Dobrar-Valores-Array)
+63. [Jaden Casing Strings](#-63-Jaden-Casing-Strings)
+64. [Soma Dos Dois Menores Numeros](#-64-Soma-Dos-Dois-Menores-Numeros)
+65. [Boletim Escolar](#-65-Boletim-Escolar)
 
 
 
-public static void main(String[] args){
-    System.out.println(areaOrPerimeter(6, 10));
-}
 
-
----
 
 ## 🧪 1. Palíndromo
 
@@ -2664,6 +2664,143 @@ Este problema trata de **mapeamento** (*mapping*), que é o ato de transformar u
 | `new int[tamanho]`      | Aloca espaço na memória para um novo array de inteiros.                   | `int[] res = new int[5];`       |
 | `arr.length`            | Propriedade que retorna o tamanho total do array.                         | `for (int i=0; i < arr.length)` |
 | `resultado[i] = valor`  | Atribuição direta de valor em uma posição específica do array.            | `res[0] = 10;`                  |
+
+
+
+
+## 🧪 63. Jaden Casing Strings
+
+### ✅ Enunciado
+Jaden Smith, filho de Will Smith, é conhecido por suas frases no Twitter onde ele quase sempre capitaliza a primeira letra de cada palavra.
+Sua tarefa é converter strings para o formato que seriam escritas por Jaden Smith.
+
+**Regra Específica:** A versão em Java espera um retorno `null` caso a string de entrada seja vazia ou `null`.
+
+**Exemplo:**
+Entrada: `"How can mirrors be real if our eyes aren't real"`
+Saída: `"How Can Mirrors Be Real If Our Eyes Aren't Real"`
+
+### 💡 Lógica do Algoritmo
+Podemos resolver isso de forma eficiente tratando a string como uma sequência de caracteres.
+
+1.  **Validação:** Verificamos se a entrada é válida (`!= null` e `length > 0`). Se não for, retornamos `null` imediatamente.
+2.  **Conversão:** Transformamos a String em um array de `char`. Isso permite alterar caracteres individuais (Strings em Java são imutáveis).
+3.  **Iteração:** Percorremos o array.
+4.  **Condição de Capitalização:** Uma letra deve ser maiúscula se:
+    *   For a primeira letra da frase (índice 0).
+    *   **OU** se o caractere imediatamente anterior a ela for um espaço (`' '`).
+5.  **Reconstrução:** Criamos uma nova String baseada no array modificado.
+
+Essa abordagem funciona perfeitamente para contrações (como "aren't"), pois o apóstrofo não é um espaço, então o 't' permanece minúsculo.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+- **Tempo:** Percorremos cada caractere da frase uma única vez.
+- **Espaço:** Criamos um array de caracteres do mesmo tamanho da string original.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito         | O que faz                                                                 | Exemplo de uso                  |
+|---------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `toCharArray()`           | Converte a String em um array de primitivos `char`.                       | `"abc".toCharArray()`           |
+| `array[i-1]`              | Acessa o elemento anterior ao índice atual.                               | Verificar espaços.              |
+| `Character.toUpperCase()` | Converte um caractere primitivo para maiúsculo.                           | `Character.toUpperCase('a')` -> `'A'` |
+| `new String(array)`       | Construtor que cria uma String a partir de um array de caracteres.        | `new String(charArray)`         |
+
+
+
+## 🧪 64. Soma dos Dois Menores Números
+
+### ✅ Enunciado
+Crie uma função que retorne a soma dos dois menores números positivos dado um array de no mínimo 4 inteiros positivos. Não serão passados números flutuantes ou não-positivos.
+
+Para Java, os inteiros virão como `long` (precisão dupla).
+
+**Exemplos:**
+*   `[19, 5, 42, 2, 77]` --> `7` (pois `2 + 5 = 7`)
+*   `[10, 343445353, 3453445, 3453545353453]` --> `3453455`
+
+### 💡 Lógica do Algoritmo
+Poderíamos ordenar o array e pegar os dois primeiros itens, mas isso é ineficiente para arrays grandes. A melhor abordagem é uma **Varredura Única**.
+
+1.  Definimos duas variáveis (`menor` e `segundoMenor`) iniciadas com o valor máximo possível (`Long.MAX_VALUE`).
+2.  Percorremos cada número do array.
+3.  **Comparação Principal:** O número atual é menor que o nosso `menor`?
+    *   Se sim, o antigo `menor` passa a ser o `segundoMenor`, e o atual vira o novo `menor`.
+4.  **Comparação Secundária:** Se não for o menor de todos, ele é pelo menos menor que o `segundoMenor`?
+    *   Se sim, atualizamos apenas o `segundoMenor`.
+5.  Ao final, somamos as duas variáveis.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+- **Tempo:** O algoritmo percorre o array apenas uma vez, tornando-o muito mais rápido que uma ordenação (`O(n log n)`).
+- **Espaço:** Usamos apenas duas variáveis para armazenar o estado atual.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `long`                  | Tipo primitivo de 64 bits para inteiros grandes.                          | `long x = 3453545353453L;`      |
+| `Long.MAX_VALUE`        | Constante que representa o maior valor possível para um long.             | Usado para inicializar comparações de mínimo. |
+| `for (long n : arr)`    | Loop *foreach* para iterar pelos elementos do array.                      | `for (long numero : numbers)`   |
+
+
+
+## 🧪 65. Boletim Escolar (Grade Book)
+
+### ✅ Enunciado
+Complete a função para que ela encontre a média das três notas passadas e retorne a letra associada a essa nota.
+
+**Tabela de Notas:**
+| Pontuação Numérica | Letra |
+| :--- | :--- |
+| 90 <= média <= 100 | `'A'` |
+| 80 <= média < 90 | `'B'` |
+| 70 <= média < 80 | `'C'` |
+| 60 <= média < 70 | `'D'` |
+| 0 <= média < 60 | `'F'` |
+
+**Nota:** Todos os valores testados estão entre 0 e 100. Não é necessário verificar números negativos ou maiores que 100.
+
+### 💡 Lógica do Algoritmo
+O problema envolve aritmética simples e controle de fluxo.
+
+1.  **Cálculo da Média:** Somamos `s1 + s2 + s3` e dividimos por `3`. Como as notas são inteiras, a divisão inteira do Java (`int`) funciona perfeitamente aqui.
+2.  **Cascata de Decisão:** Usamos uma estrutura `if / else if`.
+    *   A ordem importa: verificamos do maior para o menor.
+    *   Ao verificar `if (media >= 90)`, se for verdadeiro, retornamos 'A'.
+    *   Se chegarmos no `else if (media >= 80)`, o programa já sabe implicitamente que a média é **menor que 90** (pois falhou no teste anterior). Por isso, não precisamos escrever `media >= 80 && media < 90`. Isso deixa o código mais limpo e rápido.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo:** Realiza apenas 3 somas, 1 divisão e no máximo 4 comparações. É constante.
+- **Espaço:** Usa apenas uma variável para armazenar a média.
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                  |
+|-------------------------|---------------------------------------------------------------------------|---------------------------------|
+| `(s1 + s2 + s3) / 3`    | Cálculo de média aritmética simples.                                      | `(100 + 50 + 60) / 3`           |
+| `if / else if`          | Estrutura condicional em cascata.                                         | Verifica múltiplas faixas.      |
+| `return 'A'`            | Retorna um caractere (`char`) literal.                                    | `char nota = 'A';`              |
+
+
+
 
 
 
