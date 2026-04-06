@@ -2801,6 +2801,83 @@ O problema envolve aritmética simples e controle de fluxo.
 
 
 
+# 🧪 66. Formar Frase com Array de Palavras
+
+## ✅ Enunciado:
+
+Escreva uma função que recebe um array de palavras, as une para formar uma frase e retorna essa frase. Você pode ignorar a necessidade de sanitizar palavras ou adicionar pontuação, mas deve adicionar espaços entre cada palavra. Cuidado, não deve haver um espaço no início ou no final da frase!
+
+### Exemplo:
+
+
+### Premissas:
+
+- Você pode assumir que apenas palavras são fornecidas.
+- Você não pode assumir o tamanho do array.
+- Você pode assumir que um array será fornecido.
+
+---
+
+## 💡 Lógica do Algoritmo:
+
+Existem algumas maneiras de resolver isso, mas a mais eficiente e idiomática em Java para construir strings a partir de coleções é usando `StringJoiner` (a partir do Java 8) ou `StringBuilder`.
+
+### 🔹 Abordagem com StringJoiner (Recomendada para Java 8+):
+
+- Crie um `StringJoiner` especificando o delimitador que deve ser usado entre os elementos (um espaço, `" "`).
+- Percorra cada palavra no array.
+- Adicione cada palavra ao `StringJoiner`.
+- O `StringJoiner` se encarregará automaticamente de adicionar os espaços corretamente e evitar espaços extras no início ou fim.
+- Retorne a string final do `StringJoiner`.
+
+---
+
+### 🔹 Abordagem com StringBuilder (Compatível com versões anteriores do Java):
+
+- Crie um `StringBuilder` para construir a frase.
+- Percorra o array de palavras.
+- Para cada palavra, adicione-a ao `StringBuilder`.
+- Se não for a última palavra, adicione um espaço após ela. Isso evita um espaço extra no final.
+- Retorne a string final do `StringBuilder`.
+
+---
+
+### 🔹 Abordagem com String.join() (Mais concisa para Java 8+):
+
+- A forma mais direta e concisa é usar o método estático `String.join()`.
+- Ele recebe um delimitador e uma sequência de `CharSequences` (que inclui arrays de `String`).
+- Ele faz exatamente o que o problema pede: une os elementos com o delimitador especificado, sem espaços extras.
+
+📌 Vamos focar na abordagem `String.join()` por ser a mais limpa e eficiente para este cenário.
+
+---
+
+## 🔍 Complexidade:
+
+| Tipo   | Valor |
+|--------|------|
+| Tempo  | O(L) |
+| Espaço | O(L) |
+
+### 📊 Explicação:
+
+- **Tempo:** Onde `L` é o comprimento total de todos os caracteres em todas as palavras (incluindo os espaços adicionados).  
+  A operação de unir strings é proporcional ao número total de caracteres que precisam ser copiados para formar a nova string.  
+  Se houver `N` palavras e o comprimento médio for `M`, então:
+
+
+
+- **Espaço:** O espaço é necessário para armazenar a nova string resultante, que também é proporcional ao comprimento total da frase final (`L`).
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados:
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|----------|--------------|
+| `String.join(CharSequence delimiter, CharSequence... elements)` | Retorna uma nova string composta por cópias dos elementos unidos por um delimitador | `String.join(" ", words)` |
+| `String[] words` | Parâmetro de entrada da função, um array de strings | `String[] wordArray = {"hello", "world"};` |
+| `return String` | Retorna a string final (a frase) | `return "hello world";` |
 
 
 
