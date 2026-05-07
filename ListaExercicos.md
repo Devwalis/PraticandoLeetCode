@@ -2880,7 +2880,74 @@ Existem algumas maneiras de resolver isso, mas a mais eficiente e idiomática em
 | `return String` | Retorna a string final (a frase) | `return "hello world";` |
 
 
+# 🧪 67. Verificar se é Par
 
+## ✅ Enunciado
+
+Neste Kata, estamos passando um número (`n`) para uma função.  
+Seu código determinará se o número passado é par (ou não).  
+A função precisa retornar `true` ou `false`.
+
+Os números podem ser positivos ou negativos, inteiros ou de ponto flutuante.  
+**Números de ponto flutuante com parte decimal diferente de zero são considerados ÍMPARES** para este Kata.
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O ponto crucial aqui é a regra para números de ponto flutuante. Se um número de ponto flutuante tiver uma parte decimal diferente de zero, ele é considerado ímpar. Isso simplifica a lógica, pois só precisamos verificar a paridade de números inteiros.
+
+### 1. Verificar se é Float com Decimal
+
+- Primeiro, verifique se o número de entrada (`n`) é um número de ponto flutuante com uma parte decimal diferente de zero.
+- Uma maneira de fazer isso é comparar `n` com sua versão inteira truncada `((int) n)`. Se `n` for diferente de `(int) n`, significa que ele tem uma parte decimal.
+- Alternativamente, podemos verificar se `n % 1 != 0`. Se o resto da divisão por 1 não for zero, ele tem uma parte decimal.
+- Se for um float com decimal, retorne `false` (ímpar).
+
+### 2. Verificar Paridade de Inteiros
+
+- Se o número passou pela primeira verificação (ou seja, é um inteiro ou um float com parte decimal zero), então podemos usar o operador de módulo (`%`) para verificar a paridade.
+- Converta o número para `long` ou `int` (para lidar com valores potencialmente grandes, `long` é mais seguro, mas `int` pode ser suficiente dependendo dos limites).
+- Calcule `numeroInteiro % 2`.
+- Se o resultado for `0`, o número é par, então retorne `true`.
+- Se o resultado for `1` ou `-1` (o operador `%` em Java mantém o sinal do dividendo para números negativos), o número é ímpar, então retorne `false`.  
+  Uma forma robusta de verificar é `Math.abs(numeroInteiro % 2) == 0`.
+
+---
+
+### Exemplos da lógica
+
+| Entrada | Verificação | Resultado |
+|---------|-------------|-----------|
+| `4`     | `4 % 2 == 0` | `true`    |
+| `-2`    | `-2 % 2 == 0` | `true`    |
+| `3.0`   | `3.0 % 1 == 0` → não tem decimal → `(long)3 % 2 != 0` | `false`   |
+| `3.5`   | `3.5 % 1 != 0` → tem decimal | `false`   |
+
+---
+
+## 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+- **Tempo**: A função envolve algumas comparações e uma operação de módulo. Todas essas são operações de tempo constante, independentemente do valor do número de entrada.
+- **Espaço**: A função utiliza apenas algumas variáveis para os parâmetros e resultados temporários. Isso é um uso de espaço constante.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito         | O que faz                                                                 | Exemplo de uso                        |
+|---------------------------|---------------------------------------------------------------------------|----------------------------------------|
+| `double n`                | Parâmetro de entrada da função, um número (inteiro ou float).             | `double num = 5.5;`                    |
+| `n % 1 != 0`              | Verifica se o número tem uma parte decimal diferente de zero.             | `if (3.5 % 1 != 0) → true`             |
+| `(long) n`                | Converte o `double` para `long`, truncando a parte decimal.               | `long intPart = (long) 5.5; → 5`       |
+| `intPart % 2 == 0`        | Verifica a paridade do número inteiro usando o operador de módulo.        | `if (4 % 2 == 0) → true`               |
+| `Math.abs(value)`         | Retorna o valor absoluto de um número. Útil para lidar com restos negativos. | `Math.abs(-1) → 1`                     |
+| `return boolean;`         | Retorna um valor booleano (`true` ou `false`).                            | `return true;`                         |
 
 
 
