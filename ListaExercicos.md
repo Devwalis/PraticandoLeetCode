@@ -2951,6 +2951,56 @@ O ponto crucial aqui é a regra para números de ponto flutuante. Se um número 
 
 
 
+# 🧪 68. Duplicar Caracteres
+
+## ✅ Enunciado
+
+Dada uma string, você deve retornar uma string na qual cada caractere (sensível a maiúsculas/minúsculas) é repetido uma vez.
+
+### Exemplos (Entrada -> Saída):
+
+- `"String"` -> `"SSttrriinngg"`
+- `"Hello World"` -> `"HHeelllloo WWoorrlldd"`
+- `"1234!_ "` -> `"11223344!!__ "`
+
+## 💡 Lógica do Algoritmo
+
+1. **Verificar String Vazia/Nula**: Se a string de entrada for vazia ou nula, retorne uma string vazia (ou a própria string vazia/nula, dependendo do requisito exato, mas geralmente vazia é o mais seguro para evitar `NullPointerException`).
+
+2. **Usar StringBuilder**: Crie um `StringBuilder` para construir a nova string. Usar `StringBuilder` é mais eficiente do que concatenar strings repetidamente com `+`, especialmente para strings maiores.
+
+3. **Iterar sobre a String**: Percorra cada caractere da string de entrada.
+
+4. **Duplicar e Adicionar**: Para cada caractere:
+   - Adicione o caractere ao `StringBuilder` uma vez.
+   - Adicione o mesmo caractere ao `StringBuilder` novamente.
+
+5. **Retornar Resultado**: Converta o `StringBuilder` final para uma `String` e retorne-a.
+
+## 🔍 Complexidade
+
+| Tipo      | Valor  |
+|-----------|--------|
+| **Tempo** | O(n)   |
+| **Espaço**| O(n)   |
+
+- **Tempo**: Onde `n` é o comprimento da string de entrada. O algoritmo percorre a string de entrada uma única vez. Em cada iteração, ele adiciona dois caracteres ao `StringBuilder`. As operações de `append` em `StringBuilder` têm complexidade média `O(1)`. Portanto, o tempo total é `O(n)`.
+
+- **Espaço**: O `StringBuilder` armazena a nova string resultante, que terá o dobro do comprimento da string original. Portanto, o espaço necessário é `O(n)`.
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito       | O que faz                                                                 | Exemplo de uso                                       |
+|-------------------------|---------------------------------------------------------------------------|------------------------------------------------------|
+| `String str`            | Parâmetro de entrada da função, a string a ser processada.                | `String input = "Hello";`                           |
+| `String.isEmpty()`      | Verifica se a string está vazia.                                          | `if (input.isEmpty()) { ... }`                      |
+| `StringBuilder`         | Classe mutável e eficiente para construção de strings.                    | `StringBuilder duplicatedString = new StringBuilder();` |
+| `str.toCharArray()`     | Converte a string em um array de caracteres.                              | `for (char c : input.toCharArray()) { ... }`        |
+| `sb.append(char)`       | Adiciona um caractere ao final do `StringBuilder`.                        | `duplicatedString.append('H');`                     |
+| `sb.toString()`         | Converte o `StringBuilder` de volta para uma `String` imutável.           | `return duplicatedString.toString();`               |
+
+
+
 
 ## 📂 Organização
 
