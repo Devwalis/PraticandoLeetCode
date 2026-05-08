@@ -72,6 +72,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 63. [Jaden Casing Strings](#-63-Jaden-Casing-Strings)
 64. [Soma Dos Dois Menores Numeros](#-64-Soma-Dos-Dois-Menores-Numeros)
 65. [Boletim Escolar](#-65-Boletim-Escolar)
+66. [Formar Frase com Array de Palavras](#-66-Formar-Frase-com-Array-de-Palavras)
+67. [Verificar se é Par](#-67-Verificar-se-é-Par)
+68. [Duplicar Caracteres](#-68-duplicar-caracteres)
 
 
 
