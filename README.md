@@ -75,6 +75,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 66. [Formar Frase com Array de Palavras](#-66-Formar-Frase-com-Array-de-Palavras)
 67. [Verificar se é Par](#-67-Verificar-se-é-Par)
 68. [Duplicar Caracteres](#-68-duplicar-caracteres)
+69. [Espaço no Ônibus do Bob](#-69-espaço-no-ônibus-do-bob)
 
 
 
@@ -3002,7 +3003,76 @@ Dada uma string, você deve retornar uma string na qual cada caractere (sensíve
 | `sb.append(char)`       | Adiciona um caractere ao final do `StringBuilder`.                        | `duplicatedString.append('H');`                     |
 | `sb.toString()`         | Converte o `StringBuilder` de volta para uma `String` imutável.           | `return duplicatedString.toString();`               |
 
+# 🧪 69. Espaço no Ônibus do Bob
 
+## ✅ Enunciado
+
+**A História:**
+
+Bob trabalha como motorista de ônibus. No entanto, ele se tornou extremamente popular entre os moradores da cidade. Com tantos passageiros querendo subir em seu ônibus, ele às vezes tem que enfrentar o problema de não ter espaço suficiente no ônibus! Ele quer que você escreva um programa simples dizendo a ele se ele conseguirá acomodar todos os passageiros.
+
+**Visão Geral da Tarefa:**
+
+Você deve escrever uma função que aceite três parâmetros:
+
+- `cap` é a quantidade de pessoas que o ônibus pode comportar, excluindo o motorista.
+- `on` é o número de pessoas já no ônibus, excluindo o motorista.
+- `wait` é o número de pessoas esperando para entrar no ônibus, excluindo o motorista.
+
+Se houver espaço suficiente, retorne `0`, e se não houver, retorne o número de passageiros que ele não poderá levar.
+
+---
+
+## 💡 Lógica do Algoritmo
+
+1. **Calcular Pessoas Atuais + Esperando:**  
+   Some o número de pessoas que já estão no ônibus (`on`) com o número de pessoas esperando para entrar (`wait`). Isso dará o `totalDePessoasNecessarias`.
+
+2. **Calcular Espaço Disponível:**  
+   O espaço total que o ônibus pode comportar é `cap`.
+
+3. **Comparar e Retornar:**  
+   - Se `totalDePessoasNecessarias` for **menor ou igual** a `cap`, significa que há espaço suficiente para todos. Nesse caso, retorne `0`.  
+   - Se `totalDePessoasNecessarias` for **maior** que `cap`, significa que não há espaço suficiente. O número de passageiros que ele não pode levar é a diferença: `totalDePessoasNecessarias - cap`. Retorne este valor.
+
+**Simplificação:**  
+Podemos combinar a lógica usando a função `Math.max()`. O número de pessoas que ele não pode levar será o maior entre `0` e `(on + wait - cap)`.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** A função executa um número fixo de operações (soma, subtração, comparação ou `Math.max()`). Todas são operações de tempo constante, independentemente dos valores de entrada.
+- **Espaço:** A função utiliza apenas algumas variáveis para os parâmetros e o resultado temporário. Isso é um uso de espaço constante.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                     | O que faz                                                                 | Exemplo de uso                     |
+|---------------------------------------|---------------------------------------------------------------------------|-------------------------------------|
+| `int cap`                             | Capacidade máxima do ônibus (excluindo o motorista).                      | `int capacity = 30;`                |
+| `int on`                              | Pessoas já no ônibus (excluindo o motorista).                             | `int passengersOnBoard = 15;`       |
+| `int wait`                            | Pessoas esperando para entrar no ônibus (excluindo o motorista).          | `int peopleWaiting = 10;`           |
+| `on + wait`                           | Soma das pessoas a bordo e esperando.                                     | `15 + 10 → 25`                      |
+| `if (condicao) return valor; else...` | Estrutura condicional para retornar diferentes resultados.                | `if (total <= cap) return 0; else return total - cap;` |
+| `Math.max(a, b)`                      | Retorna o maior de dois valores. Útil para garantir que o resultado não seja negativo quando há espaço. | `Math.max(0, 25 - 30) → 0` |
+| `return int;`                         | Retorna um valor inteiro.                                                 | `return 0;`                         |
+
+---
+
+## 🧑‍💻 Exemplo de Implementação (JavaScript)
+
+```javascript
+function enough(cap, on, wait) {
+    const total = on + wait;
+    return Math.max(0, total - cap);
+}
 
 
 ## 📂 Organização
