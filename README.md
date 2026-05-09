@@ -3066,13 +3066,6 @@ Podemos combinar a lógica usando a função `Math.max()`. O número de pessoas 
 
 ---
 
-## 🧑‍💻 Exemplo de Implementação (JavaScript)
-
-```javascript
-function enough(cap, on, wait) {
-    const total = on + wait;
-    return Math.max(0, total - cap);
-}
 
 
 ## 📂 Organização

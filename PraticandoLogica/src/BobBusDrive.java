@@ -1,4 +1,6 @@
-public class BobBusDriver{
+
+
+public class BobBusDrive{
 
 /*
 Calcula se bob consegue acomodar todos os passageiros no ônibus
@@ -13,7 +15,7 @@ public int enough(int cap, int on, int wait){
 	if(totalPassagers <= cap){
 		return 0; //Há espaço para todos
 	
-	}elese{
+	}else{
 		return totalPassagers - cap; //Retorna o número de pessoas  que não cabem
 
 	}
