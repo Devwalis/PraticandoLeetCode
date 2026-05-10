@@ -76,6 +76,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 67. [Verificar se é Par](#-67-Verificar-se-é-Par)
 68. [Duplicar Caracteres](#-68-duplicar-caracteres)
 69. [Espaço no Ônibus do Bob](#-69-espaço-no-ônibus-do-bob)
+70. [Anti-Troll Remover Vogais](#-70-anti-troll-remover-vogais)
 
 
 
@@ -3066,6 +3067,70 @@ Podemos combinar a lógica usando a função `Math.max()`. O número de pessoas 
 
 ---
 
+
+# 🧪 70. Anti-Troll (Remover Vogais)
+
+## ✅ Enunciado
+
+Trolls estão atacando sua seção de comentários!
+
+Uma maneira comum de lidar com essa situação é remover todas as vogais dos comentários dos trolls, neutralizando a ameaça.
+
+Sua tarefa é escrever uma função que recebe uma string e retorna uma nova string com todas as vogais removidas.
+
+Por exemplo, a string `"This website is for losers LOL!"` se tornaria `"Ths wbst s fr lsrs LL!"`.
+
+**Observação:** para este Kata, `y` não é considerada uma vogal.
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O problema pede para remover todas as vogais (`a`, `e`, `i`, `o`, `u`), tanto em maiúsculas quanto em minúsculas, de uma string, mantendo `y`.
+
+Existem algumas maneiras de abordar isso:
+
+### Abordagem 1: Usando `String.replaceAll()` com Expressão Regular (Mais concisa e eficiente)
+
+1. Defina uma expressão regular que corresponda a todas as vogais, tanto maiúsculas quanto minúsculas, e exclua `y`. A expressão regular seria `"[aeiouAEIOU]"`.
+2. Use o método `replaceAll()` da classe `String` para substituir todas as ocorrências das vogais (que correspondem à expressão regular) por uma string vazia (`""`).
+3. Retorne a nova string resultante.
+
+### Abordagem 2: Iterando e Usando `StringBuilder`
+
+1. Crie um `StringBuilder` para construir a nova string sem vogais.
+2. Percorra cada caractere da string de entrada.
+3. Para cada caractere, verifique se ele é uma vogal (`a`, `e`, `i`, `o`, `u`, `A`, `E`, `I`, `O`, `U`).
+4. Se não for uma vogal, adicione-o ao `StringBuilder`.
+5. Retorne a string final do `StringBuilder`.
+
+A abordagem de Expressão Regular (`String.replaceAll()`) é geralmente mais limpa e otimizada para este tipo de tarefa em Java.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(n)  |
+| **Espaço**| O(n)  |
+
+- **Tempo:** Onde `n` é o comprimento da string de entrada. O método `String.replaceAll()` internamente otimiza a substituição, e seu desempenho é aproximadamente linear ao comprimento da string (`n`). No pior caso, ele precisa percorrer a string uma vez.
+- **Espaço:** O método `replaceAll()` retorna uma nova string. No pior caso (se não houver vogais para remover), a nova string terá o mesmo comprimento da original. No melhor caso (se todos forem vogais), a string pode ser vazia. Portanto, o espaço necessário para a nova string é `O(n)`.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `String str` | Parâmetro de entrada da função, a string a ser processada. | `String comment = "Hello World";` |
+| `String.replaceAll(String regex, String replacement)` | Substitui cada substring da string que corresponde à expressão regular (`regex`) pela `replacement` fornecida. | `comment.replaceAll("[aeiouAEIOU]", "");` |
+| `"[aeiouAEIOU]"` | Expressão regular que corresponde a qualquer uma das letras `a`, `e`, `i`, `o`, `u` (minúsculas ou maiúsculas). | `String regex = "[aeiouAEIOU]";` |
+| `""` | Uma string vazia, usada como substituição para remover as vogais. | `String replacement = "";` |
+| `return String;` | Retorna a string final sem as vogais. | `return "Hll Wrld";` |
+
+--
 
 
 ## 📂 Organização
