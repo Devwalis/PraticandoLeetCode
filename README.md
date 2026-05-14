@@ -77,7 +77,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 68. [Duplicar Caracteres](#-68-duplicar-caracteres)
 69. [Espaço no Ônibus do Bob](#-69-espaço-no-ônibus-do-bob)
 70. [Anti-Troll Remover Vogais](#-70-anti-troll-remover-vogais)
-
+71. [String termina com?](#-71-String-termina-com?)
 
 
 
@@ -3132,6 +3132,68 @@ A abordagem de Expressão Regular (`String.replaceAll()`) é geralmente mais lim
 
 --
 
+
+# 🧪 71. String Termina Com?
+
+## ✅ Enunciado
+
+Complete a solução para que ela retorne `true` se o primeiro argumento (string) passado terminar com o segundo argumento (também uma string).
+
+**Exemplos:**
+
+- Entradas: `"abc"`, `"bc"`  
+  Saída: `true`
+
+- Entradas: `"abc"`, `"d"`  
+  Saída: `false`
+
+- Entradas: `"abc"`, `""`  
+  Saída: `true` (uma string vazia é considerada o final de qualquer string)
+
+- Entradas: `"samurai"`, `"ai"`  
+  Saída: `true`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+A linguagem Java (e muitas outras linguagens) já possui um método embutido na classe `String` que faz exatamente isso: `endsWith()`.
+
+1. A função receberá duas strings: `str` (a string principal) e `ending` (a string que queremos verificar se é o final de `str`).
+2. Use o método `str.endsWith(ending)`.
+3. Este método retorna `true` se `str` termina com `ending`, e `false` caso contrário. Ele também lida corretamente com casos como `ending` sendo uma string vazia (retorna `true`) ou `ending` sendo mais longa que `str` (retorna `false`).
+
+**Se não pudéssemos usar `endsWith()`**, a lógica manual seria:
+
+- Verifique se o comprimento de `ending` é maior que o comprimento de `str`. Se for, retorne `false` (uma string não pode terminar com outra string mais longa).
+- Verifique se `ending` é uma string vazia. Se for, retorne `true` (uma string vazia termina qualquer string).
+- Obtenha a substring de `str` que tem o mesmo comprimento de `ending` e começa na posição `str.length() - ending.length()`.
+- Compare esta substring com `ending`. Se forem iguais, retorne `true`; caso contrário, retorne `false`.
+
+Para este problema, o uso de `endsWith()` é a solução mais limpa e eficiente.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo    | Valor |
+|---------|-------|
+| Tempo   | O(m)  |
+| Espaço  | O(1)  |
+
+- **Tempo:** Onde `m` é o comprimento da string `ending`. O método `endsWith()` (e a lógica manual equivalente) precisa comparar no máximo `m` caracteres. Portanto, a complexidade de tempo é **O(m)**. No pior caso, se `m` for quase tão longo quanto `str` (`n`), seria **O(n)**.
+- **Espaço:** O método `endsWith()` não cria novas strings para sua operação principal, realizando a comparação "in-place". Portanto, o uso de espaço é constante (**O(1)**).
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                | O que faz                                                                 | Exemplo de uso                     |
+|----------------------------------|---------------------------------------------------------------------------|------------------------------------|
+| `String str`                     | O primeiro parâmetro, a string principal.                                | `String mainString = "abc";`      |
+| `String ending`                  | O segundo parâmetro, a string que deve ser verificada no final.          | `String suffix = "bc";`           |
+| `str.endsWith(ending)`           | Método da classe `String` que verifica se a string termina com a substring especificada. | `"abc".endsWith("bc")` → `true` |
+| `return boolean;`                | Retorna um valor booleano (`true` ou `false`).                           | `return true;`                     |
 
 ## 📂 Organização
 
