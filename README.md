@@ -78,6 +78,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 69. [Espaço no Ônibus do Bob](#-69-espaço-no-ônibus-do-bob)
 70. [Anti-Troll Remover Vogais](#-70-anti-troll-remover-vogais)
 71. [String termina com?](#-71-String-termina-com?)
+72. [Melhor media da classe?](#-72-Melhor-media-da-classe)
 
 
 
@@ -3194,6 +3195,74 @@ Para este problema, o uso de `endsWith()` é a solução mais limpa e eficiente.
 | `String ending`                  | O segundo parâmetro, a string que deve ser verificada no final.          | `String suffix = "bc";`           |
 | `str.endsWith(ending)`           | Método da classe `String` que verifica se a string termina com a substring especificada. | `"abc".endsWith("bc")` → `true` |
 | `return boolean;`                | Retorna um valor booleano (`true` ou `false`).                           | `return true;`                     |
+
+
+# 🧪 72. Melhor que a Média da Classe?
+
+## ✅ Enunciado
+
+Houve uma prova em sua turma e você passou. Parabéns!
+
+Mas você é uma pessoa ambiciosa. Você quer saber se é melhor que o aluno médio da sua turma.
+
+Você recebe um array com as notas dos seus colegas. Agora calcule a média e compare sua nota!
+
+Retorne `true` se você for melhor, caso contrário, `false`!
+
+**Nota:** Sua nota não está incluída no array de notas da sua turma. Não se esqueça dela ao calcular a média da turma!
+
+## 💡 Lógica do Algoritmo
+
+Para determinar se você é melhor que a média da classe, precisamos:
+
+1. **Calcular a Soma Total das Notas:** Some todas as notas dos seus colegas presentes no array.
+2. **Adicionar Sua Nota:** Inclua sua própria nota a essa soma total.
+3. **Calcular o Número Total de Alunos:** O número de alunos será o tamanho do array de colegas + 1 (para incluir você).
+4. **Calcular a Média:** Divida a soma total das notas pelo número total de alunos.
+5. **Comparar:** Compare sua nota com a média calculada.
+   - Se sua nota for **estritamente maior** que a média, retorne `true`.
+   - Caso contrário (se sua nota for igual ou menor que a média), retorne `false`.
+
+## 🔍 Complexidade
+
+| Tipo      | Valor     |
+|-----------|-----------|
+| **Tempo** | O(n)      |
+| **Espaço**| O(1)      |
+
+- **Tempo:** Onde `n` é o número de colegas (tamanho do array `classPoints`). O algoritmo precisa percorrer o array uma vez para somar todas as notas. As operações de soma, divisão e comparação são constantes. Portanto, a complexidade de tempo é **O(n)**.
+- **Espaço:** O algoritmo utiliza apenas algumas variáveis para a soma, a média e os contadores. O uso de espaço é constante (**O(1)**), pois não depende do tamanho do array de entrada.
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                      | O que faz                                                                 | Exemplo de uso                                       |
+|----------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------|
+| `int[] classPoints`                    | O array de notas dos colegas de turma.                                    | `int[] scores = {80, 70, 90};`                      |
+| `int yourPoints`                       | Sua nota na prova.                                                        | `int myScore = 85;`                                 |
+| `int sum = 0;`                         | Variável para acumular a soma das notas.                                  | `int totalSum = 0;`                                 |
+| `for (int score : classPoints)`        | Laço for-each para iterar sobre cada nota no array.                       | `for (int s : scores) { totalSum += s; }`           |
+| `sum += score;`                        | Adiciona a nota atual à soma total.                                       | `totalSum += 80;`                                   |
+| `sum += yourPoints;`                   | Adiciona sua nota à soma total.                                           | `totalSum += myScore;`                              |
+| `double average = (double) sum / (classPoints.length + 1);` | Calcula a média. `(double)` garante divisão de ponto flutuante. `+1` inclui sua nota. | `double avg = (double) 245 / 4;` → `61.25` |
+| `yourPoints > average`                 | Compara sua nota com a média.                                             | `85 > 61.25` → `true`                               |
+| `return boolean;`                      | Retorna `true` ou `false`.                                                | `return true;`                                      |
+
+## 🧠 Exemplo prático
+
+```java
+public class MelhorQueAMedia {
+    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+        int sum = 0;
+        for (int score : classPoints) {
+            sum += score;
+        }
+        sum += yourPoints;
+        double average = (double) sum / (classPoints.length + 1);
+        return yourPoints > average;
+    }
+}
+
+
 
 ## 📂 Organização
 
