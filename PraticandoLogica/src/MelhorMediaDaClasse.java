@@ -35,10 +35,15 @@ public boolean notas(int[] pontosClasse, int minhaNota){
 	return minhaNota > todosPontos;
 
 
+}
 
 
+public static void main(String[] args){
 
+MelhorMediaDaClasse media = new MelhorMediaDaClasse();
 
+int[] notasDaClasse1 = {100, 40, 34, 57, 72, 57, 80};
+int minhaNota1 = 75;
 
-
+System.out.println("Minha nota 75, notas da turma [100, 40, 34, 57,26,72,57,88] -> melhor que a média?" + media.notas(notasDaClasse1, minhaNota1))
 }
