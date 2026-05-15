@@ -79,7 +79,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 70. [Anti-Troll Remover Vogais](#-70-anti-troll-remover-vogais)
 71. [String termina com?](#-71-String-termina-com?)
 72. [Melhor media da classe?](#-72-Melhor-media-da-classe)
-
+73. [Inverter Caso](#-73-Inverter-Caso)
 
 
 
@@ -2284,7 +2284,177 @@ Embora a linguagem Java possua métodos poderosos como `.replace()`, a lógica e
 | Espaço | O(n)  |
 
 - **Tempo:** É necessário visitar cada caractere da string uma vez para verificar se é espaço ou não.
-- **Espaço:** No pior caso (uma string sem espaços), criaremos uma nova string do mesmo tamanho da original.
+- **Espaço:** No pior caso (uma string Alternating Case Algorithm Markdown
+User asks about image content
+Exercício de notas em Markdown
+String ends with problem solution
+Recursive Functions in Python
+AntiTrollVowelRemovalMarkdown
+Bus Space Problem Markdown
+Duplicar caracteres markdown gerado
+DER True Statement Identification
+Check which GPU laptop uses for games
+Phone Attribute Classification Composite Multivalued
+Convert text to markdown format
+Migrar para Git Flow em repositório existente
+Infrastructure as Code definition
+Terraform provider definition
+PR templates improve contribution quality
+Mean Presentation Time Calculation
+Limpeza segura de cache no Debian
+Tautology classification of logical equation
+Formar Frase com Array de Palavras
+Code Output Sequence Identification
+Amazon EventBridge para integração serverless
+Configuração de CI/CD para serviço usuario-service
+Modelagem Física do Banco de Dados E-commerce
+Solução escalável para alta demanda na AWS
+Sair do workspace e versionar projetos
+Amazon DynamoDB: Banco de dados de chave-valor
+AWS Outposts suporte arquitetura híbrida
+Sintaxe Básica da Linguagem Java
+Estrutura Básica de Programas Java
+Migração de 50 PB para AWS com Snowmobile
+Continuar projeto enviando código atual
+Erros de permissão e configuração Spring Boot
+Passo a passo para deploy Docker na AWS
+Ajustes e sugestões para diagrama de banco
+Amazon Cognito para gerenciamento de acesso
+Amazon EFS para acesso compartilhado EC2
+Projeto de E-commerce com Microsserviços e AWS
+AWS Directory Service para gerenciamento de acessos
+Serviços AWS para provisionamento consistente
+Prevenção de bugs de concorrência em Java
+Find Highest and Lowest Numbers in String
+AWS SDKs para implantação programática
+E-commerce com Microsserviços: Requisitos e Branches
+Configuração de autenticação de dois fatores
+Pessoas como ponte no AWS CAF
+Definição de limites de custo com AWS Budgets
+Tarefa restrita do root AWS detalhada
+Reconhecimento Facial: Identificação Pessoal Única
+Identifying Non-Benefits of AWS Cloud Computing
+Migração para nuvem AWS e vantagens
+Solução de armazenamento para Amazon EC2
+Cláusula GROUP BY para agregação de dados
+Função COUNT() para linhas de tabela
+Vantagens da análise estática de código
+Cultura Adhocrática favorece empreendedorismo e inovação.
+Deploy de sites educacionais na AWS
+Opções válidas para comando find
+Verificar se é fator em programação
+Escolha de técnica para grande volume de requisitos
+Requisitos para Sistema de E-commerce
+Hospedagem gratuita para sites Django/Python
+Obrigação de devolver apartamento pintado
+Praticando LeetCode em Java com soluções
+Praticando LeetCode em Java com soluções
+Praticando Lógica com Java e LeetCode
+Como resolver erro de push no Git
+Significado de nullable = false em JPA
+Modelagem de Banco de Dados para E-commerce
+Criação de gráfico de vendas HTML/CSS/JS
+Adaptação de dropdown para administração
+Função e implementação de gateway em microsserviços
+como crio grafico de colunas de
+Implementação de contador de carrinho autenticado
+Implementação de Login com JWT em Java Spring
+Correção de carrossel infinito em JavaScript
+Reestruturação de header para ecommerce autenticado
+Refatoração de código React para ecommerce
+Ajuda para currículo sem experiência em programação
+Conversão de JavaScript para React JSX
+Migração de código front-end para React
+Introdução ao SASS para estilos complexos
+Análise e melhorias de código back-end
+Boa noite e oferta de ajuda.
+Passo a passo para criar projeto React
+Erro de regra @tailwind: resolução passo a passo
+Iniciante em programação busca freelancer como freelancer
+Erro ao inicializar projeto React: solução
+Comandos para iniciar repositório Git
+Implementação segura de navbar após login
+Bom dia, como posso ajudar?
+Bom dia
+Ola, boa tarde
+package blue_ecommerce.service;
+package blue_ecommerce.service;
+package blue_ecommerce.service;
+package blue_ecommerce.service;
+Boa tarde
+como faz para abrir o banco h2 j
+<!DOCTYPE html> <html lang="pt-b
+package com.ecommerce_api.usuari
+Alternating Case Algorithm Markdown
+52. Inverter Caso (Alternating Case)
+
+✅ Enunciado:
+
+altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+
+Defina um método similar a toAlternatingCase que faça com que cada letra minúscula se torne maiúscula e cada letra maiúscula se torne minúscula.
+
+Exemplos:
+
+    "hello world" -> "HELLO WORLD"
+
+    "HELLO WORLD" -> "hello world"
+
+    "hello WORLD" -> "HELLO world"
+
+    "HeLlO WoRlD" -> "hElLo wOrLd"
+
+    "12345" -> "12345" (caracteres não alfabéticos não mudam)
+
+    "1a2b3c4d5e" -> "1A2B3C4D5E"
+
+    "String.prototype.toAlternatingCase" -> "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
+
+💡 Lógica do Algoritmo:
+
+    Usar StringBuilder: Crie um StringBuilder para construir a nova string modificada. Usar StringBuilder é mais eficiente do que concatenar strings repetidamente com +, especialmente para strings maiores.
+
+    Iterar sobre a String: Percorra cada caractere da string de entrada.
+
+    Verificar e Converter Caso: Para cada caractere:
+
+        Verifique se o caractere é uma letra minúscula (Character.isLowerCase(c)). Se for, converta-o para maiúscula (Character.toUpperCase(c)) e adicione-o ao StringBuilder.
+
+        Caso contrário, verifique se o caractere é uma letra maiúscula (Character.isUpperCase(c)). Se for, converta-o para minúscula (Character.toLowerCase(c)) e adicione-o ao StringBuilder.
+
+        Se o caractere não for uma letra (por exemplo, número, espaço, pontuação), adicione-o ao StringBuilder sem modificação.
+
+    Retornar Resultado: Converta o StringBuilder final para uma String e retorne-a.
+
+🔍 Complexidade:
+Tipo	Valor
+Tempo	O(n)
+Espaço	O(n)
+
+    Tempo: Onde n é o comprimento da string de entrada. O algoritmo percorre a string uma única vez. Em cada iteração, ele realiza algumas verificações e possivelmente uma conversão de caractere, que são operações de tempo constante. As operações de append em StringBuilder também têm complexidade média O(1). Portanto, o tempo total é O(n).
+
+    Espaço: O StringBuilder armazena a nova string modificada, que terá o mesmo comprimento da string original. Portanto, o espaço necessário é O(n).
+
+📘 Tabela de Métodos / Conceitos Utilizados:
+Método / Conceito	O que faz	Exemplo de uso
+String str	Parâmetro de entrada da função, a string a ser processada.	String input = "Hello World";
+StringBuilder	Classe mutável e eficiente para construção de strings.	StringBuilder resultBuilder = new StringBuilder();
+str.toCharArray()	Converte a string em um array de caracteres.	for (char c : input.toCharArray()) { ... }
+Character.isLowerCase(char c)	Verifica se o caractere é uma letra minúscula.	if (Character.isLowerCase('a')) → true
+Character.toUpperCase(char c)	Converte o caractere para sua versão maiúscula.	Character.toUpperCase('a') → 'A'
+Character.isUpperCase(char c)	Verifica se o caractere é uma letra maiúscula.	if (Character.isUpperCase('A')) → true
+Character.toLowerCase(char c)	Converte o caractere para sua versão minúscula.	Character.toLowerCase('A') → 'a'
+sb.append(char)	Adiciona um caractere ao final do StringBuilder.	resultBuilder.append('a');
+sb.toString()	Converte o StringBuilder de volta para uma String imutável.	return resultBuilder.toString();
+
+
+
+transforma em formato markdown.md
+
+Estou pedindo para transformar o enunciado, descrição, lógica, complexidade e tabela em formato markdown.md. O usuário já forneceu um texto rico em formatação. Preciso apenas converter para Markdown adequado. Isso é simples: usar cabeçalhos, listas, blocos de código, tabelas, etc. O texto original já tem uma estrutura. Vou produzir um arquivo .md com a formatação apropriada.
+markdown
+
+sem espaços), criaremos uma nova string do mesmo tamanho da original.
 
 ### 📘 Tabela de Métodos / Conceitos Utilizados
 
@@ -3262,7 +3432,66 @@ public class MelhorQueAMedia {
     }
 }
 
+# 73. Inverter Caso 
 
+## ✅ Enunciado
+
+`altERnaTIng cAsE <=> ALTerNAtiNG CaSe`
+
+Defina um método similar a `toAlternatingCase` que faça com que cada letra minúscula se torne maiúscula e cada letra maiúscula se torne minúscula.
+
+### Exemplos:
+
+- `"hello world"` → `"HELLO WORLD"`
+- `"HELLO WORLD"` → `"hello world"`
+- `"hello WORLD"` → `"HELLO world"`
+- `"HeLlO WoRlD"` → `"hElLo wOrLd"`
+- `"12345"` → `"12345"` (caracteres não alfabéticos não mudam)
+- `"1a2b3c4d5e"` → `"1A2B3C4D5E"`
+- `"String.prototype.toAlternatingCase"` → `"sTRING.PROTOTYPE.TOaLTERNATINGcASE"`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+1. **Usar `StringBuilder`**: Crie um `StringBuilder` para construir a nova string modificada. É mais eficiente do que concatenar strings repetidamente com `+`, especialmente para strings maiores.
+
+2. **Iterar sobre a String**: Percorra cada caractere da string de entrada.
+
+3. **Verificar e Converter Caso**: Para cada caractere:
+   - Se for minúsculo (`Character.isLowerCase(c)`), converta para maiúscula (`Character.toUpperCase(c)`) e adicione ao `StringBuilder`.
+   - Senão, se for maiúsculo (`Character.isUpperCase(c)`), converta para minúscula (`Character.toLowerCase(c)`) e adicione ao `StringBuilder`.
+   - Caso contrário (não for letra), adicione o caractere original sem modificação.
+
+4. **Retornar Resultado**: Converta o `StringBuilder` final para `String` e retorne.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo   | Valor   |
+|--------|---------|
+| Tempo  | O(n)    |
+| Espaço | O(n)    |
+
+- **Tempo**: Onde `n` é o comprimento da string de entrada. O algoritmo percorre a string uma única vez, realizando operações de tempo constante por caractere.
+- **Espaço**: O `StringBuilder` armazena a nova string modificada, que tem o mesmo tamanho da original.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                       | O que faz                                                      | Exemplo de uso                                      |
+|----------------------------------------|----------------------------------------------------------------|-----------------------------------------------------|
+| `String str`                           | Parâmetro de entrada (string a ser processada)                | `String input = "Hello World";`                     |
+| `StringBuilder`                        | Classe mutável para construção eficiente de strings           | `StringBuilder resultBuilder = new StringBuilder();`|
+| `str.toCharArray()`                    | Converte a string em um array de caracteres                   | `for (char c : input.toCharArray()) { ... }`        |
+| `Character.isLowerCase(char c)`        | Verifica se o caractere é uma letra minúscula                 | `Character.isLowerCase('a')` → `true`               |
+| `Character.toUpperCase(char c)`        | Converte o caractere para maiúscula                           | `Character.toUpperCase('a')` → `'A'`                |
+| `Character.isUpperCase(char c)`        | Verifica se o caractere é uma letra maiúscula                 | `Character.isUpperCase('A')` → `true`               |
+| `Character.toLowerCase(char c)`        | Converte o caractere para minúscula                           | `Character.toLowerCase('A')` → `'a'`                |
+| `sb.append(char)`                      | Adiciona um caractere ao final do `StringBuilder`             | `resultBuilder.append('a');`                        |
+| `sb.toString()`                        | Converte o `StringBuilder` em `String` imutável               | `return resultBuilder.toString();`                  |
 
 ## 📂 Organização
 
