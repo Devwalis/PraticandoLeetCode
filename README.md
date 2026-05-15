@@ -3417,20 +3417,7 @@ Para determinar se você é melhor que a média da classe, precisamos:
 | `yourPoints > average`                 | Compara sua nota com a média.                                             | `85 > 61.25` → `true`                               |
 | `return boolean;`                      | Retorna `true` ou `false`.                                                | `return true;`                                      |
 
-## 🧠 Exemplo prático
 
-```java
-public class MelhorQueAMedia {
-    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
-        int sum = 0;
-        for (int score : classPoints) {
-            sum += score;
-        }
-        sum += yourPoints;
-        double average = (double) sum / (classPoints.length + 1);
-        return yourPoints > average;
-    }
-}
 
 # 73. Inverter Caso 
 
