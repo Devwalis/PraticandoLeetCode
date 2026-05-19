@@ -1,4 +1,4 @@
-# 🧠 Praticando LeetCode em Java
+## 🧠 Praticando LeetCode em Java
 
 Este repositório contém resoluções de problemas clássicos de lógica de programação, frequentemente cobrados em **entrevistas técnicas**.  
 Todos os algoritmos estão implementados em **Java**, com explicações passo a passo e comentários detalhados.
@@ -80,6 +80,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 71. [String termina com?](#-71-String-termina-com?)
 72. [Melhor media da classe?](#-72-Melhor-media-da-classe)
 73. [Inverter Caso](#-73-Inverter-Caso)
+74. [Maior e menor de um array](#-74-Maior-e-menor-de-um-array)
 
 
 
@@ -502,8 +503,6 @@ Calcule o fatorial de um número `n`.
 - **Tempo:** `O(n)` — uma iteração por número até `n`.
 - **Espaço:** `O(1)` — usa apenas uma variável auxiliar.
 
----
-
 ### 📘 Tabela de Métodos / Conceitos Utilizados
 
 | Método / Conceito            | O que faz                                                              |
@@ -522,6 +521,8 @@ Calcule o fatorial de um número `n`.
 ### ✅ Enunciado
 
 Dado um array, encontre a subarray de soma máxima.
+
+
 
 ---
 
@@ -3479,6 +3480,71 @@ Defina um método similar a `toAlternatingCase` que faça com que cada letra min
 | `Character.toLowerCase(char c)`        | Converte o caractere para minúscula                           | `Character.toLowerCase('A')` → `'a'`                |
 | `sb.append(char)`                      | Adiciona um caractere ao final do `StringBuilder`             | `resultBuilder.append('a');`                        |
 | `sb.toString()`                        | Converte o `StringBuilder` em `String` imutável               | `return resultBuilder.toString();`                  |
+
+
+
+## 🧪 74. Maior e menor de um Array
+
+### ✅ Enunciado:
+Ben teve uma ideia muito simples para obter lucro: ele compra algo e o vende novamente. Claro, isso não lhe daria nenhum lucro se ele simplesmente comprasse e vendesse pelo mesmo preço. Em vez disso, ele vai comprar pelo preço mais baixo possível e vender pelo preço mais alto.
+
+**Tarefa:**
+Escreva uma função que retorne tanto o número mínimo quanto o número máximo da lista/array fornecido.
+
+**Exemplos (Entrada --> Saída):**
+
+| Entrada           | Saída     |
+|-------------------|-----------|
+| `[1,2,3,4,5]`     | `[1,5]`   |
+| `[2334454,5]`     | `[5,2334454]` |
+| `[1]`             | `[1,1]`   |
+
+**Observações:**
+- Todos os arrays ou listas sempre terão pelo menos um elemento, então você não precisa verificar o comprimento.
+- Além disso, sua função sempre receberá um array ou uma lista; você não precisa verificar por `null`, `undefined` ou similar.
+
+### 💡 Lógica do Algoritmo:
+A tarefa é encontrar o menor e o maior elemento em um array. Existem algumas abordagens:
+
+**Abordagem 1: Iteração Simples (Manual)**
+1.  Inicialize duas variáveis: `min` e `max`. Para a primeira iteração, elas podem ser inicializadas com o primeiro elemento do array (já que é garantido que o array tem pelo menos um elemento).
+2.  Percorra o array a partir do segundo elemento (ou de todos, se `min` e `max` forem inicializados com `Integer.MAX_VALUE` e `Integer.MIN_VALUE`, respectivamente).
+3.  Em cada iteração, compare o elemento atual com `min` e `max`.
+    *   Se o elemento atual for menor que `min`, atualize `min`.
+    *   Se o elemento atual for maior que `max`, atualize `max`.
+4.  Retorne `min` e `max` em um novo array (ou objeto, dependendo da necessidade).
+
+**Abordagem 2: Usando `Arrays.sort()`**
+1.  Ordene o array de entrada.
+2.  O menor elemento será o primeiro (índice 0) do array ordenado.
+3.  O maior elemento será o último (índice `array.length - 1`) do array ordenado.
+4.  Retorne esses dois valores.
+
+A Abordagem 1 (Iteração Simples) é geralmente mais eficiente em tempo para esta tarefa específica, pois `Arrays.sort()` tem uma complexidade de tempo maior (`O(N log N)`) do que uma única passagem (`O(N)`).
+
+### 🔍 Complexidade
+
+| Tipo   | Valor (Iteração Simples) | Valor (`Arrays.sort()`) |
+|--------|--------------------------|-------------------------|
+| Tempo  | O(n)                     | O(n log n)              |
+| Espaço | O(1)                     | O(log n) ou O(n) (dependendo da implementação de sort) |
+
+> Onde `n` é o número de elementos no array. A iteração simples é preferível aqui pela sua melhor complexidade de tempo.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                       | O que faz                                                    |
+|----------------------------------------|--------------------------------------------------------------|
+| `int[] array = { ... };`               | Declara e inicializa um array de inteiros.                   |
+| `int min = list[0];` `int max = list[0];` | Inicializa as variáveis `min` e `max` com o primeiro elemento do array. |
+| `for (int num : list)`                 | Laço `for-each` para iterar sobre cada número no array.      |
+| `Math.min(min, num)`                   | Retorna o menor valor entre `min` e `num`.                   |
+| `Math.max(max, num)`                   | Retorna o maior valor entre `max` e `num`.                   |
+| `new int[]{min, max}`                  | Cria e retorna um novo array de inteiros contendo `min` e `max`. |
+
+
 
 ## 📂 Organização
 
