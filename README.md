@@ -82,7 +82,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 73. [Inverter Caso](#-73-Inverter-Caso)
 74. [Maior e menor de um array](#-74-Maior-e-menor-de-um-array)
 75. [Pedra, Papel e Tesoura](#-75-Pedra-Papel-e-Tesoura)
-
+76. [Idade da menina](#-76-Idade-da-menina)
 
 
 ## 🧪 1. Palíndromo
@@ -3593,6 +3593,40 @@ A solução envolve a comparação das jogadas dos dois jogadores e a aplicaçã
 | `player1.equals(player2)`         | Compara duas strings para verificar igualdade de conteúdo (case-sensitive). |
 | `if-else if-else`                 | Estrutura condicional para verificar múltiplas condições em sequência. |
 | `return "..."`                    | Retorna a string com o resultado do jogo.                    |
+
+## 🧪 76. Idade da Menina
+
+### ✅ Enunciado:
+Você pergunta a uma garotinha "Quantos anos você tem?" Ela sempre responde "x years old", onde x é um número aleatório entre 0 e 9.
+
+Escreva um programa que retorne a idade da menina (0-9) como um inteiro.
+
+Assuma que a string de entrada do teste é sempre uma string válida. Por exemplo, a entrada pode ser "1 year old" ou "5 years old". O primeiro caractere na string é sempre um número.
+
+### 💡 Lógica do Algoritmo:
+- Como o enunciado garante que o primeiro caractere da string é sempre um dígito numérico, a lógica é simples.
+- Basta acessar o primeiro caractere da string.
+- Converter esse caractere para seu valor numérico inteiro.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `frase.charAt(0)`                 | Retorna o caractere na posição 0 da string.                  |
+| `Character.getNumericValue(char)` | Converte um caractere que representa um dígito em seu valor numérico inteiro. |
+| `return`                          | Retorna o valor inteiro encontrado.                          |
+
+
+
 
 ## 📂 Organização
 
