@@ -81,6 +81,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 72. [Melhor media da classe?](#-72-Melhor-media-da-classe)
 73. [Inverter Caso](#-73-Inverter-Caso)
 74. [Maior e menor de um array](#-74-Maior-e-menor-de-um-array)
+75. [Pedra, Papel e Tesoura](#-75-Pedra-Papel-e-Tesoura)
 
 
 
@@ -3544,7 +3545,54 @@ A Abordagem 1 (Iteração Simples) é geralmente mais eficiente em tempo para es
 | `Math.max(max, num)`                   | Retorna o maior valor entre `max` e `num`.                   |
 | `new int[]{min, max}`                  | Cria e retorna um novo array de inteiros contendo `min` e `max`. |
 
+## 🧪  75. Pedra, Papel e Tesoura
 
+### ✅ Enunciado:
+As regras do jogo "Pedra, Papel e Tesoura" são:
+
+*   Pedra vence Tesoura
+*   Tesoura vence Papel
+*   Papel vence Pedra
+*   Duas jogadas idênticas resultam em empate.
+
+Vamos jogar! Você receberá jogadas válidas de dois jogadores de Pedra, Papel e Tesoura, e terá que retornar qual jogador venceu: "Player 1 won!" para o jogador 1, e "Player 2 won!" para o jogador 2. Em caso de empate, retorne "Draw!".
+
+**Exemplos:**
+
+| Jogador 1  | Jogador 2 | Saída           |
+|------------|-----------|-----------------|
+| `"scissors"` | `"paper"`   | `"Player 1 won!"` |
+| `"scissors"` | `"rock"`    | `"Player 2 won!"` |
+| `"paper"`    | `"paper"`   | `"Draw!"`       |
+
+### 💡 Lógica do Algoritmo:
+A solução envolve a comparação das jogadas dos dois jogadores e a aplicação das regras do jogo.
+
+1.  **Verificar Empate:** A primeira e mais simples condição a verificar é se as jogadas são idênticas. Se `player1` for igual a `player2`, é um empate.
+2.  **Verificar Vitórias do Jogador 1:** Se não for empate, precisamos verificar as condições em que o `player1` vence. Para isso, podemos usar uma série de `if` ou um `switch` case para cada jogada do `player1` e suas respectivas vitórias.
+    *   Se `player1` for "rock" e `player2` for "scissors".
+    *   Se `player1` for "scissors" e `player2` for "paper".
+    *   Se `player1` for "paper" e `player2` for "rock".
+3.  **Vitória do Jogador 2 (Caso Padrão):** Se não for empate e o `player1` não venceu, por eliminação, o `player2` deve ter vencido.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A complexidade é constante, pois envolve um número fixo de comparações, independentemente dos valores de entrada (já que as jogadas são sempre "rock", "paper" ou "scissors").
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `player1.equals(player2)`         | Compara duas strings para verificar igualdade de conteúdo (case-sensitive). |
+| `if-else if-else`                 | Estrutura condicional para verificar múltiplas condições em sequência. |
+| `return "..."`                    | Retorna a string com o resultado do jogo.                    |
 
 ## 📂 Organização
 
