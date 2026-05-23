@@ -83,7 +83,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 74. [Maior e menor de um array](#-74-Maior-e-menor-de-um-array)
 75. [Pedra, Papel e Tesoura](#-75-Pedra-Papel-e-Tesoura)
 76. [Idade da menina](#-76-Idade-da-menina)
-
+77. [Numero Oposto](#-77-Numero-Oposto)
 
 ## 🧪 1. Palíndromo
 
@@ -3626,7 +3626,43 @@ Assuma que a string de entrada do teste é sempre uma string válida. Por exempl
 | `return`                          | Retorna o valor inteiro encontrado.                          |
 
 
+## 🧪 77. Número Oposto
 
+### ✅ Enunciado:
+Muito simples, dado um número, encontre seu oposto (inverso aditivo).
+
+**Exemplos:**
+
+| Entrada | Saída |
+|---------|-------|
+| `1`     | `-1`  |
+| `14`    | `-14` |
+| `-34`   | `34`  |
+
+### 💡 Lógica do Algoritmo:
+O inverso aditivo de um número `x` é o número que, quando somado a `x`, resulta em zero. Matematicamente, o inverso aditivo de `x` é `-x`.
+
+Portanto, a lógica é extremamente direta:
+1.  Receba o número como entrada.
+2.  Retorne o número multiplicado por -1, ou simplesmente o número com o sinal invertido.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A complexidade é constante, pois envolve uma única operação aritmética, independentemente do valor do número.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz                                                    |
+|-------------------|--------------------------------------------------------------|
+| `-number`         | Operador unário de negação, que inverte o sinal de um número. |
+| `return`          | Retorna o valor calculado da função.                         |
 
 ## 📂 Organização
 
