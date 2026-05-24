@@ -84,6 +84,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 75. [Pedra, Papel e Tesoura](#-75-Pedra-Papel-e-Tesoura)
 76. [Idade da menina](#-76-Idade-da-menina)
 77. [Numero Oposto](#-77-Numero-Oposto)
+78. [Classificacao de idade](#-78-Classificacao-de-idade)
+
 
 ## 🧪 1. Palíndromo
 
@@ -3663,6 +3665,47 @@ Portanto, a lógica é extremamente direta:
 |-------------------|--------------------------------------------------------------|
 | `-number`         | Operador unário de negação, que inverte o sinal de um número. |
 | `return`          | Retorna o valor calculado da função.                         |
+
+
+
+
+## 🧪 78. Classificação de Idade
+
+### ✅ Enunciado:
+O enunciado explica o uso de `if..else` e `else if` como estruturas condicionais básicas. A tarefa implícita, baseada nos exemplos, é criar uma função que classifique uma idade em diferentes categorias.
+
+Para este exercício, a função `oldYoung` deve categorizar a idade da seguinte forma:
+
+- Se a idade for menor que 16, retorne `"children"`.
+- Se a idade for menor que 50 (e não for menor que 16), retorne `"young man"`.
+- Caso contrário (50 ou mais), retorne `"old man"`.
+
+💡 **Lógica do Algoritmo:**
+
+A lógica segue diretamente a estrutura `if...else if...else`:
+
+1. Primeira condição: Verifique se `age` é menor que 16. Se for, retorne `"children"`.
+2. Segunda condição: Se a primeira condição for falsa (ou seja, `age` é 16 ou mais), verifique se `age` é menor que 50. Se for, retorne `"young man"`.
+3. Condição final: Se nenhuma das condições anteriores for verdadeira (ou seja, `age` é 50 ou mais), retorne `"old man"`.
+
+🔍 **Complexidade**
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+A complexidade é constante, pois envolve um número fixo de comparações, independentemente da idade.
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito         | O que faz                                                                 |
+|---------------------------|----------------------------------------------------------------------------|
+| `if (condição)`           | Executa um bloco de código se a condição for verdadeira.                   |
+| `else if (condição)`      | Executa um bloco de código se a condição anterior for falsa e esta condição for verdadeira. |
+| `else`                    | Executa um bloco de código se todas as condições anteriores forem falsas.  |
+| `return "..."`            | Retorna a string com a classificação da idade.                             |
+
 
 ## 📂 Organização
 
