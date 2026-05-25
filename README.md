@@ -85,6 +85,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 76. [Idade da menina](#-76-Idade-da-menina)
 77. [Numero Oposto](#-77-Numero-Oposto)
 78. [Classificacao de idade](#-78-Classificacao-de-idade)
+79. [Converter Booleano para 'yes' ou 'no'](#-79-Converter-Booleano-para-yes-ou-no)
 
 
 ## 🧪 1. Palíndromo
@@ -3705,6 +3706,43 @@ A complexidade é constante, pois envolve um número fixo de comparações, inde
 | `else if (condição)`      | Executa um bloco de código se a condição anterior for falsa e esta condição for verdadeira. |
 | `else`                    | Executa um bloco de código se todas as condições anteriores forem falsas.  |
 | `return "..."`            | Retorna a string com a classificação da idade.                             |
+
+
+## 🧪 79. Converter Booleano para 'Yes' ou 'No'
+
+### ✅ Enunciado:
+Complete o método que recebe um valor booleano e retorna a string "Yes" para `true`, ou a string "No" para `false`.
+
+### 💡 Lógica do Algoritmo:
+A lógica para este problema é extremamente direta, envolvendo uma simples verificação condicional:
+
+1.  Receba o valor booleano como entrada.
+2.  Se o valor booleano for `true`, retorne a string "Yes".
+3.  Se o valor booleano for `false`, retorne a string "No".
+
+Isso pode ser implementado com um `if-else` ou, de forma mais compacta, com o operador ternário.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A complexidade é constante, pois envolve uma única verificação e retorno, independentemente do valor booleano.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito         | O que faz                                                    |
+|--------------------------|--------------------------------------------------------------|
+| `if (bool)`              | Verifica se o valor booleano é `true`.                       |
+| `else`                   | Executa se a condição do `if` for `false`.                   |
+| `boolean ? "Yes" : "No"` | Operador ternário: avalia a condição booleana; se `true`, retorna o primeiro valor; se `false`, retorna o segundo. |
+| `return "..."`           | Retorna a string resultante.                                 |
+
+
 
 
 ## 📂 Organização
