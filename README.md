@@ -86,6 +86,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 77. [Numero Oposto](#-77-Numero-Oposto)
 78. [Classificacao de idade](#-78-Classificacao-de-idade)
 79. [Converter Booleano para 'yes' ou 'no'](#-79-Converter-Booleano-para-yes-ou-no)
+80. [Contar Por X](#-80-Contar-Por-X)
 
 
 ## 🧪 1. Palíndromo
@@ -3742,7 +3743,51 @@ Isso pode ser implementado com um `if-else` ou, de forma mais compacta, com o op
 | `boolean ? "Yes" : "No"` | Operador ternário: avalia a condição booleana; se `true`, retorna o primeiro valor; se `false`, retorna o segundo. |
 | `return "..."`           | Retorna a string resultante.                                 |
 
+## 🧪 80. Contar por X
 
+### ✅ Enunciado:
+Crie uma função com dois argumentos que retornará um array dos primeiros `n` múltiplos de `x`.
+
+Assuma que tanto o número dado (`x`) quanto o número de vezes a contar (`n`) serão números positivos maiores que 0.
+
+Retorne os resultados como um array ou lista (dependendo da linguagem).
+
+**Exemplos:**
+
+| Entrada (x, n) | Saída              | Explicação              |
+|----------------|--------------------|-------------------------|
+| `(1, 10)`      | `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` | Múltiplos de 1, 10 vezes. |
+| `(2, 5)`       | `[2, 4, 6, 8, 10]` | Múltiplos de 2, 5 vezes.  |
+| `(3, 4)`       | `[3, 6, 9, 12]`    | Múltiplos de 3, 4 vezes.  |
+
+### 💡 Lógica do Algoritmo:
+A tarefa é gerar uma sequência de múltiplos.
+
+1.  **Inicializar o Array:** Crie um novo array de inteiros com tamanho `n` (o número de múltiplos que queremos).
+2.  **Iterar e Calcular:** Use um laço de repetição (`for`) que vai de `0` até `n-1` (para preencher o array).
+    *   Em cada iteração `i`, o múltiplo correspondente será `x * (i + 1)`.
+    *   Armazene este múltiplo na posição `i` do array.
+3.  **Retornar o Array:** Após o laço, o array estará preenchido com os múltiplos e deve ser retornado.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(n)  |
+
+> A complexidade de tempo é proporcional a `n` porque precisamos realizar `n` cálculos e `n` atribuições. A complexidade de espaço também é proporcional a `n` porque estamos criando um novo array de tamanho `n`.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `new int[n]`                      | Cria um novo array de inteiros com `n` posições.             |
+| `for (int i = 0; i < n; i++)`     | Laço `for` tradicional que itera `n` vezes, com `i` variando de 0 a `n-1`. |
+| `result[i] = x * (i + 1)`         | Calcula o `(i+1)`-ésimo múltiplo de `x` e o armazena no array. |
+| `return result`                   | Retorna o array preenchido com os múltiplos.                 |
 
 
 ## 📂 Organização
