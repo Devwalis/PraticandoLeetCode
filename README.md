@@ -87,7 +87,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 78. [Classificacao de idade](#-78-Classificacao-de-idade)
 79. [Converter Booleano para 'yes' ou 'no'](#-79-Converter-Booleano-para-yes-ou-no)
 80. [Contar Por X](#-80-Contar-Por-X)
-
+81. [Verifica Valor dentro do array](#-81-Verificar-valor-dentro-do-array)
 
 ## 🧪 1. Palíndromo
 
@@ -3789,6 +3789,49 @@ A tarefa é gerar uma sequência de múltiplos.
 | `result[i] = x * (i + 1)`         | Calcula o `(i+1)`-ésimo múltiplo de `x` e o armazena no array. |
 | `return result`                   | Retorna o array preenchido com os múltiplos.                 |
 
+
+
+
+
+## 🧪 81. Verificar valor dentro do array
+
+### ✅ Enunciado:
+Você receberá um array `a` e um valor `x`. Tudo o que você precisa fazer é verificar se o array fornecido contém o valor.
+
+`a` pode conter números ou strings. `x` pode ser um ou outro.
+
+Retorne `true` se o array contiver o valor, `false` caso contrário.
+
+### 💡 Lógica do Algoritmo:
+A tarefa é verificar a presença de um elemento em um array.
+
+1.  **Iterar sobre o Array:** Percorra cada elemento do array `a`.
+2.  **Comparar Elementos:** Em cada iteração, compare o elemento atual do array com o valor `x` que estamos procurando.
+3.  **Retorno Imediato:** Se o valor `x` for encontrado, a função pode parar imediatamente e retornar `true`.
+4.  **Retorno Final:** Se o laço terminar e o valor `x` não tiver sido encontrado, significa que ele não está no array, então a função deve retornar `false`.
+
+**Consideração Importante para Java:** Como o array `a` pode conter tanto números quanto strings, e `x` também pode ser um ou outro, o tipo do array de entrada em Java seria `Object[]`. A comparação deve ser feita usando `equals()` para objetos, e não `==`, para garantir comparações corretas de conteúdo.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(n)  |
+| Espaço | O(1)  |
+
+> Onde `n` é o número de elementos no array. No pior caso (elemento não encontrado ou no final do array), percorremos todos os elementos. O espaço é constante, pois usamos apenas algumas variáveis.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `Object[] a`                      | Declara um array de objetos, capaz de armazenar diferentes tipos (números, strings, etc.). |
+| `for (Object element : a)`        | Laço `for-each` para iterar sobre cada `Object` no array.    |
+| `element.equals(x)`               | Compara se o `element` atual é igual ao valor `x`. É crucial usar `equals()` para objetos. |
+| `return true`                     | Retorna `true` imediatamente assim que o valor é encontrado. |
+| `return false`                    | Retorna `false` se o laço terminar sem encontrar o valor.    |
 
 ## 📂 Organização
 
