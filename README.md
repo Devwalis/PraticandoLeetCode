@@ -88,6 +88,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 79. [Converter Booleano para 'yes' ou 'no'](#-79-Converter-Booleano-para-yes-ou-no)
 80. [Contar Por X](#-80-Contar-Por-X)
 81. [Verifica Valor dentro do array](#-81-Verificar-valor-dentro-do-array)
+82. [Par ou Impar](#-82-Par-ou-Impar)
+
+
 
 ## 🧪 1. Palíndromo
 
@@ -3832,6 +3835,47 @@ A tarefa é verificar a presença de um elemento em um array.
 | `element.equals(x)`               | Compara se o `element` atual é igual ao valor `x`. É crucial usar `equals()` para objetos. |
 | `return true`                     | Retorna `true` imediatamente assim que o valor é encontrado. |
 | `return false`                    | Retorna `false` se o laço terminar sem encontrar o valor.    |
+
+## 🧪 82. Par ou Ímpar
+
+### ✅ Enunciado:
+Crie uma função que receba um número inteiro como argumento e retorne "Even" para números pares ou "Odd" para números ímpares.
+
+### 💡 Lógica do Algoritmo:
+A lógica para determinar se um número é par ou ímpar é baseada no operador de módulo (`%`).
+
+1.  **Operador Módulo:** O operador de módulo retorna o resto da divisão.
+2.  **Números Pares:** Um número é par se, ao ser dividido por 2, o resto for 0.
+3.  **Números Ímpares:** Um número é ímpar se, ao ser dividido por 2, o resto for 1 (ou -1, dependendo da linguagem e do sinal do número original, mas para inteiros positivos e negativos a lógica `resto == 0` funciona consistentemente para determinar paridade).
+4.  **Verificação:**
+    *   Se `number % 2 == 0`, o número é par, retorne "Even".
+    *   Caso contrário, o número é ímpar, retorne "Odd".
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A complexidade é constante, pois envolve uma única operação aritmética (módulo) e uma comparação, independentemente do valor do número.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz                                                    |
+|-------------------|--------------------------------------------------------------|
+| `number % 2`      | Calcula o resto da divisão de `number` por 2.                |
+| `== 0`            | Compara se o resto da divisão é igual a zero.                |
+| `if-else`         | Estrutura condicional para escolher entre "Even" e "Odd".    |
+| `return "..."`    | Retorna a string apropriada.                                 |
+
+
+
+
+
+
 
 ## 📂 Organização
 
