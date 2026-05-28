@@ -89,7 +89,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 80. [Contar Por X](#-80-Contar-Por-X)
 81. [Verifica Valor dentro do array](#-81-Verificar-valor-dentro-do-array)
 82. [Par ou Impar](#-82-Par-ou-Impar)
-
+83. [Sera que cabe?](#-83-Sera-que-cabe?)
 
 
 ## 🧪 1. Palíndromo
@@ -3872,7 +3872,59 @@ A lógica para determinar se um número é par ou ímpar é baseada no operador 
 | `return "..."`    | Retorna a string apropriada.                                 |
 
 
+## 🧪 83. Será que Cabe? (Capacidade do Ônibus)
 
+### ✅ Enunciado:
+**A História:**
+Bob trabalha como motorista de ônibus. No entanto, ele se tornou extremamente popular entre os moradores da cidade. Com tantos passageiros querendo embarcar em seu ônibus, ele às vezes se depara com o problema de não haver espaço suficiente no ônibus! Ele quer que você escreva um programa simples que diga a ele se ele conseguirá acomodar todos os passageiros.
+
+**Visão Geral da Tarefa:**
+Você deve escrever uma função que aceite três parâmetros:
+*   `cap` é a capacidade de pessoas que o ônibus pode comportar, excluindo o motorista.
+*   `on` é o número de pessoas já no ônibus, excluindo o motorista.
+*   `wait` é o número de pessoas esperando para entrar no ônibus, excluindo o motorista.
+
+Se houver espaço suficiente, retorne `0`. Se não houver, retorne o número de passageiros que ele não pode levar.
+
+**Exemplos de Uso:**
+
+| cap | on | wait | Saída |
+|-----|----|------|-------|
+| 10  | 5  | 5    | 0     |
+| 100 | 60 | 50   | 10    |
+| 10  | 0  | 0    | 0     |
+
+### 💡 Lógica do Algoritmo:
+A lógica para determinar se Bob consegue acomodar todos os passageiros envolve calcular o espaço disponível e compará-lo com o número de pessoas esperando.
+
+1.  **Calcular Pessoas Atuais:** O número total de pessoas que tentarão entrar no ônibus é `on + wait`.
+2.  **Calcular Espaço Disponível:** O espaço disponível no ônibus é `cap - on`.
+3.  **Verificar se Cabem Todos:**
+    *   Se `(on + wait)` for menor ou igual a `cap`, significa que há espaço suficiente para todos. Nesse caso, retorne `0`.
+    *   Caso contrário, o ônibus não tem espaço para todos. O número de passageiros que não caberá é `(on + wait) - cap`. Retorne esse valor.
+
+**Alternativa mais direta:**
+Calcule diretamente a quantidade de pessoas que excedem a capacidade: `(on + wait) - cap`. Se este valor for negativo ou zero, significa que não há excesso, então retorne `0`. Caso contrário, retorne o valor calculado.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+> A complexidade é constante, pois envolve um número fixo de operações aritméticas e uma comparação, independentemente dos valores de entrada.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `int`                             | Tipo de dado para representar números inteiros.              |
+| `cap - on`                        | Calcula o espaço que ainda resta no ônibus.                  |
+| `Math.max(0, ...)`                | Retorna o maior valor entre 0 e a expressão, garantindo que o resultado nunca seja negativo. |
+| `return`                          | Retorna o número de passageiros que não cabem ou 0.          |
 
 
 
