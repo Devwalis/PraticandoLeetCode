@@ -90,7 +90,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 81. [Verifica Valor dentro do array](#-81-Verificar-valor-dentro-do-array)
 82. [Par ou Impar](#-82-Par-ou-Impar)
 83. [Sera que cabe?](#-83-Sera-que-cabe?)
-
+84. [Tempo desde a meia noite](#-84-Tempo-desde-a-meia-noite)
 
 ## 🧪 1. Palíndromo
 
@@ -3927,7 +3927,69 @@ Calcule diretamente a quantidade de pessoas que excedem a capacidade: `(on + wai
 | `return`                          | Retorna o número de passageiros que não cabem ou 0.          |
 
 
+# 🧪 84. Tempo Desde a Meia-Noite (Milissegundos)
 
+## ✅ Enunciado
+
+Um relógio mostra `h` horas, `m` minutos e `s` segundos após a meia-noite.
+
+Sua tarefa é escrever uma função que retorne o tempo decorrido desde a meia-noite em milissegundos.
+
+**Exemplo:**
+
+- Entradas: `h = 0`, `m = 1`, `s = 1`
+- Saída: `61000`
+
+**Restrições de entrada:**
+
+- `0 <= h <= 23`
+- `0 <= m <= 59`
+- `0 <= s <= 59`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O problema consiste em converter diferentes unidades de tempo (horas, minutos e segundos) para uma unidade comum (milissegundos) e somar os valores resultantes.
+
+Para realizar a conversão, aplicamos as seguintes relações matemáticas:
+
+1. **Segundos para milissegundos:** Cada segundo possui 1.000 milissegundos.
+   $$\text{ms} = s \times 1.000$$
+
+2. **Minutos para milissegundos:** Cada minuto possui 60 segundos. Logo, multiplicamos os minutos por 60 (para obter os segundos) e depois por 1.000.
+   $$\text{ms} = m \times 60 \times 1.000 = m \times 60.000$$
+
+3. **Horas para milissegundos:** Cada hora possui 60 minutos (ou 3.600 segundos). Logo, multiplicamos as horas por 3.600 e depois por 1.000.
+   $$\text{ms} = h \times 3.600 \times 1.000 = h \times 3.600.000$$
+
+### Passos da implementação:
+- Multiplique o valor de `h` por `3.600.000`.
+- Multiplique o valor de `m` por `60.000`.
+- Multiplique o valor de `s` por `1.000`.
+- Some os três resultados obtidos e retorne o valor total.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** A complexidade é constante, pois a função realiza apenas operações aritméticas simples de multiplicação e adição, independentemente do tamanho dos valores de entrada.
+- **Espaço:** A complexidade de espaço é constante, uma vez que não são criadas estruturas de dados dinâmicas e nenhum espaço extra de memória é alocado para executar a lógica.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int h, m, s` | Parâmetros de entrada que representam horas, minutos e segundos. | `int h = 0;` |
+| Operadores Aritméticos | Executam operações de multiplicação (`*`) e adição (`+`) para converter os valores. | `h * 3600000 + m * 60000` |
+| `return int;` | Retorna o resultado final do cálculo em milissegundos. | `return 61000;` |
 
 ## 📂 Organização
 
