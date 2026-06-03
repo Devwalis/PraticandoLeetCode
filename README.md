@@ -92,6 +92,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 83. [Sera que cabe?](#-83-Sera-que-cabe?)
 84. [Tempo desde a meia noite](#-84-Tempo-desde-a-meia-noite)
 85. [Expressoes Importam](#-85-Expressoes-Importam)
+86. [Verificar Fator](#-86-Verificar-Fator)
 
 
 
@@ -4064,6 +4065,64 @@ Essa abordagem garante cobertura contra todas as combinações, contornando qual
 | Estrutura de Decisão `if` | Utilizada de forma sequencial para comparar os resultados calculados e guardar o maior valor encontrado. | `if (r2 > max) max = r2;` |
 
 
+
+
+
+# 🧪 86. Verificar Fator (Grasshopper - Check for factor)
+
+## ✅ Enunciado
+
+Esta função deve testar se o parâmetro `factor` (fator) é um fator do parâmetro `base`.
+
+Retorne `true` se for um fator, ou `false` caso contrário.
+
+### Sobre Fatores
+
+Fatores são números que você pode multiplicar entre si para obter outro número. Por exemplo, 2 e 3 são fatores de 6 porque:
+$$2 \times 3 = 6$$
+
+- É possível encontrar um fator realizando a divisão dos números. Se o resto da divisão for igual a `0`, então o número é um fator.
+- Você pode usar o operador de módulo (`%`) na maioria das linguagens de programação para verificar se há resto de divisão.
+
+Por exemplo, 2 não é um fator de 7 porque:
+$$7 \pmod 2 = 1$$
+
+**Observação:** `base` é um número não-negativo e `factor` é um número positivo.
+
+---
+
+## 💡 Lógica do Algoritmo
+
+Para determinar se um número é fator de outro, a lógica matemática nos diz que a divisão do número `base` pelo número `factor` precisa ser exata (ou seja, não deve deixar resto).
+
+Em programação, a forma mais eficiente de verificar se uma divisão é exata é através do operador de módulo (`%`), que calcula o resto da divisão inteira.
+
+1. Realizamos a operação: `base % factor`.
+2. Comparamos o resultado dessa operação com `0`.
+3. Se o resto for igual a `0`, retornamos `true` (é um fator).
+4. Caso contrário, retornamos `false` (não é um fator).
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** O tempo de execução é constante, pois a operação de módulo e a comparação lógica subsequente são realizadas em uma única instrução de processador, sem depender do tamanho das entradas.
+- **Espaço:** O algoritmo opera diretamente sobre os parâmetros fornecidos sem alocar qualquer espaço de memória auxiliar, resultando em uso de memória constante.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int base, factor` | Parâmetros de entrada numéricos que representam o dividendo e o divisor. | `int base = 6;` |
+| Operador Módulo (`%`) | Retorna o resto da divisão inteira entre os operandos. | `6 % 2` (retorna `0`) |
+| Operador de Igualdade (`==`) | Compara se o resto obtido é estritamente igual a zero para validar a divisibilidade. | `(base % factor) == 0` |
 
 
 ## 📂 Organização
