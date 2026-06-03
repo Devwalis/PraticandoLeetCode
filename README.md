@@ -91,6 +91,9 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 82. [Par ou Impar](#-82-Par-ou-Impar)
 83. [Sera que cabe?](#-83-Sera-que-cabe?)
 84. [Tempo desde a meia noite](#-84-Tempo-desde-a-meia-noite)
+85. [Expressoes Importam](#-85-Expressoes-Importam)
+
+
 
 ## 🧪 1. Palíndromo
 
@@ -3990,6 +3993,78 @@ Para realizar a conversão, aplicamos as seguintes relações matemáticas:
 | `int h, m, s` | Parâmetros de entrada que representam horas, minutos e segundos. | `int h = 0;` |
 | Operadores Aritméticos | Executam operações de multiplicação (`*`) e adição (`+`) para converter os valores. | `h * 3600000 + m * 60000` |
 | `return int;` | Retorna o resultado final do cálculo em milissegundos. | `return 61000;` |
+
+1 * (2 + 3) = 5
+1 * 2 * 3 = 6
+1 + 2 * 3 = 7
+(1 + 2) * 3 = 9
+
+
+# 🧪 85. Expressões Importam (Expressions Matter)
+
+## ✅ Enunciado
+
+Dados três inteiros `a`, `b` e `c`, retorne o maior número obtido após inserir os operadores aritméticos de soma `+`, multiplicação `*` e parênteses `()`. 
+
+Em outras palavras, teste todas as combinações possíveis de posicionamento de operadores e parênteses entre os três operandos, mantendo a ordem original dos números, e retorne o maior valor resultante.
+
+**Exemplo:**
+
+Com os números `1`, `2` e `3`, aqui estão algumas das expressões possíveis:
+- `1 * (2 + 3) = 5`
+- `1 * 2 * 3 = 6`
+- `1 + 2 * 3 = 7`
+- `(1 + 2) * 3 = 9`
+
+O maior valor que pode ser obtido nesse caso é `9`.
+
+**Observações:**
+- Os números de entrada são sempre inteiros positivos no intervalo `1 <= a, b, c <= 10`.
+- Você pode usar a mesma operação mais de uma vez.
+- Não é obrigatório usar todos os operadores ou parênteses.
+- Não é permitido alterar a ordem dos operandos originais. Por exemplo, dadas as entradas `1, 2, 3`, você não pode tentar a expressão `(1 + 3) * 2 = 8`.
+
+---
+
+## 💡 Lógica do Algoritmo
+
+Como a ordem dos três termos não pode ser modificada e o número de operandos é muito pequeno (apenas 3 variáveis), há um número limitado de combinações operacionais possíveis. Podemos listar todas as 6 combinações diretas:
+
+1. `a + b + c` (Apenas somas)
+2. `a * b * c` (Apenas multiplicações)
+3. `a * (b + c)` (Multiplicação à esquerda com parênteses)
+4. `(a + b) * c` (Multiplicação à direita com parênteses)
+5. `a + b * c` (Soma à esquerda e multiplicação à direita, seguindo precedência)
+6. `a * b + c` (Multiplicação à esquerda e soma à direita, seguindo precedência)
+
+A solução direta calcula cada um desses 6 valores possíveis e, em seguida, compara-os de forma sequencial ou usando funções de utilidade de máximo para obter o maior valor total. 
+
+Essa abordagem garante cobertura contra todas as combinações, contornando qualquer cenário de números baixos (como o número `1`, que se beneficia mais de adições do que multiplicações).
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** O tempo de execução é constante pois, independentemente dos valores de entrada `a`, `b` e `c`, o código sempre realizará apenas 6 cálculos aritméticos pré-definidos e um número constante de comparações simples.
+- **Espaço:** O uso de memória é constante, já que apenas algumas variáveis primitivas de escopo local são criadas para armazenar os resultados temporários dos cálculos.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int a, b, c` | Parâmetros de entrada que contêm os operandos que não podem ter a ordem alterada. | `int a = 1;` |
+| Operadores aritméticos | Operadores de soma (`+`), multiplicação (`*`) e priorização de precedência por parênteses `()`. | `(a + b) * c` |
+| Estrutura de Decisão `if` | Utilizada de forma sequencial para comparar os resultados calculados e guardar o maior valor encontrado. | `if (r2 > max) max = r2;` |
+
+
+
 
 ## 📂 Organização
 
