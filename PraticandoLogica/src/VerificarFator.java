@@ -18,7 +18,18 @@ public class VerificarFator{
 		
 	
 }
+
+	public static void main(String[] args){
+	VerificarFator = verificar = new VerificarFator();	
+	//testes de exemplos 
+
+
+	System.out.println("Base: 6, fator: 2 -> " + verificar.verificarDeFator(6 , 2));
+	System.out.println("Base: 7 Fator 2 -> 	" + verificar.verificarDeFator(7, 2));
+	System.out.println("Base: 63 Fator: 7 -> " + verificar.verificarDeFator(63, 7));
+
 		
+}		
 
 
 	}
