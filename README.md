@@ -4132,6 +4132,63 @@ Exemplo: `Palindromo.java`, `Fatorial.java`, `InverterArray`, `SomarDePares`, `F
 
 ---
 
+# 🧪 87. Transporte nas Férias (Transportation on vacation)
+
+## ✅ Enunciado
+
+Depois de um trimestre difícil no escritório, você decide descansar nas férias. Então, você reserva um voo para você e sua namorada e tenta deixar toda a bagunça para trás.
+
+Você precisará de um carro alugado para se locomover nas férias. O gerente da locadora de carros lhe faz algumas boas ofertas:
+
+- Cada dia de aluguel do carro custa **$40**.
+- Se você alugar o carro por **7 ou mais dias**, você ganha **$50 de desconto** no total.
+- Alternativamente, se você alugar o carro por **3 ou mais dias** (e menos de 7), você ganha **$20 de desconto** no total.
+
+Escreva um código que retorne o valor total para diferentes quantidades de dias (`d`).
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O cálculo do valor final do aluguel do carro segue uma estrutura lógica de condições mutuamente exclusivas baseadas na quantidade de dias (`d`):
+
+1. **Cálculo do Custo Bruto:** O valor inicial sem desconto é gerado multiplicando o total de dias `d` pela taxa diária de $40.
+   $$\text{custo\_bruto} = d \times 40$$
+
+2. **Aplicação das Regras de Desconto:**
+   - **Caso 1 ($d \ge 7$):** O cliente ganha um desconto fixo de $50. O custo total passa a ser:
+     $$\text{total} = (d \times 40) - 50$$
+   - **Caso 2 ($3 \le d < 7$):** O cliente ganha um desconto alternativo de $20. O custo total passa a ser:
+     $$\text{total} = (d \times 40) - 20$$
+   - **Caso 3 ($d < 3$):** Não há nenhum tipo de desconto aplicado. O custo total é equivalente ao custo bruto:
+     $$\text{total} = d \times 40$$
+
+Implementar essa lógica por meio de desvios condicionais (`if` / `else if` / `else`) garante que apenas uma das deduções seja aplicada à compra.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** A complexidade é constante, pois o número de operações aritméticas e testes de controle de fluxo não varia de acordo com o tamanho da entrada. O processamento ocorre de forma imediata.
+- **Espaço:** O algoritmo necessita de espaço de memória constante, pois utiliza apenas variáveis primitivas básicas locais de controle aritmético, sem gerar novas estruturas.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int d` | Parâmetro de entrada indicando a quantidade de dias de aluguel. | `int d = 5;` |
+| Estrutura Condicional `if/else if/else` | Executa o bloco lógico correspondente à faixa de desconto em que o total de dias se enquadra. | `if (d >= 7) { ... }` |
+| Operadores Aritméticos | Multiplicação (`*`) e subtração (`-`) usadas para formular o total bruto e deduzir os descontos. | `(d * 40) - 50` |
+
+
+
 ## 🚀 Como executar
 
 1. Clone este repositório:
