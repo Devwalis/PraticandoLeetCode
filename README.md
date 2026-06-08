@@ -94,7 +94,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 85. [Expressoes Importam](#-85-Expressoes-Importam)
 86. [Verificar Fator](#-86-Verificar-Fator)
 87. [Transporte nas Férias](#-87-Transporte-nas-ferias)
-
+88. [Função 2 - Elevando um Argumento ao quadrado](#-88-Elevando-um-Argumento-ao-quadrado)
 
 ## 🧪 1. Palíndromo
 
@@ -4182,6 +4182,55 @@ Implementar essa lógica por meio de desvios condicionais (`if` / `else if` / `e
 | Operadores Aritméticos | Multiplicação (`*`) e subtração (`-`) usadas para formular o total bruto e deduzir os descontos. | `(d * 40) - 50` |
 
 
+
+
+# 🧪 88. Função 2 - Elevando um Argumento ao Quadrado (Function 2 - squaring an argument)
+
+## ✅ Enunciado
+
+Sua tarefa é escrever uma função simples que receba um argumento numérico e retorne o quadrado desse número.
+
+**Exemplos:**
+
+- Entrada: `3`  
+  Saída: `9`
+
+- Entrada: `5`  
+  Saída: `25`
+
+- Entrada: `-4`  
+  Saída: `16`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O cálculo do quadrado de um número é uma das operações aritméticas mais fundamentais. Para encontrar o quadrado de uma variável $n$, basta realizar a multiplicação do número por ele mesmo:
+$$\text{resultado} = n \times n$$
+
+Embora linguagens como o Java disponibilizem métodos utilitários específicos para exponenciação (como `Math.pow(base, expoente)`), para a potência de grau 2, a multiplicação direta (`n * n`) é a estratégia mais recomendada. Ela evita custos de conversão interna de tipos inteiros para ponto flutuante (`double`) e preserva a performance original do código.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** A complexidade é constante, visto que a multiplicação de tipos numéricos primitivos é traduzida em uma única operação em nível de instruções de CPU.
+- **Espaço:** A complexidade de espaço é constante, pois a operação ocorre de forma direta e sem alocação de novas estruturas em memória.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int n` | O número que será processado pela função. | `int n = 3;` |
+| Operador de Multiplicação (`*`) | Efetua a multiplicação da base por si mesma para encontrar o quadrado do número. | `n * n` |
+| `return` | Retorna o produto inteiro gerado pelo cálculo. | `return 9;` |
 
 
 
