@@ -4125,12 +4125,6 @@ Em programação, a forma mais eficiente de verificar se uma divisão é exata �
 | Operador de Igualdade (`==`) | Compara se o resto obtido é estritamente igual a zero para validar a divisibilidade. | `(base % factor) == 0` |
 
 
-## 📂 Organização
-
-Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
-Exemplo: `Palindromo.java`, `Fatorial.java`, `InverterArray`, `SomarDePares`, `Fibonacci` etc.
-
----
 
 # 🧪 87. Transporte nas Férias (Transportation on vacation)
 
@@ -4187,6 +4181,16 @@ Implementar essa lógica por meio de desvios condicionais (`if` / `else if` / `e
 | Estrutura Condicional `if/else if/else` | Executa o bloco lógico correspondente à faixa de desconto em que o total de dias se enquadra. | `if (d >= 7) { ... }` |
 | Operadores Aritméticos | Multiplicação (`*`) e subtração (`-`) usadas para formular o total bruto e deduzir os descontos. | `(d * 40) - 50` |
 
+
+
+
+
+## 📂 Organização
+
+Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
+Exemplo: `Palindromo.java`, `Fatorial.java`, `InverterArray`, `SomarDePares`, `Fibonacci` etc.
+
+---
 
 
 ## 🚀 Como executar
