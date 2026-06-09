@@ -95,6 +95,10 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 86. [Verificar Fator](#-86-Verificar-Fator)
 87. [Transporte nas Férias](#-87-Transporte-nas-ferias)
 88. [Função 2 - Elevando um Argumento ao quadrado](#-88-Elevando-um-Argumento-ao-quadrado)
+89. [Trabalho Escolar](#-89-Trabalho-Escolar)
+
+
+
 
 ## 🧪 1. Palíndromo
 
@@ -4231,6 +4235,60 @@ Embora linguagens como o Java disponibilizem métodos utilitários específicos 
 | `int n` | O número que será processado pela função. | `int n = 3;` |
 | Operador de Multiplicação (`*`) | Efetua a multiplicação da base por si mesma para encontrar o quadrado do número. | `n * n` |
 | `return` | Retorna o produto inteiro gerado pelo cálculo. | `return 9;` |
+
+
+# 🧪 89. Trabalho Escolar (Paperwork)
+
+## ✅ Enunciado
+
+Seus colegas de classe pediram para você fazer cópias de um trabalho escolar para eles. Você sabe que existem `n` colegas de classe e que o trabalho possui `m` páginas.
+
+Sua tarefa é calcular de quantas páginas em branco você precisará. Caso `n < 0` ou `m < 0`, a função deve retornar `0`.
+
+**Exemplos:**
+
+- Entradas: `n = 5`, `m = 5`  
+  Saída: `25`
+
+- Entradas: `n = -5`, `m = 5`  
+  Saída: `0`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O problema requer uma multiplicação simples entre a quantidade de colegas de classe e a quantidade de páginas do documento a ser copiado. No entanto, é exigida uma validação de restrição inicial.
+
+1. **Validação de Entrada:** Em termos físicos, é impossível lidar com quantidades negativas de pessoas ou páginas. Portanto, a primeira etapa consiste em validar os parâmetros recebidos.
+   - Verificamos se `n` é menor que zero ou se `m` é menor que zero. Se qualquer um dos testes for verdadeiro, retornamos imediatamente `0`.
+   
+2. **Cálculo de Páginas:** Caso as entradas sejam válidas ($\ge 0$), efetuamos a multiplicação das variáveis para obter o total de folhas em branco necessárias:
+   $$\text{folhas\_totais} = n \times m$$
+
+3. **Retorno:** Retornamos o produto da operação.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** A complexidade é constante, pois a comparação condicional inicial e a multiplicação ocorrem em uma quantidade fixa de etapas de hardware, não dependendo de nenhuma escala dinâmica.
+- **Espaço:** A complexidade de espaço é constante, já que a operação é calculada e retornada diretamente sem alocar espaço adicional para novas estruturas de dados na memória.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int n, m` | Parâmetros de entrada contendo o total de colegas de classe e folhas por documento, respectivamente. | `int n = 5;` |
+| Operador Lógico OU (`\|\|`) | Avalia se pelo menos uma das condições de erro (número menor que zero) é verdadeira. | `n < 0 \|\| m < 0` |
+| Operador de Multiplicação (`*`) | Calcula o produto entre as duas variáveis aprovadas pela validação. | `n * m` |
+
 
 
 
