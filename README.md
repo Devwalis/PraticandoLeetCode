@@ -96,7 +96,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 87. [Transporte nas Férias](#-87-Transporte-nas-ferias)
 88. [Função 2 - Elevando um Argumento ao quadrado](#-88-Elevando-um-Argumento-ao-quadrado)
 89. [Trabalho Escolar](#-89-Trabalho-Escolar)
-
+90. [Diferença de Volume de Cuboides]
 
 
 
@@ -4289,6 +4289,60 @@ O problema requer uma multiplicação simples entre a quantidade de colegas de c
 | Operador Lógico OU (`\|\|`) | Avalia se pelo menos uma das condições de erro (número menor que zero) é verdadeira. | `n < 0 \|\| m < 0` |
 | Operador de Multiplicação (`*`) | Calcula o produto entre as duas variáveis aprovadas pela validação. | `n * m` |
 
+
+
+# 🧪 90. Diferença de Volume entre Cuboides (Difference of Volumes of Cuboids)
+
+## ✅ Enunciado
+
+Neste exercício, você criará um programa que receberá duas listas de inteiros, `a` e `b`. Cada lista consistirá em exatamente 3 inteiros positivos maiores que 0, representando as dimensões (comprimento, largura e altura) dos cuboides `a` e `b`.
+
+Sua tarefa é encontrar a diferença absoluta entre os volumes dos cuboides, independentemente de qual deles seja maior.
+
+**Exemplo:**
+
+- Parâmetros passados: `a = [2, 2, 3]`, `b = [5, 4, 1]`
+- Volume de `a`: $2 \times 2 \times 3 = 12$
+- Volume de `b`: $5 \times 4 \times 1 = 20$
+- Diferença absoluta: $|12 - 20| = 8$
+- Retorno: `8`
+
+---
+
+## 💡 Lógica do Algoritmo
+
+O cálculo da diferença de volumes de dois cuboides baseia-se em geometria espacial elementar aliada ao uso de operações aritméticas de módulo (valor absoluto).
+
+1. **Cálculo de Volumes:** O volume de um cuboide é a multiplicação de suas três dimensões básicas.
+   $$\text{volume\_a} = a[0] \times a[1] \times a[2]$$
+   $$\text{volume\_b} = b[0] \times b[1] \times b[2]$$
+
+2. **Diferença Absoluta:** O enunciado pede a diferença "independentemente de qual seja maior". Isso significa que o resultado deve ser sempre positivo ou zero. Para atingir essa regra, subtraímos um volume do outro e aplicamos a função de valor absoluto. Em Java, essa operação é desempenhada de forma nativa pela função `Math.abs()`:
+   $$\text{diferença} = |\text{volume\_a} - \text{volume\_b}|$$
+
+A lógica pode ser reduzida e escrita em uma única linha, aplicando todas as operações diretamente na instrução de retorno.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(1)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** A complexidade é constante, pois a quantidade de operações executadas (exatamente 6 multiplicações, 1 subtração e 1 cálculo de valor absoluto) é fixa e não varia de acordo com as dimensões de entrada dos cuboides.
+- **Espaço:** O espaço necessário para a execução também é constante, dado que o processamento ocorre de maneira direta (in-place) sem a criação de estruturas de dados auxiliares.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito | O que faz | Exemplo de uso |
+|------------------|-----------|----------------|
+| `int[] a, b` | Arrays contendo exatamente 3 inteiros representando comprimento, largura e altura. | `int[] a = {2, 2, 3};` |
+| Indexação de Arrays | Permite acessar as dimensões em índices específicos. | `a[0], a[1], a[2]` |
+| `Math.abs(int value)` | Retorna o valor absoluto de um número inteiro, convertendo resultados negativos para positivos. | `Math.abs(-8)` (retorna `8`) |
 
 
 
