@@ -22,6 +22,15 @@ public class TrabalhoEscolar{
 	return n * m;
 		
 	}
+	
 
+	public static void main(String[] args){
+		TrabalhoEscolar calculador = new TrabalhoEscolar();
+	
+
+	System.out.println("n=5, m=5  -> " + calculador.trabalho(5,5));
+	
+	
+	}
 
 	}
