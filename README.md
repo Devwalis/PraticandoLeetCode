@@ -96,8 +96,8 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 87. [Transporte nas Férias](#-87-Transporte-nas-ferias)
 88. [Função 2 - Elevando um Argumento ao quadrado](#-88-Elevando-um-Argumento-ao-quadrado)
 89. [Trabalho Escolar](#-89-Trabalho-Escolar)
-90. [Diferença de Volume de Cuboides]
-
+90. [Diferença de Volume de Cuboides](#-90-Diferenca-de-volume-de-cuboides)
+91. [Summation](-#-91-Sumation)
 
 
 ## 🧪 1. Palíndromo
