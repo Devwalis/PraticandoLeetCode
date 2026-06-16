@@ -4344,7 +4344,37 @@ A lógica pode ser reduzida e escrita em uma única linha, aplicando todas as op
 | Indexação de Arrays | Permite acessar as dimensões em índices específicos. | `a[0], a[1], a[2]` |
 | `Math.abs(int value)` | Retorna o valor absoluto de um número inteiro, convertendo resultados negativos para positivos. | `Math.abs(-8)` (retorna `8`) |
 
+# 91 - Summation
 
+## 📝 Descrição
+
+Escreva um programa que calcule a soma de todos os números de 1 até `num` (inclusive). O número será sempre um inteiro positivo maior que 0. A função deve retornar apenas o resultado.
+
+### Exemplos
+
+| Entrada | Saída | Explicação          |
+|---------|-------|---------------------|
+| 2       | 3     | 1 + 2 = 3           |
+| 8       | 36    | 1 + 2 + ... + 8 = 36|
+
+---
+
+## 🔧 Solução
+
+A soma dos primeiros `n` números naturais é dada pela fórmula da progressão aritmética:
+
+\[
+\text{soma} = \frac{n \cdot (n + 1)}{2}
+\]
+
+### Implementação (Java)
+
+```java
+public class Summation {
+    public static int summation(int num) {
+        return num * (num + 1) / 2;
+    }
+}
 
 ## 📂 Organização
 
