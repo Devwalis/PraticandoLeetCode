@@ -98,7 +98,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 89. [Trabalho Escolar](#-89-Trabalho-Escolar)
 90. [Diferença de Volume de Cuboides](#-90-Diferenca-de-volume-de-cuboides)
 91. [Summation](-#-91-Sumation)
-
+92. [É um triangulo?](#-92-É-um-triangulo?)
 
 ## 🧪 1. Palíndromo
 
@@ -4376,6 +4376,57 @@ public class Summation {
     }
 }
 
+
+
+
+
+
+
+
+# 92.É um triangulo? | Is this a triangle?
+
+## 📝 Descrição
+
+Implemente uma função que recebe 3 valores inteiros `a`, `b`, `c` e retorna `true` se for possível construir um triângulo com esses lados, e `false` caso contrário.  
+Para ser aceito, o triângulo deve ter área maior que 0 (ou seja, lados estritamente positivos e que satisfaçam a desigualdade triangular).
+
+### Exemplos
+
+| Entrada       | Saída |
+|---------------|-------|
+| 1, 2, 2       | true  |
+| 4, 2, 3       | true  |
+| 2, 2, 2       | true  |
+| 1, 2, 3       | false |
+| -5, 1, 3      | false |
+| 0, 2, 3       | false |
+| 1, 2, 9       | false |
+
+---
+
+## 🔧 Solução
+
+### Condições necessárias e suficientes
+
+Três lados formam um triângulo com área positiva se:
+
+1. Todos os lados são **positivos** (`a > 0`, `b > 0`, `c > 0`).
+2. A soma de quaisquer dois lados é **maior** que o terceiro (desigualdade triangular):
+   - `a + b > c`
+   - `a + c > b`
+   - `b + c > a`
+
+### Implementação (Java)
+
+```java
+public class TriangleChecker {
+    public static boolean isTriangle(int a, int b, int c) {
+        return a > 0 && b > 0 && c > 0
+                && (a + b > c)
+                && (a + c > b)
+                && (b + c > a);
+    }
+}
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
