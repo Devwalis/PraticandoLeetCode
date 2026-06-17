@@ -97,8 +97,10 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 88. [Função 2 - Elevando um Argumento ao quadrado](#-88-Elevando-um-Argumento-ao-quadrado)
 89. [Trabalho Escolar](#-89-Trabalho-Escolar)
 90. [Diferença de Volume de Cuboides](#-90-Diferenca-de-volume-de-cuboides)
-91. [Summation](-#-91-Sumation)
+91. [Summation](#-91-Sumation)
 92. [É um triangulo?](#-92-É-um-triangulo?)
+93. [Classificação da Idade](#-93-Classificação de Idade)
+
 
 ## 🧪 1. Palíndromo
 
@@ -4427,6 +4429,50 @@ public class TriangleChecker {
                 && (b + c > a);
     }
 }
+
+
+## 🧪 93. Classificação de Idade 
+
+### ✅ Enunciado:
+O enunciado explica o uso de `if..else` e `else if` como estruturas condicionais básicas. A tarefa implícita, baseada nos exemplos, é criar uma função que classifique uma idade em diferentes categorias.
+
+Para este exercício, a função `oldYoung` deve categorizar a idade da seguinte forma:
+
+- Se a idade for menor que 16, retorne `"children"`.
+- Se a idade for menor que 50 (e não for menor que 16), retorne `"young man"`.
+- Caso contrário (50 ou mais), retorne `"old man"`.
+
+💡 **Lógica do Algoritmo:**
+
+A lógica segue diretamente a estrutura `if...else if...else`:
+
+1. Primeira condição: Verifique se `age` é menor que 16. Se for, retorne `"children"`.
+2. Segunda condição: Se a primeira condição for falsa (ou seja, `age` é 16 ou mais), verifique se `age` é menor que 50. Se for, retorne `"young man"`.
+3. Condição final: Se nenhuma das condições anteriores for verdadeira (ou seja, `age` é 50 ou mais), retorne `"old man"`.
+
+🔍 **Complexidade**
+
+| Tipo   | Valor |
+|--------|-------|
+| Tempo  | O(1)  |
+| Espaço | O(1)  |
+
+A complexidade é constante, pois envolve um número fixo de comparações, independentemente da idade.
+
+📘 **Tabela de Métodos / Conceitos Utilizados**
+
+| Método / Conceito         | O que faz                                                                 |
+|---------------------------|----------------------------------------------------------------------------|
+| `if (condição)`           | Executa um bloco de código se a condição for verdadeira.                   |
+| `else if (condição)`      | Executa um bloco de código se a condição anterior for falsa e esta condição for verdadeira. |
+| `else`                    | Executa um bloco de código se todas as condições anteriores forem falsas.  |
+| `return "..."`            | Retorna a string com a classificação da idade.                             |
+
+
+
+
+
+
 ## 📂 Organização
 
 Cada exercício está dentro de sua própria classe Java e os exercícios Com complexidade de POO estão na pasta `poo`, com o nome da questão em portugês no padrão camelCase.  
