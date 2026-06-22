@@ -100,7 +100,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 91. [Summation](#-91-Sumation)
 92. [É um triangulo?](#-92-É-um-triangulo?)
 93. [Classificação da Idade](#-93-Classificação de Idade)
-
+94. [Transcrever DNA para RNA](#-94-Transcreve-DNA-para-RNA)
 
 ## 🧪 1. Palíndromo
 
@@ -4469,7 +4469,58 @@ A complexidade é constante, pois envolve um número fixo de comparações, inde
 | `return "..."`            | Retorna a string com a classificação da idade.                             |
 
 
+## 🧪 49. Transcrever DNA para RNA
 
+### ✅ Enunciado:
+O Ácido Desoxirribonucleico, DNA, é a principal molécula de armazenamento de informações em sistemas biológicos. Ele é composto por quatro bases de ácido nucleico: Guanina ('G'), Citosina ('C'), Adenina ('A') e Timina ('T').
+
+O Ácido Ribonucleico, RNA, é a principal molécula mensageira nas células. O RNA difere ligeiramente do DNA em sua estrutura química e não contém Timina. No RNA, a Timina é substituída por outra base de ácido nucleico, a Uracila ('U').
+
+Crie uma função que traduza uma dada string de DNA em RNA.
+
+**Por exemplo:**
+`"GCAT"` => `"GCAU"`
+
+A string de entrada pode ter um comprimento arbitrário - em particular, pode ser vazia. Toda entrada é garantida como válida, ou seja, cada string de entrada consistirá apenas em 'G', 'C', 'A' e/ou 'T'.
+
+### 💡 Lógica do Algoritmo:
+A tarefa é substituir todas as ocorrências de 'T' por 'U' em uma string.
+
+**Abordagem 1: Iteração Caractere por Caractere**
+1.  Crie um `StringBuilder` para construir a nova string de RNA. O `StringBuilder` é mais eficiente para concatenar caracteres repetidamente do que a concatenação direta de `String` (que cria muitos objetos intermediários).
+2.  Percorra cada caractere da string de DNA de entrada.
+3.  Para cada caractere:
+    *   Se o caractere for 'T', adicione 'U' ao `StringBuilder`.
+    *   Caso contrário (se for 'G', 'C' ou 'A'), adicione o caractere original ao `StringBuilder`.
+4.  Ao final do laço, converta o `StringBuilder` para uma `String` e retorne.
+
+**Abordagem 2: Usando `String.replace()`**
+1.  A classe `String` em Java possui um método `replace()` ou `replaceAll()` que pode ser usado para substituir todas as ocorrências de um caractere ou substring por outro.
+2.  Simplesmente chame `dna.replace('T', 'U')` na string de entrada.
+
+A Abordagem 2 é a mais concisa e idiomática para este problema em Java, pois `String.replace()` já foi otimizada para essa tarefa.
+
+### 🔍 Complexidade
+
+| Tipo   | Valor (Iteração Manual / String.replace()) |
+|--------|-------------------------------------------|
+| Tempo  | O(n)                                      |
+| Espaço | O(n)                                      |
+
+> Onde `n` é o comprimento da string de entrada. Ambos os métodos precisam, no pior caso, percorrer a string inteira e criar uma nova string (ou modificar uma cópia em StringBuilder) do mesmo tamanho.
+
+---
+
+### 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                  | O que faz                                                    |
+|-----------------------------------|--------------------------------------------------------------|
+| `dna.replace('T', 'U')`           | (Abordagem 2) Retorna uma nova string onde todas as ocorrências do primeiro caractere são substituídas pelo segundo. |
+| `dna.toCharArray()`               | (Abordagem 1) Converte a string em um array de caracteres para iteração. |
+| `StringBuilder`                   | (Abordagem 1) Uma classe mutável para construir strings de forma eficiente. |
+| `sb.append(char)`                 | (Abordagem 1) Adiciona um caractere ao `StringBuilder`.     |
+| `sb.toString()`                   | (Abordagem 1) Converte o `StringBuilder` de volta para uma `String`. |
+| `return`                          | Retorna a string de RNA resultante.                          |
 
 
 
