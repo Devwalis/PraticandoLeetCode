@@ -101,6 +101,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 92. [É um triangulo?](#-92-É-um-triangulo?)
 93. [Classificação da Idade](#-93-Classificação de Idade)
 94. [Transcrever DNA para RNA](#-94-Transcreve-DNA-para-RNA)
+95. [Série: Soma dos primeiros n termos](#-95-Série-Soma-dos-primeiros n termos)
 
 ## 🧪 1. Palíndromo
 
@@ -4469,7 +4470,7 @@ A complexidade é constante, pois envolve um número fixo de comparações, inde
 | `return "..."`            | Retorna a string com a classificação da idade.                             |
 
 
-## 🧪 49. Transcrever DNA para RNA
+## 🧪 94. Transcrever DNA para RNA
 
 ### ✅ Enunciado:
 O Ácido Desoxirribonucleico, DNA, é a principal molécula de armazenamento de informações em sistemas biológicos. Ele é composto por quatro bases de ácido nucleico: Guanina ('G'), Citosina ('C'), Adenina ('A') e Timina ('T').
@@ -4522,7 +4523,96 @@ A Abordagem 2 é a mais concisa e idiomática para este problema em Java, pois `
 | `sb.toString()`                   | (Abordagem 1) Converte o `StringBuilder` de volta para uma `String`. |
 | `return`                          | Retorna a string de RNA resultante.                          |
 
+# 95 Série: Soma dos primeiros n termos
 
+## 📝 Enunciado
+
+Escreva uma função que retorne a soma dos primeiros `n` termos da seguinte série:
+
+\[
+1 + \frac{1}{4} + \frac{1}{7} + \frac{1}{10} + \frac{1}{13} + \frac{1}{16} + \dots
+\]
+
+**Regras:**
+
+- Arredonde o resultado para **2 casas decimais** e retorne-o como `String`.
+- Se `n = 0`, retorne `"0.00"`.
+- Você receberá apenas **Números Naturais** como argumento.
+
+**Exemplos:**
+
+| `n` | Série                              | Saída   |
+|-----|------------------------------------|---------|
+| 1   | 1                                  | `"1.00"` |
+| 2   | 1 + 1/4                           | `"1.25"` |
+| 5   | 1 + 1/4 + 1/7 + 1/10 + 1/13       | `"1.57"` |
+
+---
+
+## 💡 Lógica do Algoritmo
+
+1. **Identificar o padrão dos denominadores:**  
+   Os denominadores são: 1, 4, 7, 10, 13, 16, …  
+   Trata‑se de uma progressão aritmética com primeiro termo `1` e razão `3`.  
+   Portanto, o **k‑ésimo** termo (começando em `k = 1`) é:
+
+   \[
+   \frac{1}{3k - 2}
+   \]
+
+2. **Somar os `n` primeiros termos:**  
+   Basta percorrer de `i = 0` até `i = n-1` e adicionar `1.0 / (3 * i + 1)`.
+
+3. **Arredondamento e formatação:**  
+   Utilize `String.format("%.2f", soma)` para obter duas casas decimais.
+
+4. **Caso especial:**  
+   Se `n == 0`, retorne `"0.00"`.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(n)  |
+| **Espaço**| O(1)  |
+
+- O loop executa `n` iterações, cada uma com operações constantes → **O(n)**.
+- Apenas algumas variáveis são usadas, independentemente do tamanho de `n` → **O(1)**.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Conceito / Método                  | O que faz                                                                 | Exemplo                                 |
+|------------------------------------|---------------------------------------------------------------------------|-----------------------------------------|
+| `double sum`                       | Acumula a soma dos termos.                                                | `double sum = 0.0;`                     |
+| `for (int i = 0; i < n; i++)`      | Itera sobre os `n` primeiros termos.                                      | `for (int i = 0; i < n; i++) { ... }`   |
+| `1.0 / (3 * i + 1)`               | Calcula o termo de índice `i` (começando em 0).                           | `1.0 / (3*0+1) = 1.0`                   |
+| `String.format("%.2f", sum)`       | Formata o número com duas casas decimais (arredondamento padrão).         | `"1.57"`                                |
+| `return`                           | Retorna a `String` formatada.                                             | `return String.format("%.2f", sum);`    |
+
+---
+
+## 💻 Código (Java)
+
+```java
+public class SeriesSum {
+
+    public static String seriesSum(int n) {
+        if (n == 0) {
+            return "0.00";
+        }
+
+        double sum = 0.0;
+        for (int i = 0; i < n; i++) {
+            sum += 1.0 / (3 * i + 1);
+        }
+
+        return String.format("%.2f", sum);
+    }
+}
 
 ## 📂 Organização
 
