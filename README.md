@@ -102,6 +102,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 93. [Classificação da Idade](#-93-Classificação de Idade)
 94. [Transcrever DNA para RNA](#-94-Transcreve-DNA-para-RNA)
 95. [Série: Soma dos primeiros n termos](#-95-Série-Soma-dos-primeiros n termos)
+96. [Contar Positivos e Somar Negativos](#-96-Contar-Positivos-e-Somar-Negativos)
 
 ## 🧪 1. Palíndromo
 
@@ -4523,7 +4524,7 @@ A Abordagem 2 é a mais concisa e idiomática para este problema em Java, pois `
 | `sb.toString()`                   | (Abordagem 1) Converte o `StringBuilder` de volta para uma `String`. |
 | `return`                          | Retorna a string de RNA resultante.                          |
 
-# 95 Série: Soma dos primeiros n termos
+## 95. Série: Soma dos primeiros n termos
 
 ## 📝 Enunciado
 
@@ -4611,6 +4612,95 @@ public class SeriesSum {
         }
 
         return String.format("%.2f", sum);
+    }
+}
+
+
+## 96. Contar Positivos e Somar Negativos
+
+## 📝 Enunciado
+
+Dado um array de inteiros, retorne um array onde:
+
+- O **primeiro elemento** é a quantidade de números **positivos**.
+- O **segundo elemento** é a **soma** dos números **negativos**.
+
+**Regras:**
+
+- O zero (0) não é considerado nem positivo nem negativo.
+- Se o array de entrada for **vazio** ou **null**, retorne um array vazio.
+
+---
+
+## 💡 Lógica do Algoritmo
+
+1. **Verificação de entrada:**
+   - Se o array for `null` ou tiver comprimento zero, retorne um array vazio (`new int[0]`).
+
+2. **Inicialização das variáveis:**
+   - `countPositives = 0`
+   - `sumNegatives = 0`
+
+3. **Percorrer o array:**
+   - Para cada elemento `num`:
+     - Se `num > 0`, incrementar `countPositives`.
+     - Se `num < 0`, adicionar `num` a `sumNegatives`.
+     - (Se `num == 0`, ignorar.)
+
+4. **Retornar o resultado:**
+   - `new int[] { countPositives, sumNegatives }`
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor |
+|-----------|-------|
+| **Tempo** | O(n)  |
+| **Espaço**| O(1)  |
+
+- **Tempo:** Percorremos o array uma única vez, com operações constantes em cada iteração – **O(n)**.
+- **Espaço:** Usamos apenas duas variáveis auxiliares, independentemente do tamanho da entrada – **O(1)**.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito             | O que faz                                                                  | Exemplo                              |
+|-------------------------------|----------------------------------------------------------------------------|--------------------------------------|
+| `int[] input`                 | Array de entrada.                                                          | `[1, 2, -3, 0, -5]`                 |
+| `if (input == null || input.length == 0)` | Verifica se a entrada é nula ou vazia.                            | `return new int[0];`                |
+| `for (int num : input)`       | Laço for-each para iterar sobre todos os elementos.                       | `for (int n : arr) { ... }`          |
+| `num > 0`                     | Verifica se o número é positivo.                                           | `if (n > 0) count++;`                |
+| `num < 0`                     | Verifica se o número é negativo.                                           | `if (n < 0) sum += n;`               |
+| `new int[]{count, sum}`       | Cria e retorna um array com dois elementos.                                | `return new int[]{2, -8};`           |
+
+---
+
+## 💻 Código (Java)
+
+```java
+public class CountPositivesSumNegatives {
+
+    public static int[] countPositivesSumNegatives(int[] input) {
+        // Caso entrada seja nula ou vazia, retornar array vazio
+        if (input == null || input.length == 0) {
+            return new int[0];
+        }
+
+        int countPositives = 0;
+        int sumNegatives = 0;
+
+        for (int num : input) {
+            if (num > 0) {
+                countPositives++;
+            } else if (num < 0) {
+                sumNegatives += num;
+            }
+            // zero é ignorado
+        }
+
+        return new int[]{countPositives, sumNegatives};
     }
 }
 
