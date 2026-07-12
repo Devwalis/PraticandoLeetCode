@@ -103,7 +103,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 94. [Transcrever DNA para RNA](#-94-Transcreve-DNA-para-RNA)
 95. [Série: Soma dos primeiros n termos](#-95-Série-Soma-dos-primeiros n termos)
 96. [Contar Positivos e Somar Negativos](#-96-Contar-Positivos-e-Somar-Negativos)
-
+97. [Indices das letras Maiúsculas](#-97-Indices-das-letras-Maiusculas)
 ## 🧪 1. Palíndromo
 
 ### ✅ Enunciado:
@@ -4664,7 +4664,7 @@ Dado um array de inteiros, retorne um array onde:
 
 ---
 
-## 📘 Tabela de Métodos / Conceitos Utilizados
+### Tabela de Métodos / Conceitos Utilizados
 
 | Método / Conceito             | O que faz                                                                  | Exemplo                              |
 |-------------------------------|----------------------------------------------------------------------------|--------------------------------------|
@@ -4677,32 +4677,64 @@ Dado um array de inteiros, retorne um array onde:
 
 ---
 
-## 💻 Código (Java)
 
-```java
-public class CountPositivesSumNegatives {
 
-    public static int[] countPositivesSumNegatives(int[] input) {
-        // Caso entrada seja nula ou vazia, retornar array vazio
-        if (input == null || input.length == 0) {
-            return new int[0];
-        }
 
-        int countPositives = 0;
-        int sumNegatives = 0;
 
-        for (int num : input) {
-            if (num > 0) {
-                countPositives++;
-            } else if (num < 0) {
-                sumNegatives += num;
-            }
-            // zero é ignorado
-        }
 
-        return new int[]{countPositives, sumNegatives};
-    }
-}
+### 97.  Índices das Letras Maiúsculas
+
+## 📝 Enunciado
+
+Escreva uma função que receba uma **string não vazia** contendo apenas letras ASCII (minúsculas e maiúsculas) e retorne uma **lista ordenada** com os índices (posições) de todas as letras maiúsculas presentes na string.
+
+**Exemplo:**
+
+- Entrada: `"CoDe"`  
+  Saída: `[0, 2]`  (índices de 'C' e 'D')
+
+- Entrada: `"HelloWorld"`  
+  Saída: `[0, 5]`  (índices de 'H' e 'W')
+
+---
+
+## 💡 Lógica do Algoritmo
+
+1. **Inicializar uma lista vazia** para armazenar os índices.
+2. **Percorrer a string caractere por caractere**, mantendo o índice atual.
+3. Para cada caractere:
+   - Verificar se ele é uma letra maiúscula usando `Character.isUpperCase(ch)`.
+   - Se for, adicionar o índice atual à lista.
+4. **Retornar a lista** (já estará em ordem crescente, pois percorremos a string da esquerda para a direita).
+
+**Observação:** O enunciado garante que a string contém apenas letras, portanto não precisamos nos preocupar com outros caracteres.
+
+---
+
+## 🔍 Complexidade
+
+| Tipo      | Valor        |
+|-----------|--------------|
+| **Tempo** | O(n)         |
+| **Espaço**| O(k)         |
+
+- **Tempo:** Percorremos a string uma única vez – **O(n)**, onde `n` é o comprimento da string.
+- **Espaço:** Armazenamos apenas os índices das letras maiúsculas. No pior caso (todos os caracteres são maiúsculos), a lista terá tamanho `n`, então espaço **O(n)**.
+
+---
+
+## 📘 Tabela de Métodos / Conceitos Utilizados
+
+| Método / Conceito                 | O que faz                                                                 | Exemplo                                 |
+|-----------------------------------|---------------------------------------------------------------------------|-----------------------------------------|
+| `String word`                     | String de entrada.                                                        | `"CoDe"`                                |
+| `List<Integer> indices`           | Lista para armazenar os índices das maiúsculas.                           | `List<Integer> list = new ArrayList<>();` |
+| `word.charAt(i)`                  | Obtém o caractere na posição `i`.                                         | `char c = word.charAt(0);`              |
+| `Character.isUpperCase(c)`        | Verifica se o caractere é maiúsculo.                                      | `Character.isUpperCase('C')` → `true`   |
+| `indices.add(i)`                  | Adiciona o índice à lista.                                                | `indices.add(0);`                       |
+| `return indices;`                 | Retorna a lista.                                                          | `return indices;`                       |
+
+
 
 ## 📂 Organização
 
