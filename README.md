@@ -104,6 +104,11 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 95. [Série: Soma dos primeiros n termos](#-95-Série-Soma-dos-primeiros n termos)
 96. [Contar Positivos e Somar Negativos](#-96-Contar-Positivos-e-Somar-Negativos)
 97. [Indices das letras Maiúsculas](#-97-Indices-das-letras-Maiusculas)
+98. [Flores do Amor (Opposites Attract)](#-98-flores-do-amor-opposites-attract)
+
+
+
+
 ## 🧪 1. Palíndromo
 
 ### ✅ Enunciado:
@@ -4734,7 +4739,42 @@ Escreva uma função que receba uma **string não vazia** contendo apenas letras
 | `indices.add(i)`                  | Adiciona o índice à lista.                                                | `indices.add(0);`                       |
 | `return indices;`                 | Retorna a lista.                                                          | `return indices;`                       |
 
+### 98. Flores do Amor (Opposites Attract)
+✅ Enunciado:
 
+Timmy e Sarah acham que estão apaixonados, mas onde moram, eles só saberão ao colherem uma flor cada um. Se uma das flores tiver um número par de pétalas e a outra tiver um número ímpar de pétalas, significa que eles estão apaixonados.
+
+Escreva uma função que receba a quantidade de pétalas de cada flor (flower1 e flower2) e retorne true se eles estiverem apaixonados e false caso contrário.
+
+Exemplos:
+| Entrada (flower1, flower2) | Saída | Explicação |
+|--------------------------------|-------|------------|
+| (1, 4) | true | 1 é ímpar, 4 é par |
+| (2, 2) | false | Ambos são pares |
+| (0, 1) | true | 0 é par, 1 é ímpar |
+| (0, 0) | false | Ambos são pares |
+### 💡 Lógica do Algoritmo:
+
+    Verificação de Paridade: Um número é par se o resto da sua divisão por 2 for 0 (n % 2 == 0) e ímpar se for diferente de 0.
+
+    Comparação Direta: Eles só estarão apaixonados se a paridade de flower1 for diferente da paridade de flower2: (flower1 % 2) != (flower2 % 2).
+
+    Propriedade Matemática (Alternativa): A soma de um número par com um número ímpar sempre resulta em um número ímpar. Portanto, outra forma simples de resolver é verificar se a soma das pétalas é ímpar: (flower1 + flower2) % 2 != 0.
+
+### 🔍 Complexidade:
+Tipo	Valor
+Tempo	O(1)
+Espaço	O(1)
+
+    Tempo: Apenas uma operação matemática/lógica simples, executada instantaneamente.
+
+    Espaço: Não há alocação de memória dinâmica.
+
+📘 Tabela de Métodos / Conceitos Utilizados:
+Método / Conceito	O que faz	Exemplo de uso
+n % 2	Operador de módulo: retorna o resto da divisão por 2.	4 % 2 (retorna 0)
+!=	Operador de desigualdade: verifica se a paridade das flores é diferente.	(flower1 % 2) != (flower2 % 2)
+(f1 + f2) % 2 != 0	Atalho matemático: se a soma de dois números for ímpar, um é par e o outro é ímpar.	(1 + 4) % 2 != 0 (retorna true)
 
 ## 📂 Organização
 
