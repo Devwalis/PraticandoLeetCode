@@ -105,7 +105,7 @@ Todos os algoritmos estão implementados em **Java**, com explicações passo a 
 96. [Contar Positivos e Somar Negativos](#-96-Contar-Positivos-e-Somar-Negativos)
 97. [Indices das letras Maiúsculas](#-97-Indices-das-letras-Maiusculas)
 98. [Flores do Amor (Opposites Attract)](#-98-flores-do-amor-opposites-attract)
-
+99. [Desenhar Diamante de Asteriscos (Give me a Diamond)](#-99-desenhar-diamante-de-asteriscos-give-me-a-diamond)
 
 
 
@@ -4775,6 +4775,93 @@ Método / Conceito	O que faz	Exemplo de uso
 n % 2	Operador de módulo: retorna o resto da divisão por 2.	4 % 2 (retorna 0)
 !=	Operador de desigualdade: verifica se a paridade das flores é diferente.	(flower1 % 2) != (flower2 % 2)
 (f1 + f2) % 2 != 0	Atalho matemático: se a soma de dois números for ímpar, um é par e o outro é ímpar.	(1 + 4) % 2 != 0 (retorna true)
+
+
+🧪 99. Desenhar Diamante de Asteriscos (Give me a Diamond)
+✅ Enunciado:
+
+Jamie é programadora e namorada de James. Ela gosta de diamantes e quer uma string em formato de diamante feita por James. Como James não sabe como fazer isso acontecer, ele precisa da sua ajuda.
+
+Tarefa:
+Retorne uma string que tenha a aparência de um diamante quando impressa na tela, usando caracteres asterisco (*).
+
+Regras:
+
+    Espaços após os asteriscos (trailing spaces) devem ser removidos.
+
+    Todas as linhas devem ser finalizadas com um caractere de quebra de linha (\n).
+
+    Retorne null se a entrada for um número par ou negativo (incluindo zero), pois não é possível imprimir um diamante nesses casos.
+
+Exemplos:
+
+    Tamanho 3:
+
+code Text
+
+*\n
+***\n
+ *\n
+
+    Tamanho 5:
+
+code Text
+
+*\n
+ ***\n
+*****\n
+ ***\n
+  *\n
+
+💡 Lógica do Algoritmo:
+
+    Validação inicial: Se n <= 0 ou n % 2 == 0, retorne null imediatamente.
+
+    Identificar o centro: A linha do meio está na posição meio = n / 2.
+
+    Iterar pelas linhas (i de 0 até n - 1):
+
+        Calcule a distância da linha atual até a linha central: distancia = Math.abs(meio - i).
+
+        O número de espaços no início da linha é igual à distancia.
+
+        O número de asteriscos é igual a n - (2 * distancia).
+
+    Construir a string: Adicione os espaços, depois os asteriscos e, ao final de cada linha, adicione \n.
+
+    Retorne o resultado acumulado no StringBuilder.
+
+🔍 Complexidade:
+Tipo	Valor
+Tempo	O(n²)
+Espaço	O(n²)
+
+    Tempo: O laço externo executa n vezes (linhas). Para cada linha, o total de caracteres inseridos é proporcional a n. Logo, a complexidade total é
+
+            
+    O(n2)O(n2)
+
+          
+
+    .
+
+    Espaço: O objeto StringBuilder armazena a representação em texto do diamante, que contém aproximadamente
+
+            
+    n2n2
+
+          
+
+    caracteres.
+
+📘 Tabela de Métodos / Conceitos Utilizados:
+Método / Conceito	O que faz	Exemplo de uso
+Math.abs(valor)	Retorna o valor absoluto de um número (transforma negativos em positivos).	Math.abs(2 - 0) → 2
+StringBuilder	Classe mutável para construir strings de forma eficiente em laços de repetição.	StringBuilder sb = new StringBuilder();
+append()	Adiciona caracteres ou strings ao final do StringBuilder.	sb.append("*");
+toString()	Converte o acumulador StringBuilder de volta para String.	return sb.toString();
+
+
 
 ## 📂 Organização
 
